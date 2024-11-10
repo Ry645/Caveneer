@@ -1,0 +1,2 @@
+## required plugins
+* better-terrain
