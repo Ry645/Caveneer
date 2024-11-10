@@ -1,0 +1,75 @@
+walk around in an endless field (plains biome)
+dig up entrances to caves, and later dungeons
+inspired by first legend of zelda game's inspiration miyamoto exploring caves
+also inspired by endoparasitic 2
+
+check props and sus spots for caves
+
+first cave is one or two rooms with small amounts of resources
+gather resources from first cave
+all resources gathered from caves
+
+use resources to unlock the ability to open the next cave type
+this cave has more rooms and a few enemies
+
+optional:
+idk make a treasure/crystal at the very end and have an escape sequence
+cave/dungeon is caving in and falling apart
+
+inspecting
+mining
+	indestructible pickaxe
+	mine ores
+light
+	torch
+		use fire spirit to light 
+combat
+	weakpoints
+	knife
+		1 damage
+		triples from hitting a weakpoint
+		only 5 hits before dulling
+		can be repaired with silver chunks
+		each silver chunk restores a hit
+		5 silver chunks result in a full heal
+	sword
+		4 damage
+		no benefits from weakpoints
+		only 3 hits before dulling
+		silver ingot restores a hit
+		can smelt 6 silver chunks into 3 ingots using a fire spirit
+		technically more effective to use the knife
+enemies
+	shambler
+		3 health
+		weakpoint on back
+
+player is wizard like in noita
+upgrade exists that allows player to use mouse to move knife around the room (max range)
+used to hit weakpoints while enemy chases you b/c funny
+
+
+secret rooms:
+	scratched rock:
+		a scratched rock that can be inspected to move out of the way to reveal a secret room
+		mining the rock will make a loud landslide sound
+		inspecting the landslide pile of dirt will say "...hm"
+
+
+
+required tech to learn
+	graphics:
+		create tilemaps
+		use tilemaps
+		small detail to tilemaps
+		pixel art
+		32 color palette
+		procedural generation (look at endoparasitic roguelite devlog for that)
+	
+	gameplay:
+		wasd movement
+		animation trees
+		inventory
+		enemy ai
+		
+	

@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=15 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
+[ext_resource type="Texture2D" uid="uid://btiopm0d4dtjd" path="res://sprites/wand/wand.png" id="3_oxifs"]
+[ext_resource type="Script" path="res://wand/wand.gd" id="4_t2p4c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -87,7 +89,7 @@ size = Vector2(15, 3)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
-position = Vector2(240, 220)
+position = Vector2(136, 102)
 script = ExtResource("1_hpm7c")
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
@@ -98,3 +100,12 @@ animation = &"walkUp"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 13.5)
 shape = SubResource("RectangleShape2D_vgyxl")
+
+[node name="wandTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="wand" type="Sprite2D" parent="wandTransform"]
+unique_name_in_owner = true
+position = Vector2(0.5, -7)
+texture = ExtResource("3_oxifs")
+script = ExtResource("4_t2p4c")

@@ -2,14 +2,22 @@ extends CharacterBody2D
 
 
 @export var speed = 128
+@export var maxReach = 40
+
 @onready var player_sprite = %playerSprite
+@onready var wand_transform = %wandTransform
+@onready var wand = %wand
 
 var mousePos:Vector2
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	pass
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	handleMovement(direction)
-	
+	inputProcess()
 	updateAnimation(direction)
 
 	move_and_slide()
@@ -20,6 +28,10 @@ func handleMovement(direction):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
+
+func inputProcess():
+	if Input.is_action_just_pressed("interact"):
+		pass
 
 func updateAnimation(direction):
 	#find offset
@@ -59,4 +71,22 @@ func updateAnimation(direction):
 func _input(event):
 	#for updateAnimation
 	if event is InputEventMouseMotion:
-		mousePos = event.global_position
+		updateMouseAndWandPosition(event)
+
+func updateMouseAndWandPosition(event:InputEventMouseMotion):
+	#find offset
+	var offset:Vector2 = (event.global_position - global_position)
+	#clamp if too long
+	if offset.length() > maxReach:
+		get_viewport().warp_mouse(offset.normalized() * maxReach + global_position)
+	
+	
+	wand_transform.global_position = event.global_position
+	
+	#flip y b/c weird WARNING MESSES WITH offset VARIABLE
+	offset.y = -offset.y
+	var angleFromPlayer:float = offset.angle()
+	wand_transform.rotation = -angleFromPlayer + PI/2
+	
+	mousePos = event.global_position
+	print(mousePos)
