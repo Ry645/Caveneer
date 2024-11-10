@@ -8,10 +8,11 @@ extends CharacterBody2D
 @onready var wand_transform = %wandTransform
 @onready var wand = %wand
 
-var mousePos:Vector2
+var previousMousePos:Vector2
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	pass
 
 func _physics_process(delta):
@@ -35,12 +36,12 @@ func inputProcess():
 
 func updateAnimation(direction):
 	#find offset
-	var offset:Vector2 = (mousePos - global_position)
+	var offset:Vector2 = (wand_transform.global_position - global_position)
 	#flip y b/c weird
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
 	#print(angleFromPlayer)
-	#print(mousePos - global_position)
+	#print(wand_transform.global_position - global_position)
 	
 	#in grid
 	var possibleAngleRanges = [-3*PI/4, -PI/4, PI/4, 3*PI/4]
@@ -71,22 +72,26 @@ func updateAnimation(direction):
 func _input(event):
 	#for updateAnimation
 	if event is InputEventMouseMotion:
-		updateMouseAndWandPosition(event)
+		updateWandPosition(event)
 
-func updateMouseAndWandPosition(event:InputEventMouseMotion):
+func updateWandPosition(event:InputEventMouseMotion):
+	var changeInPosition = event.global_position - previousMousePos
+	previousMousePos = event.global_position
+	
+	wand_transform.global_position += changeInPosition
+	
 	#find offset
-	var offset:Vector2 = (event.global_position - global_position)
+	var offset:Vector2 = wand_transform.global_position - global_position
+	print(offset)
+	
 	#clamp if too long
 	if offset.length() > maxReach:
-		get_viewport().warp_mouse(offset.normalized() * maxReach + global_position)
+		wand_transform.global_position = offset.normalized() * maxReach + global_position
 	
-	
-	wand_transform.global_position = event.global_position
-	
-	#flip y b/c weird WARNING MESSES WITH offset VARIABLE
+	#flip y b/c weird
+	#WARNING MESSES WITH offset VARIABLE
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
 	wand_transform.rotation = -angleFromPlayer + PI/2
 	
-	mousePos = event.global_position
-	print(mousePos)
+	#print(wand_transform.global_position)
