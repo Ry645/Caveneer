@@ -22,27 +22,33 @@ func handleMovement(direction):
 		velocity.y = move_toward(velocity.y, 0, speed)
 
 func updateAnimation(direction):
+	#find offset
 	var offset:Vector2 = (mousePos - global_position)
 	#flip y b/c weird
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
-	print(angleFromPlayer)
+	#print(angleFromPlayer)
 	#print(mousePos - global_position)
 	
+	#in grid
 	var possibleAngleRanges = [-3*PI/4, -PI/4, PI/4, 3*PI/4]
 	var playerAnimations:Array[StringName] = ["walkDown", "walkRight", "walkUp", "walkLeft"]
 	
 	for i in range(playerAnimations.size()):
+		#last one since 5*PI/4 == -3PI/4
 		if i == playerAnimations.size() - 1:
 			player_sprite.play(playerAnimations[playerAnimations.size() - 1])
 			break
 		
+		#check if in bounds
 		if angleFromPlayer > possibleAngleRanges[i] && angleFromPlayer < possibleAngleRanges[i + 1]:
 			if player_sprite.animation != playerAnimations[i]:
 				player_sprite.play(playerAnimations[i])
 			break
 	
+	#moving or not
 	if direction:
+		#check if playing to prevent reset over and over again
 		if !player_sprite.is_playing():
 			player_sprite.play()
 	else:
@@ -51,5 +57,6 @@ func updateAnimation(direction):
 		player_sprite.pause()
 
 func _input(event):
+	#for updateAnimation
 	if event is InputEventMouseMotion:
 		mousePos = event.global_position
