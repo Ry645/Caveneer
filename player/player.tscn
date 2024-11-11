@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=19 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
-[ext_resource type="Texture2D" uid="uid://btiopm0d4dtjd" path="res://sprites/wand/wand.png" id="3_oxifs"]
-[ext_resource type="Script" path="res://wand/wand.gd" id="4_t2p4c"]
+[ext_resource type="PackedScene" uid="uid://chs3kbc7l7ng8" path="res://wand/wand.tscn" id="3_7w0ju"]
+[ext_resource type="Texture2D" uid="uid://bjxu87i72rwwl" path="res://sprites/grappleLash/grappleLash-Sheet.png" id="4_1jab7"]
+[ext_resource type="Texture2D" uid="uid://d15exvgua0xsn" path="res://sprites/pickaxe/pickaxe.png" id="5_8gx82"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -87,6 +88,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgyxl"]
 size = Vector2(15, 3)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6noht"]
+atlas = ExtResource("4_1jab7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22dto"]
+atlas = ExtResource("4_1jab7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elm7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6noht")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22dto")
+}],
+"loop": true,
+"name": &"grapple",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 z_index = 2
 position = Vector2(136, 102)
@@ -101,11 +129,30 @@ animation = &"walkUp"
 position = Vector2(-0.5, 13.5)
 shape = SubResource("RectangleShape2D_vgyxl")
 
-[node name="wandTransform" type="Marker2D" parent="."]
+[node name="carryingTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
 
-[node name="wand" type="Sprite2D" parent="wandTransform"]
+[node name="wand" parent="carryingTransform" instance=ExtResource("3_7w0ju")]
 unique_name_in_owner = true
-position = Vector2(0.5, -7)
-texture = ExtResource("3_oxifs")
-script = ExtResource("4_t2p4c")
+
+[node name="wandTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-7, 13)
+
+[node name="grappleLashTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 13)
+
+[node name="grappleLash" type="AnimatedSprite2D" parent="grappleLashTransform"]
+unique_name_in_owner = true
+position = Vector2(-0.5, -6)
+sprite_frames = SubResource("SpriteFrames_elm7p")
+
+[node name="pickaxeTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5, 13)
+
+[node name="pickaxe" type="Sprite2D" parent="pickaxeTransform"]
+unique_name_in_owner = true
+position = Vector2(0.5, -6)
+texture = ExtResource("5_8gx82")

@@ -2,17 +2,18 @@ extends CharacterBody2D
 
 
 @export var speed = 128
-@export var maxReach = 40
+@export var maxReach = 32
 
+@onready var tools = [%wand, %grappleLash, %pickaxe]
 @onready var player_sprite = %playerSprite
-@onready var wand_transform = %wandTransform
-@onready var wand = %wand
+@onready var carrying_transform = %carryingTransform
+@onready var equippedTool = %wand
+@onready var holster = %wandTransform
 
 var previousMousePos:Vector2
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	pass
 
 func _physics_process(delta):
@@ -33,15 +34,35 @@ func handleMovement(direction):
 func inputProcess():
 	if Input.is_action_just_pressed("interact"):
 		pass
+	#TEMP later add pause menu
+	if Input.is_action_just_pressed("pause"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if Input.is_action_just_pressed("slot 1"):
+		swapWeapon(1)
+	if Input.is_action_just_pressed("slot 2"):
+		swapWeapon(2)
+	if Input.is_action_just_pressed("slot 3"):
+		swapWeapon(3) 
+
+#equips new weapon and holsters old new
+func swapWeapon(slot):
+	#back to holster
+	equippedTool.reparent(holster, false)
+	#grab tool
+	equippedTool = tools[slot - 1]
+	#store holster
+	holster = equippedTool.get_parent()
+	#tool now in hand
+	equippedTool.reparent(%carryingTransform, false)
 
 func updateAnimation(direction):
 	#find offset
-	var offset:Vector2 = (wand_transform.global_position - global_position)
+	var offset:Vector2 = (carrying_transform.global_position - global_position)
 	#flip y b/c weird
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
 	#print(angleFromPlayer)
-	#print(wand_transform.global_position - global_position)
+	#print(carrying_transform.global_position - global_position)
 	
 	#in grid
 	var possibleAngleRanges = [-3*PI/4, -PI/4, PI/4, 3*PI/4]
@@ -72,26 +93,29 @@ func updateAnimation(direction):
 func _input(event):
 	#for updateAnimation
 	if event is InputEventMouseMotion:
-		updateWandPosition(event)
+		updateCarryPosition(event)
+	#TEMP later add pause menu
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
-func updateWandPosition(event:InputEventMouseMotion):
+func updateCarryPosition(event:InputEventMouseMotion):
 	var changeInPosition = event.global_position - previousMousePos
 	previousMousePos = event.global_position
 	
-	wand_transform.global_position += changeInPosition
+	carrying_transform.global_position += changeInPosition
 	
 	#find offset
-	var offset:Vector2 = wand_transform.global_position - global_position
-	print(offset)
+	var offset:Vector2 = carrying_transform.global_position - global_position
+	#print(offset)
 	
 	#clamp if too long
 	if offset.length() > maxReach:
-		wand_transform.global_position = offset.normalized() * maxReach + global_position
+		carrying_transform.global_position = offset.normalized() * maxReach + global_position
 	
 	#flip y b/c weird
 	#WARNING MESSES WITH offset VARIABLE
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
-	wand_transform.rotation = -angleFromPlayer + PI/2
+	carrying_transform.rotation = -angleFromPlayer + PI/2
 	
-	#print(wand_transform.global_position)
+	#print(carrying_transform.global_position)

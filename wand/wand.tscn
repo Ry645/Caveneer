@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://chs3kbc7l7ng8"]
+
+[ext_resource type="Texture2D" uid="uid://btiopm0d4dtjd" path="res://sprites/wand/wand.png" id="1_rm3p7"]
+[ext_resource type="Script" path="res://wand/wand.gd" id="2_yxr0s"]
+
+[node name="wand" type="Sprite2D"]
+position = Vector2(0.5, -7)
+texture = ExtResource("1_rm3p7")
+script = ExtResource("2_yxr0s")
