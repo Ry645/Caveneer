@@ -14,26 +14,24 @@ var previousMousePos:Vector2
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	%grappleLash.user = self
 	pass
 
 func _physics_process(delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
-	handleMovement(direction)
 	inputProcess()
-	updateAnimation(direction)
-
+	updateAnimation()
+	
 	move_and_slide()
-
-func handleMovement(direction):
-	if direction:
-		velocity = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.y = move_toward(velocity.y, 0, speed)
 
 func inputProcess():
 	if Input.is_action_just_pressed("interact"):
 		pass
+	if Input.is_action_just_pressed("attack"):
+		if equippedTool.has_method("use"):
+			equippedTool.use()
+	if Input.is_action_just_released("attack"):
+		if equippedTool.has_method("stopUse"):
+			equippedTool.stopUse()
 	#TEMP later add pause menu
 	if Input.is_action_just_pressed("pause"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -55,7 +53,8 @@ func swapWeapon(slot):
 	#tool now in hand
 	equippedTool.reparent(%carryingTransform, false)
 
-func updateAnimation(direction):
+#updates the player animation to face a certain direction (ie mouse location/carrying transform)
+func updateAnimation():
 	#find offset
 	var offset:Vector2 = (carrying_transform.global_position - global_position)
 	#flip y b/c weird
@@ -81,7 +80,7 @@ func updateAnimation(direction):
 			break
 	
 	#moving or not
-	if direction:
+	if velocity != Vector2.ZERO:
 		#check if playing to prevent reset over and over again
 		if !player_sprite.is_playing():
 			player_sprite.play()
@@ -98,7 +97,11 @@ func _input(event):
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
+#updates the transform of the carry
 func updateCarryPosition(event:InputEventMouseMotion):
+	#use previous mouse pos before set
+	#BUG weird thing where the wand can only move along a line
+	#replicate by dragging the mouse in one direction at low screen size for a long time
 	var changeInPosition = event.global_position - previousMousePos
 	previousMousePos = event.global_position
 	
@@ -113,9 +116,10 @@ func updateCarryPosition(event:InputEventMouseMotion):
 		carrying_transform.global_position = offset.normalized() * maxReach + global_position
 	
 	#flip y b/c weird
-	#WARNING MESSES WITH offset VARIABLE
+	#WARNING MESSES WITH OFFSET VARIABLE
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
+	#rotate tool away from player
 	carrying_transform.rotation = -angleFromPlayer + PI/2
 	
 	#print(carrying_transform.global_position)

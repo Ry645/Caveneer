@@ -135,6 +135,12 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 1, 0, 0
 [node name="CaveEntrance" parent="." instance=ExtResource("2_si7ex")]
 position = Vector2(113, 64)
 
+[node name="CaveEntrance2" parent="." instance=ExtResource("2_si7ex")]
+position = Vector2(205, 199)
+
+[node name="CaveEntrance3" parent="." instance=ExtResource("2_si7ex")]
+position = Vector2(58, 204)
+
 [node name="rockFloor" type="TileMap" parent="."]
 position = Vector2(16, 16)
 tile_set = SubResource("TileSet_6wet8")

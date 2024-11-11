@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func use():
-	print("f")
+	print("e")

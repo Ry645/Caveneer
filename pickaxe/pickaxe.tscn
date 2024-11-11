@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxk77cj4o8il8"]
+
+[ext_resource type="Texture2D" uid="uid://d15exvgua0xsn" path="res://sprites/pickaxe/pickaxe.png" id="1_cbgf8"]
+
+[node name="pickaxe" type="Sprite2D"]
+position = Vector2(0.5, -6)
+texture = ExtResource("1_cbgf8")
