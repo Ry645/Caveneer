@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=18 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
@@ -89,6 +89,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgyxl"]
 size = Vector2(15, 3)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5lhue"]
+radius = 3.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 2
 position = Vector2(136, 102)
@@ -105,9 +108,17 @@ shape = SubResource("RectangleShape2D_vgyxl")
 
 [node name="carryingTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(21.5, 0)
 
 [node name="wand" parent="carryingTransform" instance=ExtResource("3_7w0ju")]
 unique_name_in_owner = true
+
+[node name="interactArea" type="Area2D" parent="carryingTransform"]
+unique_name_in_owner = true
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carryingTransform/interactArea"]
+shape = SubResource("CircleShape2D_5lhue")
 
 [node name="wandTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true

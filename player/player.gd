@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-@export var speed = 128
 @export var maxReach = 32
+@export var brakePower = 5
+@export var fullStopThreshold = 5
 
 @onready var tools = [%wand, %grappleLash, %pickaxe]
 @onready var player_sprite = %playerSprite
@@ -10,22 +11,27 @@ extends CharacterBody2D
 @onready var equippedTool = %wand
 @onready var holster = %wandTransform
 
-var previousMousePos:Vector2
-
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	%grappleLash.user = self
 	pass
 
 func _physics_process(delta):
-	inputProcess()
+	inputProcess(delta)
 	updateAnimation()
 	
 	move_and_slide()
 
-func inputProcess():
+func inputProcess(delta):
 	if Input.is_action_just_pressed("interact"):
-		pass
+		#TEMP later have indicator
+		for body in %interactArea.get_overlapping_bodies():
+			if body.has_method("interact"):
+				body.interact()
+				#only interact with one thing
+				break
+	if Input.is_action_pressed("brake"):
+		slowPlayerMovement(delta)
 	if Input.is_action_just_pressed("attack"):
 		if equippedTool.has_method("use"):
 			equippedTool.use()
@@ -95,16 +101,16 @@ func _input(event):
 		updateCarryPosition(event)
 	#TEMP later add pause menu
 	if event is InputEventMouseButton:
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 #updates the transform of the carry
 func updateCarryPosition(event:InputEventMouseMotion):
 	#use previous mouse pos before set
-	#BUG weird thing where the wand can only move along a line
+	#FIXED weird thing where the wand can only move along a line
 	#replicate by dragging the mouse in one direction at low screen size for a long time
-	var changeInPosition = event.global_position - previousMousePos
-	previousMousePos = event.global_position
+	#FIXED changed Input.MOUSE_MODE_CONFINED_HIDDEN to Input.MOUSE_MODE_CAPTURED
 	
+	var changeInPosition = event.relative
 	carrying_transform.global_position += changeInPosition
 	
 	#find offset
@@ -123,3 +129,8 @@ func updateCarryPosition(event:InputEventMouseMotion):
 	carrying_transform.rotation = -angleFromPlayer + PI/2
 	
 	#print(carrying_transform.global_position)
+
+func slowPlayerMovement(delta):
+	velocity = lerp(velocity, Vector2.ZERO, brakePower * delta)
+	if velocity.length() < fullStopThreshold:
+		velocity = Vector2.ZERO

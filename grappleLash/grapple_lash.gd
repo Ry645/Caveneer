@@ -7,9 +7,15 @@ extends AnimatedSprite2D
 
 @onready var grapple_range:RayCast2D = $grappleRange
 
+enum {
+	NOT_GRAPPLING,
+	GRAPPLING,
+	BUFFERING
+}
+
 var line:Line2D
 var endpoint:Vector2
-var isGrappling:bool = false
+var grappleState:int = NOT_GRAPPLING
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,10 +24,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if line != null:
 		line.points[0] = grapple_range.global_position
-	if isGrappling:
+	if grappleState == BUFFERING:
+		shootGrapple()
+	if grappleState == GRAPPLING:
 		moveUser(delta)
 
 
@@ -30,11 +38,10 @@ func use():
 
 func shootGrapple():
 	if !grapple_range.is_colliding():
-		return
-	
+		grappleState = BUFFERING
 	createGrappleLine()
 	
-	isGrappling = true
+	grappleState = GRAPPLING
 
 func createGrappleLine():
 	play("grapple")
@@ -49,8 +56,16 @@ func createGrappleLine():
 
 func moveUser(delta):
 	#use grapple range instead of user for max control
-	var direction = (endpoint - grapple_range.global_position).normalized()
-	user.velocity += direction * grappleAcceleration * delta
+	var maxLineLength := (endpoint - grapple_range.global_position).length()
+	var direction := (endpoint - grapple_range.global_position).normalized()
+	
+	#var newPossibleGrappleLength:float = (endpoint - ((direction * grappleAcceleration * delta) + grapple_range.global_position + user.velocity)).length()
+	#
+	var addedVelocity:Vector2 = direction * grappleAcceleration * delta
+	#if newPossibleGrappleLength > maxLineLength:
+		#addedVelocity *= 3
+	
+	user.velocity += addedVelocity
 
 func stopUse():
 	retractGrapple()
@@ -59,4 +74,4 @@ func stopUse():
 
 func retractGrapple():
 	play("default")
-	isGrappling = false
+	grappleState = NOT_GRAPPLING

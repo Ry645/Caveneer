@@ -1,12 +1,14 @@
 extends Sprite2D
 
+@export var sceneToLoad:PackedScene # = preload("res://zones/firstCave/first_cave.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-#TODO allow load scene on interact with wand nearby
+func loadArea():
+	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+
+func interact():
+	loadArea()
+
+func interactHover():
 	pass
