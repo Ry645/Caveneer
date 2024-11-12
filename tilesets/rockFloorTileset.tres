@@ -1,0 +1,105 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ck3t1nt4yqdo2"]
+
+[ext_resource type="Texture2D" uid="uid://dcjh86ffgny07" path="res://sprites/tileSets/cave/caveFloor.png" id="1_h2d5y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0cur"]
+texture = ExtResource("1_h2d5y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+4: [0],
+"type": -1
+}
+1:0/0 = 0
+1:0/0/metadata/_better_terrain = {
+0: [0],
+3: [0],
+"type": -1
+}
+2:0/0 = 0
+2:0/0/metadata/_better_terrain = {
+3: [0],
+4: [0],
+"type": 0
+}
+3:0/0 = 0
+3:0/0/metadata/_better_terrain = {
+3: [0],
+4: [0],
+"type": -1
+}
+0:1/0 = 0
+0:1/0/metadata/_better_terrain = {
+3: [0],
+"type": 0
+}
+1:1/0 = 0
+1:1/0/metadata/_better_terrain = {
+0: [0],
+3: [0],
+4: [0],
+"type": -1
+}
+2:1/0 = 0
+2:1/0/metadata/_better_terrain = {
+0: [0],
+3: [0],
+4: [0],
+"type": 0
+}
+3:1/0 = 0
+3:1/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+"type": 0
+}
+0:2/0 = 0
+0:2/0/metadata/_better_terrain = {
+0: [0],
+"type": -1
+}
+1:2/0 = 0
+1:2/0/metadata/_better_terrain = {
+0: [0],
+"type": 0
+}
+2:2/0 = 0
+2:2/0/metadata/_better_terrain = {
+0: [0],
+3: [0],
+"type": 0
+}
+3:2/0 = 0
+3:2/0/metadata/_better_terrain = {
+4: [0],
+"type": 0
+}
+1:3/0 = 0
+1:3/0/metadata/_better_terrain = {
+3: [0],
+"type": -1
+}
+2:3/0 = 0
+2:3/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+"type": -1
+}
+3:3/0 = 0
+3:3/0/metadata/_better_terrain = {
+"type": 0
+}
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_f0cur")
+metadata/_better_terrain = {
+"decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
+"path": "res://addons/better-terrain/icons/Decoration.svg"
+}],
+"terrains": [["rock", Color(0.945313, 1, 0, 1), 0, [], {
+"coord": Vector2i(2, 1),
+"source_id": 0
+}]],
+"version": "0.2"
+}
