@@ -11,5 +11,11 @@ func _process(delta):
 	pass
 
 
+#TEMP
 func use():
-	print("f")
+	shootBolt()
+
+func shootBolt():
+	var body:Node2D = %RayCast2D.get_collider()
+	if body.has_method("takeDamage"):
+		body.takeDamage()

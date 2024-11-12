@@ -43,5 +43,3 @@ target_position = Vector2(0, 3000)
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
 width = 1.0
-
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]

@@ -110,9 +110,6 @@ shape = SubResource("RectangleShape2D_vgyxl")
 unique_name_in_owner = true
 position = Vector2(21.5, 0)
 
-[node name="wand" parent="carryingTransform" instance=ExtResource("3_7w0ju")]
-unique_name_in_owner = true
-
 [node name="interactArea" type="Area2D" parent="carryingTransform"]
 unique_name_in_owner = true
 collision_mask = 3
@@ -120,22 +117,27 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carryingTransform/interactArea"]
 shape = SubResource("CircleShape2D_5lhue")
 
-[node name="wandTransform" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(-7, 13)
-
-[node name="grappleLashTransform" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, 13)
-
-[node name="grappleLash" parent="grappleLashTransform" node_paths=PackedStringArray("user") instance=ExtResource("4_v7oug")]
+[node name="grappleLash" parent="carryingTransform" node_paths=PackedStringArray("user") instance=ExtResource("4_v7oug")]
 unique_name_in_owner = true
 user = NodePath("../..")
 
+[node name="grappleLashTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-7, 13)
+
+[node name="wandTransform" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 13)
+
+[node name="wand" parent="wandTransform" instance=ExtResource("3_7w0ju")]
+unique_name_in_owner = true
+
 [node name="pickaxeTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(5, 13)
+position = Vector2(7, 13)
 
 [node name="pickaxe" parent="pickaxeTransform" instance=ExtResource("6_3nngf")]
 unique_name_in_owner = true
 script = ExtResource("7_souao")
+
+[node name="mainCamera" type="Camera2D" parent="."]

@@ -60,7 +60,7 @@ func moveUser(delta):
 	var direction := (endpoint - grapple_range.global_position).normalized()
 	
 	#var newPossibleGrappleLength:float = (endpoint - ((direction * grappleAcceleration * delta) + grapple_range.global_position + user.velocity)).length()
-	#
+	
 	var addedVelocity:Vector2 = direction * grappleAcceleration * delta
 	#if newPossibleGrappleLength > maxLineLength:
 		#addedVelocity *= 3

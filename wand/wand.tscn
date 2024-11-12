@@ -7,3 +7,9 @@
 position = Vector2(0.5, -7)
 texture = ExtResource("1_rm3p7")
 script = ExtResource("2_yxr0s")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.5, 0)
+rotation = 3.14159
+target_position = Vector2(0, 1000)

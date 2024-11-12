@@ -5,15 +5,18 @@ extends CharacterBody2D
 @export var brakePower = 5
 @export var fullStopThreshold = 5
 
-@onready var tools = [%wand, %grappleLash, %pickaxe]
+@onready var tools = [%grappleLash, %wand, %pickaxe]
 @onready var player_sprite = %playerSprite
 @onready var carrying_transform = %carryingTransform
-@onready var equippedTool = %wand
-@onready var holster = %wandTransform
+
+
+@onready var equippedTool = %grappleLash
+@onready var holster = %grappleLashTransform
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	%grappleLash.user = self
+	
 	pass
 
 func _physics_process(delta):
