@@ -1,11 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=15 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
-[ext_resource type="PackedScene" uid="uid://chs3kbc7l7ng8" path="res://wand/wand.tscn" id="3_7w0ju"]
 [ext_resource type="PackedScene" uid="uid://bog6uxyq7uej" path="res://grappleLash/grapple_lash.tscn" id="4_v7oug"]
-[ext_resource type="PackedScene" uid="uid://bxk77cj4o8il8" path="res://pickaxe/pickaxe.tscn" id="6_3nngf"]
-[ext_resource type="Script" path="res://pickaxe/pickaxe.gd" id="7_souao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -129,15 +126,8 @@ position = Vector2(-7, 13)
 unique_name_in_owner = true
 position = Vector2(0, 13)
 
-[node name="wand" parent="wandTransform" instance=ExtResource("3_7w0ju")]
-unique_name_in_owner = true
-
 [node name="pickaxeTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(7, 13)
-
-[node name="pickaxe" parent="pickaxeTransform" instance=ExtResource("6_3nngf")]
-unique_name_in_owner = true
-script = ExtResource("7_souao")
 
 [node name="mainCamera" type="Camera2D" parent="."]

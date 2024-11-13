@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var brakePower = 5
 @export var fullStopThreshold = 5
 
-@onready var tools = [%grappleLash, %wand, %pickaxe]
+@onready var tools = [%grappleLash]
 @onready var player_sprite = %playerSprite
 @onready var carrying_transform = %carryingTransform
 
@@ -48,10 +48,11 @@ func inputProcess(delta):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("slot 1"):
 		swapWeapon(1)
-	if Input.is_action_just_pressed("slot 2"):
-		swapWeapon(2)
-	if Input.is_action_just_pressed("slot 3"):
-		swapWeapon(3) 
+	#     not yet
+	#if Input.is_action_just_pressed("slot 2"):
+		#swapWeapon(2)
+	#if Input.is_action_just_pressed("slot 3"):
+		#swapWeapon(3) 
 
 #equips new weapon and holsters old new
 func swapWeapon(slot):
