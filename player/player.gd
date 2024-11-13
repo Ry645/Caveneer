@@ -33,6 +33,8 @@ func inputProcess(delta):
 				body.interact()
 				#only interact with one thing
 				break
+	if Input.is_action_just_pressed("dash"):
+		dash()
 	if Input.is_action_pressed("brake"):
 		slowPlayerMovement(delta)
 	if Input.is_action_just_pressed("attack"):
@@ -41,9 +43,6 @@ func inputProcess(delta):
 	if Input.is_action_just_released("attack"):
 		if equippedTool.has_method("stopUse"):
 			equippedTool.stopUse()
-	if Input.is_action_just_pressed("alt fire"):
-		if equippedTool.has_method("alt"):
-			equippedTool.alt()
 	#TEMP later add pause menu
 	if Input.is_action_just_pressed("pause"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -141,3 +140,7 @@ func slowPlayerMovement(delta):
 	velocity = lerp(velocity, Vector2.ZERO, brakePower * delta)
 	if velocity.length() < fullStopThreshold:
 		velocity = Vector2.ZERO
+
+func dash():
+	var speed = velocity.length()
+	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
