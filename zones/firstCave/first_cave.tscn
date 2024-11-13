@@ -64,3 +64,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="slime" parent="." instance=ExtResource("4_rc512")]
 position = Vector2(1090, 130)
+
+[node name="slime2" parent="." instance=ExtResource("4_rc512")]
+position = Vector2(225, 154)

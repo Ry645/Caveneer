@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4redlyvexlly"]
+[gd_scene load_steps=7 format=3 uid="uid://b4redlyvexlly"]
 
+[ext_resource type="Shader" path="res://hurtEffect.gdshader" id="2_s42aa"]
 [ext_resource type="SpriteFrames" uid="uid://dtdft2q72n251" path="res://slimeFoe/slimeSpriteFrames.tres" id="2_t2o8w"]
 [ext_resource type="Script" path="res://slimeFoe/slime.gd" id="2_ujqnd"]
 [ext_resource type="PackedScene" uid="uid://1l5roa5kttpy" path="res://healthSystem/health_system.tscn" id="3_nfghd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02niw"]
+shader = ExtResource("2_s42aa")
+shader_parameter/tint = Color(0, 0, 0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ay1mb"]
 radius = 15.1327
@@ -11,6 +16,7 @@ radius = 15.1327
 script = ExtResource("2_ujqnd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_02niw")
 sprite_frames = ExtResource("2_t2o8w")
 animation = &"walkDown"
 frame_progress = 0.0936517
