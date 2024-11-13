@@ -75,3 +75,10 @@ func stopUse():
 func retractGrapple():
 	play("default")
 	grappleState = NOT_GRAPPLING
+
+func alt():
+	dash()
+
+func dash():
+	var speed = user.velocity.length()
+	user.velocity = Vector2.UP.rotated(global_rotation) * speed

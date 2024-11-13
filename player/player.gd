@@ -41,6 +41,9 @@ func inputProcess(delta):
 	if Input.is_action_just_released("attack"):
 		if equippedTool.has_method("stopUse"):
 			equippedTool.stopUse()
+	if Input.is_action_just_pressed("alt fire"):
+		if equippedTool.has_method("alt"):
+			equippedTool.alt()
 	#TEMP later add pause menu
 	if Input.is_action_just_pressed("pause"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -121,6 +124,7 @@ func updateCarryPosition(event:InputEventMouseMotion):
 	#print(offset)
 	
 	#clamp if too long
+	#TODO later have walls block it
 	if offset.length() > maxReach:
 		carrying_transform.global_position = offset.normalized() * maxReach + global_position
 	

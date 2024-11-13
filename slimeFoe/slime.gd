@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var health = 3
+func _ready():
+	var animatedSprite:AnimatedSprite2D = $AnimatedSprite2D
+	animatedSprite.play()
 
 func takeDamage():
-	health -= 1
-	if health <= 0:
-		die()
+	$healthSystem.takeDamage(1)
 
 func die():
 	print("ow")
