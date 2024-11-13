@@ -1,33 +1,27 @@
 extends CharacterBody2D
 
-var hurtEffectFramesLeft = -1
-
 func _ready():
 	var animatedSprite:AnimatedSprite2D = $AnimatedSprite2D
 	animatedSprite.play()
 
-## for hurt effect frames
-func _process(delta):
-	processHurtEffect()
-
-func processHurtEffect():
-	if hurtEffectFramesLeft > 0:
-		hurtEffectFramesLeft -= 1
-	if hurtEffectFramesLeft == 0:
-		hurtEffectFramesLeft -= 1
-		endHurtEffect()
-
 func takeDamage():
+	# this before take damage so the death animation takes precedence
+	hurtEffect()
 	$healthSystem.takeDamage(1)
-	hurtEffect(20)
 
 func die():
-	print("ow")
+	for i in range(5):
+		hurtEffect()
+		$hurtEffectTimer.start(0.06)
+		await $hurtEffectTimer.timeout
+		$hurtEffectTimer.start(0.06)
+		await $hurtEffectTimer.timeout
+	
 	queue_free()
 
-func hurtEffect(frames):
+func hurtEffect():
 	$AnimatedSprite2D.material.set_shader_parameter("tint", Color(0.5, 0.5, 0.5, 0))
-	hurtEffectFramesLeft = frames
+	$hurtEffectTimer.start(0.15)
 
 func endHurtEffect():
 	$AnimatedSprite2D.material.set_shader_parameter("tint", Color(0, 0, 0, 0))
