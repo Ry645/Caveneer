@@ -1,4 +1,5 @@
-extends Node
+extends Node2D
+
 
 var numLevers:int
 var pulledLevers:int

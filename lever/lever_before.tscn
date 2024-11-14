@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgwl5elp0tlmx"]
+
+[ext_resource type="Script" path="res://lever/leverBefore.gd" id="1_rm12v"]
+
+[node name="leverBefore" type="Node2D"]
+script = ExtResource("1_rm12v")
