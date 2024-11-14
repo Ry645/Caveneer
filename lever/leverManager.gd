@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var quickPuzzle:bool = true
+@export var quickPuzzle:bool# = true
 
 var numLevers:int
 var pulledLevers:int
