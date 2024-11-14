@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdupyhh0hl1fl"]
+[gd_scene load_steps=12 format=3 uid="uid://cdupyhh0hl1fl"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_4pgds"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_ulpxx"]
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_th57a"]
 [ext_resource type="PackedScene" uid="uid://drrghx6as50r5" path="res://caveEntrance/cave_entrance.tscn" id="4_bkdvh"]
+[ext_resource type="Script" path="res://lever/leverManager.gd" id="4_opyhc"]
 [ext_resource type="Texture2D" uid="uid://d15exvgua0xsn" path="res://sprites/pickaxe/pickaxe.png" id="4_vaip8"]
+[ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="5_wplgx"]
+[ext_resource type="Script" path="res://lever/leverAfter.gd" id="6_6rkck"]
+[ext_resource type="Script" path="res://lever/leverBefore.gd" id="8_y0rbj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv4ha"]
 texture = ExtResource("2_ulpxx")
@@ -64,14 +68,13 @@ text = "teaches player about levers and opening doors and revisiting areas
 (AVOID MAKING THE PLAYER BACKTRACK AS MUCH AS POSSIBLE)"
 
 [node name="lever1" type="Node2D" parent="."]
+script = ExtResource("4_opyhc")
 
-[node name="lever1_1" type="Sprite2D" parent="lever1"]
-position = Vector2(6637, -1635)
-rotation = -3.14159
-texture = ExtResource("4_vaip8")
+[node name="lever1_1" parent="lever1" instance=ExtResource("5_wplgx")]
 
 [node name="lever1After" type="Node2D" parent="."]
 visible = false
+script = ExtResource("6_6rkck")
 
 [node name="lever2" type="Node2D" parent="lever1After"]
 
@@ -116,6 +119,7 @@ layer_0/tile_data = PackedInt32Array(-1572714, 1, 0, -1572713, 1, 0, -1572712, 1
 
 [node name="lever2Before" type="Node2D" parent="."]
 visible = false
+script = ExtResource("8_y0rbj")
 
 [node name="door" type="TileMap" parent="lever2Before"]
 z_index = 1
@@ -164,3 +168,5 @@ layer_0/tile_data = PackedInt32Array(-1376101, 1, 0, -1310565, 1, 0, -1245029, 1
 
 [node name="CaveEntrance" parent="." instance=ExtResource("4_bkdvh")]
 position = Vector2(6626, -666)
+
+[connection signal="activate" from="lever1" to="lever1After" method="_on_lever_1_activate"]
