@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d0mg4hf531jbw" path="res://sprites/caveEntrance/caveEntrance.png" id="1_3e6hk"]
 [ext_resource type="Script" path="res://caveEntrance/cave_entrance.gd" id="2_x511w"]
-[ext_resource type="PackedScene" uid="uid://r3gey0bkfaqo" path="res://zones/firstCave/first_cave_room1.tscn" id="3_gt0tf"]
 [ext_resource type="Script" path="res://interactBody.gd" id="4_08lsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xa8x"]
@@ -13,7 +12,6 @@ z_index = 1
 position = Vector2(138, 128)
 texture = ExtResource("1_3e6hk")
 script = ExtResource("2_x511w")
-sceneToLoad = ExtResource("3_gt0tf")
 
 [node name="interactBody" type="StaticBody2D" parent="."]
 collision_layer = 3

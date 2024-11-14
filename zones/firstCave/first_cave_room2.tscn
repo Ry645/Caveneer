@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdupyhh0hl1fl"]
+[gd_scene load_steps=15 format=3 uid="uid://cdupyhh0hl1fl"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_4pgds"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_ulpxx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://chm7t41n5lmqf" path="res://door/door.tscn" id="9_2yhwp"]
 [ext_resource type="PackedScene" uid="uid://c1igbdcmltw5r" path="res://lever/lever_manager.tscn" id="10_3j6db"]
 [ext_resource type="PackedScene" uid="uid://bgwl5elp0tlmx" path="res://lever/lever_before.tscn" id="11_ubr4a"]
+[ext_resource type="PackedScene" uid="uid://r3gey0bkfaqo" path="res://zones/firstCave/first_cave_room1.tscn" id="12_awvb0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv4ha"]
 texture = ExtResource("2_ulpxx")
@@ -175,6 +176,7 @@ script = ExtResource("8_bekxj")
 
 [node name="CaveEntrance" parent="." instance=ExtResource("4_bkdvh")]
 position = Vector2(6626, -666)
+sceneToLoad = ExtResource("12_awvb0")
 
 [connection signal="activate" from="leverManager1" to="leverBefore1" method="_on_lever_activate"]
 [connection signal="activate" from="leverManager1" to="lever1After" method="_on_lever_activate"]
