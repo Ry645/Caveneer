@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpn0evwb5mf8q"]
+
+[ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_wd4l0"]
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_cmjn7"]
+[ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_b05ni"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhbjv"]
+texture = ExtResource("2_cmjn7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_38w63"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_uhbjv")
+
+[node name="caveRoomTemplate" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_wd4l0")]
+position = Vector2(4448, 608)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(131, 131)
+scale = Vector2(8.375, 8.3125)
+texture = ExtResource("2_cmjn7")
+
+[node name="caveFloor" type="TileMap" parent="."]
+position = Vector2(16, 16)
+tile_set = ExtResource("3_b05ni")
+format = 2
+layer_0/tile_data = PackedInt32Array(1179786, 131072, 1, 1179785, 65536, 0, 1114249, 65536, 3, 1114250, 196608, 0, 1179787, 196608, 2, 1114251, 0, 0, 1245323, 196608, 3, 1245322, 65536, 2, 1245321, 0, 2)
+
+[node name="border" type="TileMap" parent="."]
+z_index = -1
+tile_set = SubResource("TileSet_38w63")
+format = 2
+
+[node name="overview" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 4350.0
+offset_top = 979.0
+offset_right = 4555.0
+offset_bottom = 1103.0
+theme_override_font_sizes/normal_font_size = 12
+text = "level purpose
+(what does this level teach or what does this level test)"
