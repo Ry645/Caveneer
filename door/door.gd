@@ -1,4 +1,4 @@
-extends TileMap
+extends TileMapLayer
 
 var starting_position:Vector2
 
@@ -12,5 +12,3 @@ func disable():
 func enable():
 	visible = true
 	global_position = starting_position
-
-
