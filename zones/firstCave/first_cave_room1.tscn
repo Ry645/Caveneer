@@ -21,7 +21,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cv4ha")
 
-[node name="first_cave" type="Node2D"]
+[node name="first_cave2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("2_5cwtb")]
 position = Vector2(221, 266)
@@ -75,6 +75,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "press 'spacebar' to dash"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 1182.0
 offset_top = -969.0
 offset_right = 1291.0
