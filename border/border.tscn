@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://do3ylcqvoufi5"]
+
+[ext_resource type="Script" path="res://border/autoBorder.gd" id="1_0hjco"]
+
+[node name="border" type="TileMapLayer"]
+script = ExtResource("1_0hjco")
+tileWidth = null

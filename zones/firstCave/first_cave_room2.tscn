@@ -102,13 +102,11 @@ text = "teaches player about levers and opening doors and revisiting areas
 (AVOID MAKING THE PLAYER BACKTRACK AS MUCH AS POSSIBLE)"
 
 [node name="leverManager1" parent="." instance=ExtResource("10_3j6db")]
-visible = false
 
 [node name="lever1_1" parent="leverManager1" instance=ExtResource("5_wplgx")]
 position = Vector2(7779, -1554)
 
 [node name="leverBefore1" parent="." instance=ExtResource("11_ubr4a")]
-visible = false
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="leverBefore1"]
 offset_left = 7150.0
@@ -119,7 +117,6 @@ theme_override_font_sizes/normal_font_size = 12
 text = "left shift to slow down"
 
 [node name="lever1After" type="Node2D" parent="."]
-visible = false
 script = ExtResource("6_6rkck")
 
 [node name="leverManager2" parent="lever1After" instance=ExtResource("10_3j6db")]
@@ -162,7 +159,6 @@ theme_override_font_sizes/normal_font_size = 12
 text = "something changed"
 
 [node name="lever2Before" type="Node2D" parent="."]
-visible = false
 script = ExtResource("8_y0rbj")
 
 [node name="door" type="TileMapLayer" parent="lever2Before"]
@@ -172,7 +168,6 @@ tile_set = SubResource("TileSet_g8jp8")
 script = ExtResource("8_bekxj")
 
 [node name="lever2After" type="Node2D" parent="."]
-visible = false
 script = ExtResource("6_6rkck")
 
 [node name="leverManager3" parent="lever2After" instance=ExtResource("10_3j6db")]
@@ -193,7 +188,6 @@ position = Vector2(5298, -68)
 position = Vector2(4945, -237)
 
 [node name="lever3Before" type="Node2D" parent="."]
-visible = false
 script = ExtResource("8_y0rbj")
 
 [node name="door3" type="TileMapLayer" parent="lever3Before"]
