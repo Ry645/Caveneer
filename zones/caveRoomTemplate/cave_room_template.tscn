@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpn0evwb5mf8q"]
+[gd_scene load_steps=6 format=4 uid="uid://dpn0evwb5mf8q"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_wd4l0"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_cmjn7"]
@@ -8,8 +8,6 @@
 texture = ExtResource("2_cmjn7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_38w63"]
@@ -32,16 +30,15 @@ position = Vector2(131, 131)
 scale = Vector2(8.375, 8.3125)
 texture = ExtResource("2_cmjn7")
 
-[node name="caveFloor" type="TileMap" parent="."]
+[node name="caveFloor" type="TileMapLayer" parent="."]
+use_parent_material = true
 position = Vector2(16, 16)
+tile_map_data = PackedByteArray("AACKABIAAAACAAEAAACJABIAAAABAAAAAACJABEAAAABAAMAAACKABEAAAADAAAAAACLABIAAAADAAIAAACLABEAAAAAAAAAAACLABMAAAADAAMAAACKABMAAAABAAIAAACJABMAAAAAAAIAAAA=")
 tile_set = ExtResource("3_b05ni")
-format = 2
-layer_0/tile_data = PackedInt32Array(1179786, 131072, 1, 1179785, 65536, 0, 1114249, 65536, 3, 1114250, 196608, 0, 1179787, 196608, 2, 1114251, 0, 0, 1245323, 196608, 3, 1245322, 65536, 2, 1245321, 0, 2)
 
-[node name="border" type="TileMap" parent="."]
-z_index = -1
+[node name="border" type="TileMapLayer" parent="."]
+use_parent_material = true
 tile_set = SubResource("TileSet_38w63")
-format = 2
 
 [node name="overview" type="RichTextLabel" parent="."]
 visible = false
