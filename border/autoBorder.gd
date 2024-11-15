@@ -64,15 +64,24 @@ steps:
 		get all border tiles
 		find which border tiles overlap with cave floor and erase them
 """
-@export var groundLayer:TileMapLayer
+@export var rawTileData:TileMapDual
+var groundLayer:TileMapLayer
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		groundLayer.connect("changed", Callable(self, "updateBorder"))
+		print("auto border ready")
+		groundLayer = rawTileData.display_tilemap
+		set_process(true)
+	else:
+		set_process(false)
 	
+
+func _process(delta: float) -> void:
+	call_deferred("updateBorder")
 
 func updateBorder() -> void:
 	var usedCellCoords := groundLayer.get_used_cells()
+	
 	for cellCoord in usedCellCoords:
 		var cellAtlasCoord = groundLayer.get_cell_atlas_coords(cellCoord)
 		var index = ALL_ATLAS_COORDS.find_key(cellAtlasCoord)
@@ -94,6 +103,9 @@ func updateBorder() -> void:
 		# if a border tile gets covered by a floor tile, erase the border tile
 		if get_cell_source_id(cellCoord) != -1:
 			erase_cell(cellCoord)
+	
+	
+	notify_runtime_tile_data_update()
 
 func setBorderTile(coords:Vector2i, offset:Vector2i):
-	set_cell(coords + offset * tileWidth, 0, Vector2i(0, 0))
+	set_cell(coords + offset * tileWidth, 1, Vector2i(0, 0))
