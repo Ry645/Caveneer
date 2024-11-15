@@ -1,10 +1,8 @@
 @tool
+
+## will automatically create a border given a base tile map layer
 class_name AutoBorder
 extends TileMapLayer
-## will automatically create a border given a base tile map layer
-
-
-@export var tileWidth:int = 32
 
 
 ## directly associated with ALL_BORDER_OFFSETS
@@ -70,13 +68,14 @@ var groundLayer:TileMapLayer
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		print("auto border ready")
-		groundLayer = rawTileData.display_tilemap
 		set_process(true)
 	else:
 		set_process(false)
-	
 
 func _process(delta: float) -> void:
+	if groundLayer == null:
+		groundLayer = rawTileData.display_tilemap
+	
 	call_deferred("updateBorder")
 
 func updateBorder() -> void:
@@ -91,6 +90,7 @@ func updateBorder() -> void:
 				setBorderTile(cellCoord, Vector2i(-1, 1))
 				continue
 			6:
+				print("no")
 				continue
 			13:
 				setBorderTile(cellCoord, Vector2i(-1, -1))
@@ -108,4 +108,4 @@ func updateBorder() -> void:
 	notify_runtime_tile_data_update()
 
 func setBorderTile(coords:Vector2i, offset:Vector2i):
-	set_cell(coords + offset * tileWidth, 1, Vector2i(0, 0))
+	set_cell(coords + offset, 1, Vector2i(0, 0))
