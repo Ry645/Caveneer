@@ -4,7 +4,7 @@
 class_name AutoBorder
 extends TileMapLayer
 
-@export var borderOn:bool = false
+@export var generate:bool = false
 
 
 ## directly associated with ALL_BORDER_OFFSETS
@@ -30,24 +30,23 @@ const ALL_ATLAS_COORDS:Dictionary = {
 
 ## directly associated with ALL_ATLAS_COORDS
 ## offsets the new border tile according to ALL_ATLAS_COORDS index
-## multiply by tile width to use the offset
 ## null entry is the non edge tile
 var ALL_BORDER_OFFSETS:Dictionary = {
-	0: Vector2i(0, -1),
-	1: Vector2i(-1, 0),
-	2: Vector2i(0, -1),
-	3: Vector2i(0, -1),
+	0: [Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 0)],
+	1: [Vector2i(-1, 0)],
+	2: [Vector2i(0, -1)],
+	3: [Vector2i(0, -1)],
 	4: [Vector2i(-1, 0), Vector2i(0, -1)],
-	5: Vector2i(-1, -1),
+	5: [Vector2i(-1, -1)],
 	6: null,
-	7: Vector2i(0, 0),
-	8: Vector2i(-1, 0),
-	9: Vector2i(0, 0),
-	10: Vector2i(-1, 0),
-	11: Vector2i(0, 0),
-	12: Vector2i(-1, -1),
+	7: [Vector2i(0, 0)],
+	8: [Vector2i(0, 0), Vector2i(-1, 0), Vector2i(-1, 0)],
+	9: [Vector2i(0, 0)],
+	10: [Vector2i(-1, 0)],
+	11: [Vector2i(0, 0)],
+	12: [Vector2i(-1, 0), Vector2i(-1, -1), Vector2i(0, -1)],
 	13: [Vector2i(-1, -1), Vector2i(0, 0)],
-	14: Vector2i(0, 0),
+	14: [Vector2i(0, 0), Vector2i(0, 0), Vector2i(0, 0)],
 }
 
 
@@ -73,8 +72,10 @@ func _ready() -> void:
 		set_process(false)
 
 func _process(delta: float) -> void:
-	if !borderOn:
+	if !generate:
 		return
+	
+	generate = false
 	
 	if groundLayer == null:
 		groundLayer = rawTileData.display_tilemap
@@ -96,15 +97,8 @@ func updateBorder() -> void:
 				continue
 			
 		
-		var arr:Array[Vector2i]
-		arr.append(ALL_BORDER_OFFSETS[index])
-		for offset in arr:
+		for offset in ALL_BORDER_OFFSETS[index]:
 			setBorderTile(cellCoord, offset)
-		
-		
-		# if a border tile gets covered by a floor tile, erase the border tile
-		#if get_cell_source_id(cellCoord) != -1:
-			#erase_cell(cellCoord)
 	
 	
 	notify_runtime_tile_data_update()
