@@ -72,13 +72,13 @@ func _ready() -> void:
 		set_process(false)
 
 func _process(delta: float) -> void:
+	if groundLayer == null:
+		groundLayer = rawTileData.display_tilemap
+	
 	if !generate:
 		return
 	
 	generate = false
-	
-	if groundLayer == null:
-		groundLayer = rawTileData.display_tilemap
 	
 	call_deferred("updateBorder")
 
@@ -93,7 +93,7 @@ func updateBorder() -> void:
 			continue
 		match index:
 			6:
-				print("no")
+				#print("no")
 				continue
 			
 		

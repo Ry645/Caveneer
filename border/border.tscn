@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://do3ylcqvoufi5"]
+[gd_scene load_steps=3 format=3 uid="uid://do3ylcqvoufi5"]
 
 [ext_resource type="Script" path="res://border/autoBorder.gd" id="1_0hjco"]
+[ext_resource type="TileSet" uid="uid://m26hcd3o4f4j" path="res://tilesets/void.tres" id="1_snbwp"]
 
 [node name="border" type="TileMapLayer"]
+tile_set = ExtResource("1_snbwp")
 script = ExtResource("1_0hjco")
