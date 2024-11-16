@@ -4,4 +4,4 @@
 
 [node name="border" type="TileMapLayer"]
 script = ExtResource("1_0hjco")
-tileWidth = null
+borderOn = null
