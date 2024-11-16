@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpevx1vmiqj3w"]
+
+[ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_56ol6"]
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_7x7kl"]
+[ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_fpqp7"]
+[ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_h0uis"]
+[ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_x5qtl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
+light_mode = 2
+
+[node name="caveRoomTemplate" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_56ol6")]
+position = Vector2(4448, 608)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(131, 131)
+scale = Vector2(8.375, 8.3125)
+texture = ExtResource("2_7x7kl")
+
+[node name="caveFloor" type="TileMapLayer" parent="."]
+material = SubResource("CanvasItemMaterial_p4fdj")
+tile_map_data = PackedByteArray(0, 0, 138, 0, 18, 0, 0, 0, 2, 0, 1, 0, 0, 0, 139, 0, 18, 0, 0, 0, 2, 0, 1, 0, 0, 0, 138, 0, 19, 0, 0, 0, 2, 0, 1, 0, 0, 0, 139, 0, 19, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_set = ExtResource("3_fpqp7")
+script = ExtResource("4_h0uis")
+
+[node name="border" parent="." node_paths=PackedStringArray("rawTileData") instance=ExtResource("5_x5qtl")]
+rawTileData = NodePath("../caveFloor")
+active = true
+
+[node name="overview" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 4350.0
+offset_top = 979.0
+offset_right = 4555.0
+offset_bottom = 1103.0
+theme_override_font_sizes/normal_font_size = 12
+text = "level purpose
+(what does this level teach or what does this level test)"

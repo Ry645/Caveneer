@@ -62,6 +62,7 @@ steps:
 		find which border tiles overlap with cave floor and erase them
 """
 @export var rawTileData:TileMapDual
+@export var active:bool = false
 var groundLayer:TileMapLayer
 
 func _ready() -> void:
@@ -72,6 +73,9 @@ func _ready() -> void:
 		set_process(false)
 
 func _process(delta: float) -> void:
+	if !active:
+		return
+	
 	if groundLayer == null:
 		groundLayer = rawTileData.display_tilemap
 	
