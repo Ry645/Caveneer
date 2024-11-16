@@ -96,6 +96,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		set_process(true)
 	else: # Run in-game using signals for better performance
+		update_full_tileset() # line added in by ry645
 		set_process(false)
 		self.changed.connect(_update_tileset, 1)
 

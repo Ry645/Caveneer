@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://r3gey0bkfaqo"]
+[gd_scene load_steps=11 format=4 uid="uid://r3gey0bkfaqo"]
 
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="1_wxrnt"]
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="2_5cwtb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drrghx6as50r5" path="res://caveEntrance/cave_entrance.tscn" id="4_dsjhh"]
 [ext_resource type="PackedScene" uid="uid://cdupyhh0hl1fl" path="res://zones/firstCave/first_cave_room2.tscn" id="5_kjx6w"]
 [ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="6_d6gwu"]
+[ext_resource type="PackedScene" uid="uid://dpn0evwb5mf8q" path="res://zones/caveRoomTemplate/cave_room_template.tscn" id="7_11wsb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vui5b"]
 light_mode = 2
@@ -105,3 +106,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CaveEntrance" parent="." instance=ExtResource("4_dsjhh")]
 position = Vector2(3613, -62)
 sceneToLoad = ExtResource("5_kjx6w")
+
+[node name="CaveEntrance2" parent="." instance=ExtResource("4_dsjhh")]
+position = Vector2(222, 151)
+sceneToLoad = ExtResource("7_11wsb")
