@@ -6,9 +6,9 @@ extends AnimatedSprite2D
 signal activated
 
 @export var outlineShader:Shader = preload("res://outline/outline.gdshader")
-
-@export var isActive = false
 @export var isOneShot = true
+
+var isActive = false
 
 func _ready() -> void:
 	var shaderMaterial:ShaderMaterial = ShaderMaterial.new()
@@ -24,14 +24,20 @@ func interact():
 	if isActive && isOneShot:
 		return
 	
-	frame = 0 if isActive else 1
 	isActive = !isActive
+	frame = 1 if isActive else 0
 	
-	if get_parent().has_method("pulledLever"):
-		get_parent().pulledLever()
+	if isActive:
+		if get_parent().has_method("activatedLever"):
+			get_parent().activatedLever()
+		#do not connect to parent, connect to a separate lever manager
+		emit_signal("activated")
 	else:
-		#breakpoint
-		print(self, ": no lever manager parent")
+		if get_parent().has_method("deactivatedLever"):
+			get_parent().deactivatedLever()
+		#do not connect to parent, connect to a separate lever manager
+		emit_signal("activated")
+	
 
 func enable():
 	visible = true

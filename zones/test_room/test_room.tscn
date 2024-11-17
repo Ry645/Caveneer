@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbbu56nt8r6d"]
+[gd_scene load_steps=9 format=3 uid="uid://cbbu56nt8r6d"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_73grf"]
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_7yd61"]
 [ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_x0o6x"]
 [ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="5_7tjlk"]
 [ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_i7c4g"]
+[ext_resource type="PackedScene" uid="uid://d2w4gweh6ftbi" path="res://lever/lever_after.tscn" id="6_jb11n"]
+[ext_resource type="PackedScene" uid="uid://c1igbdcmltw5r" path="res://lever/lever_manager.tscn" id="7_r0btk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
@@ -38,22 +40,36 @@ text = "level purpose
 [node name="lever1" parent="." instance=ExtResource("5_7tjlk")]
 position = Vector2(53, 97)
 
-[node name="lever2" parent="." instance=ExtResource("5_7tjlk")]
-position = Vector2(88, 94)
-isOneShot = false
-
 [node name="lever3" parent="." instance=ExtResource("5_7tjlk")]
 position = Vector2(17, 98)
 
 [node name="lever4" parent="." instance=ExtResource("5_7tjlk")]
 position = Vector2(-13, 100)
 
-[node name="lever5" parent="." instance=ExtResource("5_7tjlk")]
-position = Vector2(120, 89)
+[node name="leverAfter1" parent="." instance=ExtResource("6_jb11n")]
+position = Vector2(111, -118)
+
+[node name="lever1" parent="leverAfter1" instance=ExtResource("5_7tjlk")]
+position = Vector2(9, 109)
+animation = &"oneShot"
 isOneShot = false
 
-[node name="lever6" parent="." instance=ExtResource("5_7tjlk")]
-position = Vector2(170, 80)
+[node name="leverManager1" parent="." instance=ExtResource("7_r0btk")]
+position = Vector2(98, -43)
+
+[node name="lever2" parent="leverManager1" instance=ExtResource("5_7tjlk")]
+position = Vector2(-10, 137)
 isOneShot = false
+
+[node name="lever5" parent="leverManager1" instance=ExtResource("5_7tjlk")]
+position = Vector2(22, 132)
+isOneShot = false
+
+[node name="lever6" parent="leverManager1" instance=ExtResource("5_7tjlk")]
+position = Vector2(72, 123)
+isOneShot = false
+
+[connection signal="activate" from="leverManager1" to="leverAfter1" method="_on_lever_activate"]
+[connection signal="deactivate" from="leverManager1" to="leverAfter1" method="_on_lever_deactivate"]
 
 [editable path="player"]
