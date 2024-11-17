@@ -22,11 +22,12 @@ func _physics_process(delta):
 	inputProcess(delta)
 	updateAnimation()
 	
+	hover()
+	
 	move_and_slide()
 
 func inputProcess(delta):
 	if Input.is_action_just_pressed("interact"):
-		#TEMP later have indicator
 		for body in %interactArea.get_overlapping_bodies():
 			if body.has_method("interact"):
 				body.interact()
@@ -58,7 +59,19 @@ func inputProcess(delta):
 	#if Input.is_action_just_pressed("slot 3"):
 		#swapWeapon(3) 
 
-#equips new weapon and holsters old new
+func hover():
+	for body:Node2D in %interactArea.get_overlapping_bodies():
+		if body.has_method("hover"):
+			body.hover()
+			#only hover over one thing
+			break
+	for area:Node2D in %interactArea.get_overlapping_areas():
+		if area.has_method("hover"):
+			area.hover()
+			#only hover over one thing
+			break
+
+## equips new weapon and holsters old new
 func swapWeapon(slot):
 	#back to holster
 	equippedTool.reparent(holster, false)
@@ -69,7 +82,7 @@ func swapWeapon(slot):
 	#tool now in hand
 	equippedTool.reparent(%carryingTransform, false)
 
-#updates the player animation to face a certain direction (ie mouse location/carrying transform)
+## updates the player animation to face a certain direction (ie mouse location/carrying transform)
 func updateAnimation():
 	#find offset
 	var offset:Vector2 = (carrying_transform.global_position - global_position)
@@ -113,7 +126,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-#updates the transform of the carry
+## updates the transform of the carry
 func updateCarryPosition(event:InputEventMouseMotion):
 	#use previous mouse pos before set
 	#FIXED weird thing where the wand can only move along a line

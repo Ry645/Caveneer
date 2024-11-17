@@ -5,13 +5,14 @@
 [ext_resource type="Script" path="res://lever/lever.gd" id="2_gsfte"]
 [ext_resource type="Script" path="res://interactBody.gd" id="3_avos6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8h63"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjs5h"]
 shader = ExtResource("1_cxfrg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
 shader_parameter/pattern = 1
 shader_parameter/inside = false
 shader_parameter/add_margins = true
+shader_parameter/process = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfkp0"]
 atlas = ExtResource("1_mjkqh")
@@ -58,7 +59,7 @@ animations = [{
 radius = 15.0
 
 [node name="lever1" type="AnimatedSprite2D"]
-material = SubResource("ShaderMaterial_t8h63")
+material = SubResource("ShaderMaterial_qjs5h")
 sprite_frames = SubResource("SpriteFrames_iwj1g")
 animation = &"toggle"
 script = ExtResource("2_gsfte")

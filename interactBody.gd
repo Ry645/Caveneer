@@ -7,3 +7,6 @@ func interact():
 	else:
 		print("idiot forgot to define the interact method smh")
 		breakpoint
+
+func hover():
+	get_parent().hover()
