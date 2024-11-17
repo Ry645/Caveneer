@@ -3,18 +3,24 @@ extends Node2D
 
 
 func _ready():
-	visible = true
+	enable()
 
 
 
 func _on_lever_activate():
-	visible = false
-	for child in get_children():
-		if child.has_method("disable"):
-			child.disable()
+	disable()
 
 func _on_lever_deactivate():
+	enable()
+
+func enable():
 	visible = true
 	for child in get_children():
 		if child.has_method("enable"):
 			child.enable()
+
+func disable():
+	visible = false
+	for child in get_children():
+		if child.has_method("disable"):
+			child.disable()

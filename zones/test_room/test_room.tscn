@@ -51,7 +51,6 @@ position = Vector2(111, -118)
 
 [node name="lever1" parent="leverAfter1" instance=ExtResource("5_7tjlk")]
 position = Vector2(9, 109)
-animation = &"oneShot"
 isOneShot = false
 
 [node name="leverManager1" parent="." instance=ExtResource("7_r0btk")]

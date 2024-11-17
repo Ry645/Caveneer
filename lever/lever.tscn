@@ -14,11 +14,11 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfkp0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j55pw"]
 atlas = ExtResource("1_mjkqh")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_28jja"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeihe"]
 atlas = ExtResource("1_mjkqh")
 region = Rect2(32, 0, 32, 32)
 
@@ -34,10 +34,10 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wfkp0")
+"texture": SubResource("AtlasTexture_j55pw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_28jja")
+"texture": SubResource("AtlasTexture_yeihe")
 }],
 "loop": true,
 "name": &"oneShot",
@@ -61,7 +61,8 @@ radius = 15.0
 [node name="lever1" type="AnimatedSprite2D"]
 material = SubResource("ShaderMaterial_qjs5h")
 sprite_frames = SubResource("SpriteFrames_iwj1g")
-animation = &"toggle"
+animation = &"oneShot"
+frame_progress = 0.718058
 script = ExtResource("2_gsfte")
 
 [node name="Area2D" type="Area2D" parent="."]
