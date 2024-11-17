@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbbu56nt8r6d"]
+
+[ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_73grf"]
+[ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_7yd61"]
+[ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_x0o6x"]
+[ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="5_7tjlk"]
+[ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_i7c4g"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
+light_mode = 2
+
+[node name="caveRoomTemplate" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_73grf")]
+
+[node name="grappleLash" parent="player/carryingTransform" index="1"]
+hasDebugMovement = true
+
+[node name="caveFloor" type="TileMapLayer" parent="."]
+material = SubResource("CanvasItemMaterial_p4fdj")
+tile_map_data = PackedByteArray(0, 0, 138, 0, 18, 0, 0, 0, 2, 0, 1, 0, 0, 0, 139, 0, 18, 0, 0, 0, 2, 0, 1, 0, 0, 0, 138, 0, 19, 0, 0, 0, 2, 0, 1, 0, 0, 0, 139, 0, 19, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_set = ExtResource("3_7yd61")
+script = ExtResource("4_x0o6x")
+
+[node name="border" parent="." node_paths=PackedStringArray("rawTileData") instance=ExtResource("5_i7c4g")]
+rawTileData = NodePath("../caveFloor")
+
+[node name="overview" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 4350.0
+offset_top = 979.0
+offset_right = 4555.0
+offset_bottom = 1103.0
+theme_override_font_sizes/normal_font_size = 12
+text = "level purpose
+(what does this level teach or what does this level test)"
+
+[node name="lever1" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(53, 97)
+
+[node name="lever2" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(88, 94)
+isOneShot = false
+
+[node name="lever3" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(17, 98)
+
+[node name="lever4" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(-13, 100)
+
+[node name="lever5" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(120, 89)
+isOneShot = false
+
+[node name="lever6" parent="." instance=ExtResource("5_7tjlk")]
+position = Vector2(170, 80)
+isOneShot = false
+
+[editable path="player"]

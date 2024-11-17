@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@export var hasDebugMovement:bool = false
+
 @export var user:CharacterBody2D
 @export var lineTexture:Texture2D = preload("res://sprites/grappleLash/grappleLine.png")
 
@@ -27,8 +29,6 @@ func _ready():
 func _physics_process(delta):
 	if line != null:
 		line.points[0] = grapple_range.global_position
-	if grappleState == BUFFERING:
-		shootGrapple()
 	if grappleState == GRAPPLING:
 		moveUser(delta)
 
@@ -37,15 +37,23 @@ func use():
 	shootGrapple()
 
 func shootGrapple():
+	if line != null:
+		stopUse()
+	
+	var desiredLocation = grapple_range.get_collision_point()
 	if !grapple_range.is_colliding():
-		grappleState = BUFFERING
-	createGrappleLine()
+		desiredLocation = grapple_range.global_position
+	
+	if hasDebugMovement:
+		desiredLocation = grapple_range.target_position.rotated(global_rotation)
+	
+	createGrappleLine(desiredLocation)
 	
 	grappleState = GRAPPLING
 
-func createGrappleLine():
+func createGrappleLine(desiredLocation):
 	play("grapple")
-	endpoint = grapple_range.get_collision_point()
+	endpoint = desiredLocation
 	#endpoint < 5
 	line = Line2D.new()
 	line.points = [grapple_range.global_position, endpoint]

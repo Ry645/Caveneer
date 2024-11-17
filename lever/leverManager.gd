@@ -1,3 +1,4 @@
+class_name LeverManager
 extends Node2D
 
 @export var quickPuzzle:bool# = true

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var maxReach = 32
 @export var brakePower = 5
 @export var fullStopThreshold = 5

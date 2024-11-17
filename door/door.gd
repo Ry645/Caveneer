@@ -1,3 +1,4 @@
+class_name Door
 extends TileMapLayer
 
 func disable():

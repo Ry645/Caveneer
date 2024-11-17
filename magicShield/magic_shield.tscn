@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvvmo4u21fv1e"]
+
+[ext_resource type="Script" path="res://magicShield/magic_shield.gd" id="1_holna"]
+
+[node name="magicShield" type="Sprite2D"]
+script = ExtResource("1_holna")

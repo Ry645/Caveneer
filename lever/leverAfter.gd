@@ -1,3 +1,4 @@
+class_name LeverAfter
 extends Node2D
 
 

@@ -1,15 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcxah2hbl0gs7"]
+[gd_scene load_steps=12 format=3 uid="uid://bcxah2hbl0gs7"]
 
-[ext_resource type="Texture2D" uid="uid://d15exvgua0xsn" path="res://sprites/pickaxe/pickaxe.png" id="1_7hyvl"]
+[ext_resource type="Shader" path="res://outline/outline.gdshader" id="1_cxfrg"]
+[ext_resource type="Texture2D" uid="uid://dha5kqtth7h5j" path="res://sprites/lever/lever-Sheet.png" id="1_mjkqh"]
 [ext_resource type="Script" path="res://lever/lever.gd" id="2_gsfte"]
 [ext_resource type="Script" path="res://interactBody.gd" id="3_avos6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8h63"]
+shader = ExtResource("1_cxfrg")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfkp0"]
+atlas = ExtResource("1_mjkqh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28jja"]
+atlas = ExtResource("1_mjkqh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c2ig"]
+atlas = ExtResource("1_mjkqh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74r2t"]
+atlas = ExtResource("1_mjkqh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwj1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfkp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28jja")
+}],
+"loop": true,
+"name": &"oneShot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c2ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74r2t")
+}],
+"loop": true,
+"name": &"toggle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwk7j"]
 radius = 15.0
 
-[node name="lever1" type="Sprite2D"]
-rotation = -3.14159
-texture = ExtResource("1_7hyvl")
+[node name="lever1" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_t8h63")
+sprite_frames = SubResource("SpriteFrames_iwj1g")
+animation = &"toggle"
 script = ExtResource("2_gsfte")
 
 [node name="Area2D" type="Area2D" parent="."]

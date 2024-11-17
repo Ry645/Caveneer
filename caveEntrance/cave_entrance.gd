@@ -1,3 +1,4 @@
+class_name CaveEntrance
 extends Sprite2D
 
 @export var sceneToLoad:PackedScene # = preload("res://zones/firstCave/first_cave.tscn")
