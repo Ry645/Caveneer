@@ -1,11 +1,14 @@
 class_name Lever
 extends AnimatedSprite2D
 
+## DEPRECATED
+signal activated
+## DEPRECATED
+signal deactivated
+
 ## can connect to another lever interact() method to activate it
 ## useful for levers with different lever manager parents
-signal activated
-
-signal deactivated
+signal setState(state:int)
 
 @export var outlineShader:Shader = preload("res://outline/outline.gdshader")
 @export var isOneShot = true
@@ -34,11 +37,13 @@ func interact():
 			get_parent().activatedLever()
 		#do not connect to parent, connect to a separate lever manager
 		emit_signal("activated")
+		emit_signal("setState", 1)
 	else:
 		if get_parent().has_method("deactivatedLever"):
 			get_parent().deactivatedLever()
 		#do not connect to parent, connect to a separate lever manager
 		emit_signal("deactivated")
+		emit_signal("setState", 0)
 	
 
 func enable():

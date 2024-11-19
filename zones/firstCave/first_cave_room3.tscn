@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://bpevx1vmiqj3w"]
+[gd_scene load_steps=13 format=4 uid="uid://bpevx1vmiqj3w"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_56ol6"]
+[ext_resource type="Script" path="res://zones/generateLeverSignals.gd" id="1_wfln6"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_7x7kl"]
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_fpqp7"]
 [ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_h0uis"]
@@ -15,6 +16,7 @@
 light_mode = 2
 
 [node name="room3" type="Node2D"]
+script = ExtResource("1_wfln6")
 
 [node name="player" parent="." instance=ExtResource("1_56ol6")]
 position = Vector2(4448, 608)
@@ -100,5 +102,5 @@ position = Vector2(4443, 793)
 [connection signal="activate" from="leverManager1" to="leverAfter1" method="_on_lever_activate"]
 [connection signal="activate" from="leverManager1" to="leverBefore1" method="_on_lever_activate"]
 [connection signal="deactivate" from="leverManager1" to="leverAfter1" method="_on_lever_deactivate"]
-[connection signal="activate" from="leverAfter1/leverManager2" to="leverAfter2" method="_on_lever_activate"]
 [connection signal="activate" from="leverAfter1/leverManager2" to="leverAfter1/leverBefore2" method="_on_lever_activate"]
+[connection signal="activate" from="leverAfter1/leverManager2" to="leverAfter2" method="_on_lever_activate"]

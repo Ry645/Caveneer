@@ -5,10 +5,18 @@ extends Node2D
 func _ready():
 	disable()
 
+func setState(state):
+	match state:
+		0:
+			disable()
+		1:
+			enable()
 
+#DEPRECATED
 func _on_lever_activate():
 	enable()
 
+#DEPRECATED
 func _on_lever_deactivate():
 	disable()
 

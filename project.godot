@@ -30,6 +30,12 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
 
+[global_group]
+
+leverManager=""
+leverBefore=""
+leverAfter=""
+
 [input]
 
 up={
