@@ -59,14 +59,14 @@ func generateLeverSignals():
 				leverManagers[i].connect("setState", Callable(leverAfters[leverAfterIndex], "setState"), CONNECT_PERSIST)
 				leverAfterIndex += 1
 		
-		while getNodeNumber(toggleAreas[toggleAreaIndex]) == 0:
+		while toggleAreaIndex < toggleAreas.size() && getNodeNumber(toggleAreas[toggleAreaIndex]) == 0:
+			#print(toggleAreas[toggleAreaIndex])
 			toggleAreaIndex += 1
 		
-		if toggleAreaIndex < toggleAreas.size():
-			while getNodeNumber(toggleAreas[toggleAreaIndex]) == managerNumber:
-				print("connected: ", toggleAreas[toggleAreaIndex])
-				leverManagers[i].connect("setState", Callable(toggleAreas[toggleAreaIndex], "toggle"), CONNECT_PERSIST)
-				toggleAreaIndex += 1
+		while toggleAreaIndex < toggleAreas.size() && getNodeNumber(toggleAreas[toggleAreaIndex]) == managerNumber:
+			print("connected: ", toggleAreas[toggleAreaIndex])
+			leverManagers[i].connect("setState", Callable(toggleAreas[toggleAreaIndex], "toggle"), CONNECT_PERSIST)
+			toggleAreaIndex += 1
 	
 	## goes through all toggle areas and finds each manager number in the connectWith list
 	for toggleArea:ToggleArea in toggleAreas:
