@@ -45,7 +45,8 @@ func shootGrapple():
 		desiredLocation = grapple_range.global_position
 	
 	if hasDebugMovement:
-		desiredLocation = grapple_range.target_position.rotated(global_rotation)
+		desiredLocation = user.global_position
+		desiredLocation += grapple_range.target_position.rotated(global_rotation)
 	
 	createGrappleLine(desiredLocation)
 	

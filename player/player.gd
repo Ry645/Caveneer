@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var brakePower = 5
 @export var fullStopThreshold = 5
 
+@export var hasDebugMovement:bool = false
+
 @onready var tools = [%grappleLash]
 @onready var player_sprite = %playerSprite
 @onready var carrying_transform = %carryingTransform
@@ -15,6 +17,10 @@ extends CharacterBody2D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	%grappleLash.user = self
+	
+	if hasDebugMovement:
+		%grappleLash.hasDebugMovement = true
+		set_collision_mask_value(1, false)
 	
 	pass
 
