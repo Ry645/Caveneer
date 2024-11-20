@@ -13,3 +13,14 @@ func interact():
 
 func interactHover():
 	pass
+
+func hover():
+	showOutline()
+	await get_tree().physics_frame
+	hideOutline()
+
+func showOutline():
+	material.set_shader_parameter("process", true)
+
+func hideOutline():
+	material.set_shader_parameter("process", false)

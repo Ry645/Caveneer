@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://drrghx6as50r5"]
+[gd_scene load_steps=7 format=3 uid="uid://drrghx6as50r5"]
 
+[ext_resource type="Shader" path="res://outline/outline.gdshader" id="1_0btst"]
 [ext_resource type="Texture2D" uid="uid://d0mg4hf531jbw" path="res://sprites/caveEntrance/caveEntrance.png" id="1_3e6hk"]
 [ext_resource type="Script" path="res://caveEntrance/cave_entrance.gd" id="2_x511w"]
 [ext_resource type="Script" path="res://interactBody.gd" id="4_08lsw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acruw"]
+shader = ExtResource("1_0btst")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xa8x"]
 size = Vector2(64, 60)
 
 [node name="CaveEntrance" type="Sprite2D"]
 z_index = 1
+material = SubResource("ShaderMaterial_acruw")
 position = Vector2(138, 128)
 texture = ExtResource("1_3e6hk")
 script = ExtResource("2_x511w")
