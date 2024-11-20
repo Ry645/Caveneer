@@ -8,6 +8,8 @@ extends Node2D
 ## naming convention: node6, node6_2
 ## WARNING: DO NOT USE ZERO
 
+## just click generate twice idk why it does that
+
 @export var generate:bool = false
 
 #func _ready() -> void:
