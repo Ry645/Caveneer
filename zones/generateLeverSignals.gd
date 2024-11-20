@@ -5,7 +5,7 @@ extends Node2D
 ## make sure each lever manager is numbered 1-x in coorespondence to the lever before and after nodes
 ## if the signal connection doesn't generate, look at your node names first when debugging
 
-## naming convention: node6A, node6B
+## naming convention: node6, node6_2
 
 @export var generate:bool = false
 
@@ -58,18 +58,17 @@ func generateLeverSignals():
 		
 		if toggleAreaIndex < toggleAreas.size():
 			while getNodeNumber(toggleAreas[toggleAreaIndex]) == managerNumber:
-				print("toggleArea", toggleAreaIndex)
+				print("connected: ", toggleAreas[toggleAreaIndex])
 				leverManagers[i].connect("setState", Callable(toggleAreas[toggleAreaIndex], "toggle"), CONNECT_PERSIST)
 				toggleAreaIndex += 1
-
-func getEndingCharacter(node:Node):
-	return node.name.substr(node.name.length() - 1)
 
 func sortViaNumber(array:Array):
 	array.sort_custom(compareNodesViaNumber)
 
 func compareNodesViaNumber(a:Node, b:Node):
-	return a.name.to_int() < b.name.to_int()
+	return getNodeNumber(a) < getNodeNumber(b)
 
+## ignores everything past the underscore
 func getNodeNumber(node:Node):
-	return node.name.to_int()
+	var name = node.name
+	return name.substr(0, name.find("_")).to_int()

@@ -26,6 +26,12 @@ window/size/viewport_height=256
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[editor]
+
+naming/node_name_num_separator=2
+naming/node_name_casing=1
+naming/default_signal_callback_name="_on_{signal_name}"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
