@@ -1,13 +1,23 @@
+@tool
 extends Node2D
 
 ## INFO
 ## make sure each lever manager is numbered 1-x in coorespondence to the lever before and after nodes
 ## if the signal connection doesn't generate, look at your node names first when debugging
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+@export var generate:bool = false
+
+#func _ready() -> void:
+	#generateLeverSignals()
+
+func _process(delta: float) -> void:
+	if !generate:
+		return
 	
-	
+	generate = false
+	generateLeverSignals()
+
+func generateLeverSignals():
 	var leverManagers := get_tree().get_nodes_in_group("leverManager");
 	sortViaNumber(leverManagers)
 	
@@ -23,15 +33,19 @@ func _ready() -> void:
 		var endCharacter = getEndingCharacter(leverManagers[i])
 		var managerNumber = int(endCharacter)
 		
-		endCharacter = getEndingCharacter(leverBefores[leverBeforeIndex])
-		if int(endCharacter) == managerNumber:
-			leverManagers[i].connect("setState", Callable(leverBefores[leverBeforeIndex], "setState"))
-			leverBeforeIndex += 1
+		if leverBeforeIndex < leverBefores.size():
+			endCharacter = getEndingCharacter(leverBefores[leverBeforeIndex])
+			if int(endCharacter) == managerNumber:
+				print("wahoo")
+				leverManagers[i].connect("setState", Callable(leverBefores[leverBeforeIndex], "setState"), CONNECT_PERSIST)
+				leverBeforeIndex += 1
 		
-		endCharacter = getEndingCharacter(leverAfters[leverAfterIndex])
-		if int(endCharacter) == managerNumber:
-			leverManagers[i].connect("setState", Callable(leverAfters[leverAfterIndex], "setState"))
-			leverAfterIndex += 1
+		if leverAfterIndex < leverAfters.size():
+			endCharacter = getEndingCharacter(leverAfters[leverAfterIndex])
+			if int(endCharacter) == managerNumber:
+				print("wahoo")
+				leverManagers[i].connect("setState", Callable(leverAfters[leverAfterIndex], "setState"), CONNECT_PERSIST)
+				leverAfterIndex += 1
 
 func getEndingCharacter(node:Node):
 	return node.name.substr(node.name.length() - 1)
@@ -41,7 +55,3 @@ func sortViaNumber(array:Array):
 
 func compareNodesViaNameNumber(a:Node, b:Node):
 	return int(getEndingCharacter(a)) < int(getEndingCharacter(b))
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
