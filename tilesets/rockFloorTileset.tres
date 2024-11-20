@@ -1,18 +1,12 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ck3t1nt4yqdo2"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ck3t1nt4yqdo2"]
 
 [ext_resource type="Texture2D" uid="uid://dcjh86ffgny07" path="res://sprites/tileSets/cave/caveFloor.png" id="1_h2d5y"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ynfda"]
 tile_data = PackedInt32Array(0, 131072, 1, 65536, 131072, 1, 131072, 131072, 1, 196608, 131072, 1)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_fncih"]
-tile_data = PackedInt32Array(0, 131072, 1, 65536, 131072, 1, 1, 131072, 1, 65537, 131072, 1)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_d8sru"]
-tile_data = PackedInt32Array(0, 131072, 1, 1, 131072, 1)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_02nyn"]
-tile_data = PackedInt32Array(0, 131072, 1, 65536, 131072, 1)
+[sub_resource type="TileMapPattern" id="TileMapPattern_csffc"]
+tile_data = PackedInt32Array(0, 131072, 1, 1, 131072, 1, 2, 131072, 1, 3, 131072, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0cur"]
 texture = ExtResource("1_h2d5y")
@@ -107,9 +101,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f0cur")
 pattern_0 = SubResource("TileMapPattern_ynfda")
-pattern_1 = SubResource("TileMapPattern_fncih")
-pattern_2 = SubResource("TileMapPattern_d8sru")
-pattern_3 = SubResource("TileMapPattern_02nyn")
+pattern_1 = SubResource("TileMapPattern_csffc")
 metadata/_better_terrain = {
 "decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
 "path": "res://addons/better-terrain/icons/Decoration.svg"

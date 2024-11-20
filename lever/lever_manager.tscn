@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://lever/leverManager.gd" id="1_jbw1w"]
 
-[node name="leverManager1" type="Node2D" groups=["leverManager"]]
+[node name="leverManager" type="Node2D" groups=["leverManager"]]
 script = ExtResource("1_jbw1w")

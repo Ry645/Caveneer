@@ -9,6 +9,7 @@ extends Node2D
 ## WARNING: DO NOT USE ZERO
 
 ## just click generate twice idk why it does that
+## reopen scene if not work
 
 @export var generate:bool = false
 
