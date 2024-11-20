@@ -117,5 +117,5 @@ text = "right click on the tunnel to enter"
 metadata/_edit_use_anchors_ = true
 
 [node name="CaveEntrance" parent="." instance=ExtResource("4_dsjhh")]
-position = Vector2(5500, -62)
+position = Vector2(5500, -57)
 sceneToLoad = ExtResource("5_kjx6w")

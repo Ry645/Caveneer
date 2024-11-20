@@ -207,7 +207,7 @@ tile_set = SubResource("TileSet_6vyn1")
 script = ExtResource("8_bekxj")
 
 [node name="CaveEntrance" parent="." instance=ExtResource("4_bkdvh")]
-position = Vector2(6626, -666)
+position = Vector2(6626, -662)
 sceneToLoad = ExtResource("14_tkdb6")
 
 [connection signal="activate" from="leverManager1" to="leverBefore1" method="_on_lever_activate"]
