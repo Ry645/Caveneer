@@ -47,6 +47,10 @@ func inputProcess(delta):
 				break
 	if Input.is_action_just_pressed("dash"):
 		dash()
+	# debug only
+	if Input.is_action_pressed("dash"):
+		if hasDebugMovement:
+			debugSteer()
 	if Input.is_action_pressed("brake"):
 		slowPlayerMovement(delta)
 	if Input.is_action_just_pressed("attack"):
@@ -172,4 +176,8 @@ func dash():
 	if hasDebugMovement:
 		speed += 100
 	
+	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
+
+func debugSteer():
+	var speed = velocity.length()
 	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
