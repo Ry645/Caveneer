@@ -1,0 +1,3 @@
+disable all quick puzzle
+turn off player debug movement
+turn off grapple debug movement
