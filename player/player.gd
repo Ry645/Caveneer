@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var fullStopThreshold = 5
 
 @export var hasDebugMovement:bool = false
+@export var debugDashSpeed:int = 100
 
 @onready var tools = [%grappleLash]
 @onready var player_sprite = %playerSprite
@@ -167,4 +168,8 @@ func slowPlayerMovement(delta):
 
 func dash():
 	var speed = velocity.length()
+	
+	if hasDebugMovement:
+		speed += 100
+	
 	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
