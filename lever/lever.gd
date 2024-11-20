@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func interact():
 	if isActive && isOneShot:
-		return
+		return 1
 	
 	isActive = !isActive
 	frame = 1 if isActive else 0
@@ -45,6 +45,7 @@ func interact():
 		emit_signal("deactivated")
 		emit_signal("setState", 0)
 	
+	return 0
 
 func enable():
 	visible = true

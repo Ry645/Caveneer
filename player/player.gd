@@ -42,9 +42,11 @@ func inputProcess(delta):
 				break
 		for area in %interactArea.get_overlapping_areas():
 			if area.has_method("interact"):
-				area.interact()
-				#only interact with one thing
-				break
+				var exitCode = area.interact()
+				# if interacted normally
+				if exitCode == 0:
+					#only interact with one thing
+					break
 	if Input.is_action_just_pressed("dash"):
 		dash()
 	# debug only

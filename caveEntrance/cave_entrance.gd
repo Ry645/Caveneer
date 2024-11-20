@@ -10,6 +10,7 @@ func loadArea():
 
 func interact():
 	loadArea()
+	return 0
 
 func interactHover():
 	pass
