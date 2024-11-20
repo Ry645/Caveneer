@@ -6,6 +6,7 @@ extends Node2D
 ## if the signal connection doesn't generate, look at your node names first when debugging
 
 ## naming convention: node6, node6_2
+## WARNING: DO NOT USE ZERO
 
 @export var generate:bool = false
 
@@ -22,6 +23,7 @@ func _process(delta: float) -> void:
 func generateLeverSignals():
 	var leverManagers := get_tree().get_nodes_in_group("leverManager");
 	sortViaNumber(leverManagers)
+	#print(leverManagers)
 	
 	## DEPRECATED
 	var leverBefores := get_tree().get_nodes_in_group("leverBefore");
@@ -33,6 +35,7 @@ func generateLeverSignals():
 	
 	var toggleAreas := get_tree().get_nodes_in_group("toggleArea")
 	sortViaNumber(toggleAreas)
+	#print(toggleAreas)
 	
 	var leverBeforeIndex:int = 0
 	var leverAfterIndex:int = 0
@@ -40,6 +43,7 @@ func generateLeverSignals():
 	var toggleAreaIndex:int = 0
 	for i in range(leverManagers.size()):
 		var managerNumber = getNodeNumber(leverManagers[i])
+		#print(managerNumber)
 		
 		## DEPRECATED
 		if leverBeforeIndex < leverBefores.size():
@@ -55,6 +59,8 @@ func generateLeverSignals():
 				leverManagers[i].connect("setState", Callable(leverAfters[leverAfterIndex], "setState"), CONNECT_PERSIST)
 				leverAfterIndex += 1
 		
+		while getNodeNumber(toggleAreas[toggleAreaIndex]) == 0:
+			toggleAreaIndex += 1
 		
 		if toggleAreaIndex < toggleAreas.size():
 			while getNodeNumber(toggleAreas[toggleAreaIndex]) == managerNumber:
@@ -77,5 +83,5 @@ func compareNodesViaNumber(a:Node, b:Node):
 
 ## ignores everything past the underscore
 func getNodeNumber(node:Node):
-	var name = node.name
-	return name.substr(0, name.find("_")).to_int()
+	var nodeName = node.name.substr(0, name.find("_"))
+	return nodeName.to_int()
