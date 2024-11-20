@@ -35,7 +35,7 @@ func generateLeverSignals():
 	
 	var toggleAreas := get_tree().get_nodes_in_group("toggleArea")
 	sortViaNumber(toggleAreas)
-	#print(toggleAreas)
+	print(toggleAreas)
 	
 	var leverBeforeIndex:int = 0
 	var leverAfterIndex:int = 0
@@ -83,5 +83,5 @@ func compareNodesViaNumber(a:Node, b:Node):
 
 ## ignores everything past the underscore
 func getNodeNumber(node:Node):
-	var nodeName = node.name.substr(0, name.find("_"))
+	var nodeName = node.name.substr(0, node.name.find("_"))
 	return nodeName.to_int()
