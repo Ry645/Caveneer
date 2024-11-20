@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mg3k4hmnwndq"]
+
+[ext_resource type="Script" path="res://lever/toggle_area.gd" id="1_lw1c2"]
+
+[node name="toggleArea1" type="Node2D" groups=["toggleArea"]]
+script = ExtResource("1_lw1c2")

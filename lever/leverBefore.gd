@@ -1,3 +1,4 @@
+## DEPRECATED use toggle area
 class_name LeverBefore
 extends Node2D
 
