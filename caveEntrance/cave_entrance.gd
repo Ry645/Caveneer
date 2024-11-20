@@ -24,3 +24,13 @@ func showOutline():
 
 func hideOutline():
 	material.set_shader_parameter("process", false)
+
+func enable():
+	visible = true
+	($interactBody as StaticBody2D).set_collision_layer_value(1, true)
+	($interactBody as StaticBody2D).set_collision_layer_value(2, true)
+
+func disable():
+	visible = false
+	($interactBody as StaticBody2D).set_collision_layer_value(1, false)
+	($interactBody as StaticBody2D).set_collision_layer_value(2, false)
