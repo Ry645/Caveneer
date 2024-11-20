@@ -61,6 +61,13 @@ func generateLeverSignals():
 				print("connected: ", toggleAreas[toggleAreaIndex])
 				leverManagers[i].connect("setState", Callable(toggleAreas[toggleAreaIndex], "toggle"), CONNECT_PERSIST)
 				toggleAreaIndex += 1
+	
+	## goes through all toggle areas and finds each manager number in the connectWith list
+	for toggleArea:ToggleArea in toggleAreas:
+		for num in toggleArea.connectWith:
+			for manager in leverManagers:
+				if getNodeNumber(manager) == num:
+					manager.connect("setState", Callable(toggleArea, "toggle"), CONNECT_PERSIST)
 
 func sortViaNumber(array:Array):
 	array.sort_custom(compareNodesViaNumber)

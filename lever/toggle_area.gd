@@ -4,6 +4,7 @@ extends Node2D
 ## naming convention: toggleAreaActive1 or toggleAreaInactive1
 
 @export var isActive:bool = false
+@export var connectWith:Array[int]
 
 func _ready():
 	if isActive:
