@@ -17,14 +17,20 @@ signal setState(state:int)
 func _ready():
 	numLevers = get_children().size()
 
+func syncChildren(state):
+	# should only be levers
+	for child in get_children():
+		child.sync(state)
 
-func activatedLever():
+func activatedLever(): 
 	pulledLevers += 1
+	syncChildren(1)
 	if pulledLevers == numLevers || quickPuzzle:
 		emit_signal("activate")
 		emit_signal("setState", 1)
 
 func deactivatedLever():
+	syncChildren(0)
 	if pulledLevers == numLevers || quickPuzzle:
 		emit_signal("deactivate")
 		emit_signal("setState", 0)

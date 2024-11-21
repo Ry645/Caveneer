@@ -63,6 +63,29 @@ func disable():
 	visible = false
 	($Area2D as Area2D).set_collision_layer_value(2, false)
 
+
+func sync(state):
+	if isOneShot:
+		return
+	
+	match state:
+		0:
+			isActive = false
+		1:
+			isActive = true
+	
+	#TODO WHY IS THIS NOT WORKING
+	frame = 1 if isActive else 0
+	
+	# doesn't call to the parent so only one lever controls the lever manager
+	# other than it's own setState signal since that's for separate objects
+	if isActive:
+		emit_signal("setState", 1)
+	else:
+		emit_signal("setState", 0)
+	
+
+
 func hover():
 	if isActive && isOneShot:
 		return 
