@@ -1,3 +1,4 @@
+@tool
 class_name Lever
 extends AnimatedSprite2D
 
@@ -14,6 +15,13 @@ signal setState(state:int)
 @export var isOneShot = true
 
 var isActive = false
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		if isOneShot:
+			animation = "oneShot"
+		else:
+			animation = "toggle"
 
 func _ready() -> void:
 	var shaderMaterial:ShaderMaterial = ShaderMaterial.new()
