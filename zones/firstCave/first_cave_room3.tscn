@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bpevx1vmiqj3w"]
+[gd_scene load_steps=13 format=4 uid="uid://bpevx1vmiqj3w"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_56ol6"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_7x7kl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mg3k4hmnwndq" path="res://lever/toggle_area.tscn" id="9_jvtel"]
 [ext_resource type="PackedScene" uid="uid://chm7t41n5lmqf" path="res://door/door.tscn" id="10_cdwcu"]
 [ext_resource type="PackedScene" uid="uid://drrghx6as50r5" path="res://caveEntrance/cave_entrance.tscn" id="10_n1ee2"]
+[ext_resource type="PackedScene" uid="uid://dolgejm3c3elr" path="res://zones/firstCave/first_cave_room4.tscn" id="11_wvsfh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
@@ -170,6 +171,7 @@ tile_map_data = PackedByteArray("AACJABEAAQAAAAAAAACJABIAAQAAAAAAAACJABMAAQAAAAA
 
 [node name="CaveEntrance" parent="toggleArea7" instance=ExtResource("10_n1ee2")]
 position = Vector2(4954, 710)
+sceneToLoad = ExtResource("11_wvsfh")
 
 [connection signal="setState" from="toggleAreaA/leverManager1" to="toggleArea1" method="toggle"]
 [connection signal="setState" from="toggleAreaA/leverManager1" to="toggleArea1_2" method="toggle"]

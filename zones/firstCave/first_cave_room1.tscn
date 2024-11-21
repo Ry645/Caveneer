@@ -108,13 +108,12 @@ text = "accelerate by holding left click"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
-offset_left = 5448.0
-offset_top = -15.0
-offset_right = 5557.0
-offset_bottom = 22.0
+offset_left = 5449.0
+offset_top = -14.0
+offset_right = 5549.0
+offset_bottom = 23.0
 theme_override_font_sizes/normal_font_size = 12
-text = "right click on the tunnel to enter"
-metadata/_edit_use_anchors_ = true
+text = "press 'E' or right click to enter"
 
 [node name="CaveEntrance" parent="." instance=ExtResource("4_dsjhh")]
 position = Vector2(5500, -57)

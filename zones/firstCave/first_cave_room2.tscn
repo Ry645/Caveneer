@@ -82,12 +82,12 @@ rawTileData = NodePath("../caveFloor")
 active = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 7656.0
+offset_left = 7630.0
 offset_top = -1570.0
-offset_right = 7743.0
+offset_right = 7761.0
 offset_bottom = -1530.0
 theme_override_font_sizes/normal_font_size = 12
-text = "right click to pull the lever"
+text = "press 'E' or right click to pull the lever"
 
 [node name="note" type="RichTextLabel" parent="."]
 visible = false
