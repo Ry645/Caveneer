@@ -74,7 +74,6 @@ func sync(state):
 		1:
 			isActive = true
 	
-	#TODO WHY IS THIS NOT WORKING
 	frame = 1 if isActive else 0
 	
 	# doesn't call to the parent so only one lever controls the lever manager

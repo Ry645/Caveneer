@@ -35,6 +35,7 @@ func _physics_process(delta):
 
 func inputProcess(delta):
 	if Input.is_action_just_pressed("interact"):
+		#TODO maybe implement a buffer for this one idk
 		for body in %interactArea.get_overlapping_bodies():
 			if body.has_method("interact"):
 				body.interact()
