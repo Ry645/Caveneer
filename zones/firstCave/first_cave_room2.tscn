@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cdupyhh0hl1fl"]
+[gd_scene load_steps=35 format=4 uid="uid://cdupyhh0hl1fl"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_4pgds"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_ulpxx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="5_wplgx"]
 [ext_resource type="Script" path="res://lever/leverAfter.gd" id="6_6rkck"]
 [ext_resource type="Script" path="res://door/door.gd" id="8_bekxj"]
+[ext_resource type="Shader" path="res://outline/outline.gdshader" id="8_wdbqc"]
 [ext_resource type="Script" path="res://lever/leverBefore.gd" id="8_y0rbj"]
 [ext_resource type="PackedScene" uid="uid://c1igbdcmltw5r" path="res://lever/lever_manager.tscn" id="10_3j6db"]
 [ext_resource type="TileSet" uid="uid://m26hcd3o4f4j" path="res://tilesets/void.tres" id="10_tv0yt"]
@@ -29,6 +30,60 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cv4ha")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r7hf"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocwwu"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dk4j"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxxw7"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7ae2"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntguj"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1le5k"]
 texture = ExtResource("2_ulpxx")
 texture_region_size = Vector2i(32, 32)
@@ -39,6 +94,60 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_1le5k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lnjy"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pf6e"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0dkk"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2kw8"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8bl40"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5m84g"]
+shader = ExtResource("8_wdbqc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68hp8"]
 texture = ExtResource("2_ulpxx")
@@ -111,6 +220,7 @@ text = "teaches player about levers and opening doors and revisiting areas
 [node name="leverManager1" parent="." instance=ExtResource("10_3j6db")]
 
 [node name="lever1_1" parent="leverManager1" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_7r7hf")
 position = Vector2(7779, -1554)
 
 [node name="leverBefore1" parent="." instance=ExtResource("11_ubr4a")]
@@ -129,18 +239,23 @@ script = ExtResource("6_6rkck")
 [node name="leverManager2" parent="lever1After" instance=ExtResource("10_3j6db")]
 
 [node name="lever1" parent="lever1After/leverManager2" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_ocwwu")
 position = Vector2(6481, -1632)
 
 [node name="lever2" parent="lever1After/leverManager2" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_4dk4j")
 position = Vector2(4132, -1670)
 
 [node name="lever3" parent="lever1After/leverManager2" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_gxxw7")
 position = Vector2(5018, -1174)
 
 [node name="lever4" parent="lever1After/leverManager2" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_k7ae2")
 position = Vector2(5608, -821)
 
 [node name="lever5" parent="lever1After/leverManager2" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_ntguj")
 position = Vector2(4194, -1074)
 
 [node name="text_lever1On" type="RichTextLabel" parent="lever1After"]
@@ -180,21 +295,27 @@ script = ExtResource("6_6rkck")
 [node name="leverManager3" parent="lever2After" instance=ExtResource("10_3j6db")]
 
 [node name="lever1" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_8lnjy")
 position = Vector2(4448, 832)
 
 [node name="lever2" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_1pf6e")
 position = Vector2(4672, 608)
 
 [node name="lever6" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_n0dkk")
 position = Vector2(4556, 608)
 
 [node name="lever3" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_v2kw8")
 position = Vector2(4448, -61)
 
 [node name="lever4" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_8bl40")
 position = Vector2(5356, 163)
 
 [node name="lever5" parent="lever2After/leverManager3" instance=ExtResource("5_wplgx")]
+material = SubResource("ShaderMaterial_5m84g")
 position = Vector2(4945, -237)
 
 [node name="lever3Before" type="Node2D" parent="."]
