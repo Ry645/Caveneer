@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=17 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
+[ext_resource type="Shape2D" uid="uid://bab8m6vildr5n" path="res://player/playerCollision.tres" id="3_equ2o"]
 [ext_resource type="PackedScene" uid="uid://bog6uxyq7uej" path="res://grappleLash/grapple_lash.tscn" id="4_v7oug"]
+[ext_resource type="Script" path="res://player/wall_kick_area.gd" id="5_lknyh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -83,11 +85,11 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgyxl"]
-size = Vector2(15, 3)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lhue"]
 radius = 3.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqh1h"]
+size = Vector2(16, 4)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
@@ -101,7 +103,7 @@ animation = &"walkUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 13.5)
-shape = SubResource("RectangleShape2D_vgyxl")
+shape = ExtResource("3_equ2o")
 
 [node name="carryingTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -131,3 +133,16 @@ unique_name_in_owner = true
 position = Vector2(7, 13)
 
 [node name="mainCamera" type="Camera2D" parent="."]
+
+[node name="wallKickTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="wallKickArea" type="Area2D" parent="."]
+position = Vector2(-0.5, 13.5)
+script = ExtResource("5_lknyh")
+
+[node name="collisionShape2d" type="CollisionShape2D" parent="wallKickArea"]
+shape = SubResource("RectangleShape2D_bqh1h")
+
+[connection signal="body_entered" from="wallKickArea" to="wallKickArea" method="_on_body_entered"]

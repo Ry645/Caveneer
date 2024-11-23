@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var maxReach = 32
 @export var brakePower = 5
 @export var fullStopThreshold = 5
+@export var wallCrashThreshold = 256
 
 @export var hasDebugMovement:bool = false
 @export var debugDashSpeed:int = 100
@@ -15,9 +16,10 @@ extends CharacterBody2D
 @onready var player_sprite = %playerSprite
 @onready var carrying_transform = %carryingTransform
 
-
 @onready var equippedTool = %grappleLash
 @onready var holster = %grappleLashTransform
+
+var lastFivePreviousSpeeds:Array[float] = [0, 0, 0, 0, 0]
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -41,6 +43,8 @@ func _physics_process(delta):
 	updateAnimation()
 	
 	hover()
+	
+	storeSpeed()
 	
 	move_and_slide()
 
@@ -83,6 +87,18 @@ func inputProcess(delta):
 		#swapWeapon(2)
 	#if Input.is_action_just_pressed("slot 3"):
 		#swapWeapon(3) 
+
+## stores the previous speed to use in a wall kick
+func storeSpeed():
+	if $wallKickTimer.is_stopped():
+		lastFivePreviousSpeeds.pop_at(0)
+		lastFivePreviousSpeeds.append(velocity.length())
+	else:
+		print(lastFivePreviousSpeeds)
+
+## called by a wallKickArea node
+func wallKickCollision():
+	$wallKickTimer.start()
 
 func hover():
 	for body:Node2D in %interactArea.get_overlapping_bodies():
@@ -179,13 +195,21 @@ func updateCarryPosition(event:InputEventMouseMotion):
 	
 	#print(carrying_transform.global_position)
 
+## also gets rid of wall kick
 func slowPlayerMovement(delta):
+	if !($wallKickTimer.is_stopped()):
+		$wallKickTimer.stop()
+	
 	velocity = lerp(velocity, Vector2.ZERO, brakePower * delta)
 	if velocity.length() < fullStopThreshold:
 		velocity = Vector2.ZERO
 
 func dash():
 	var speed = velocity.length()
+	
+	if speed < lastFivePreviousSpeeds[1]:
+		speed = lastFivePreviousSpeeds[1]
+		$wallKickTimer.stop()
 	
 	if hasDebugMovement:
 		speed += 100
