@@ -42,6 +42,7 @@ leverManager=""
 leverBefore=""
 leverAfter=""
 toggleArea=""
+door=""
 
 [input]
 

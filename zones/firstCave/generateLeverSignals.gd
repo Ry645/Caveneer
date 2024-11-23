@@ -38,12 +38,16 @@ func generateLeverSignals():
 	
 	var toggleAreas := get_tree().get_nodes_in_group("toggleArea")
 	sortViaNumber(toggleAreas)
-	print(toggleAreas)
+	#print(toggleAreas)
+	
+	var doors := get_tree().get_nodes_in_group("door")
+	sortViaNumber(doors)
 	
 	var leverBeforeIndex:int = 0
 	var leverAfterIndex:int = 0
 	
 	var toggleAreaIndex:int = 0
+	var doorIndex:int = 0
 	for i in range(leverManagers.size()):
 		var managerNumber = getNodeNumber(leverManagers[i])
 		#print(managerNumber)
@@ -70,6 +74,10 @@ func generateLeverSignals():
 			print("connected: ", toggleAreas[toggleAreaIndex])
 			leverManagers[i].connect("setState", Callable(toggleAreas[toggleAreaIndex], "toggle"), CONNECT_PERSIST)
 			toggleAreaIndex += 1
+		
+		
+		# doors
+		doorIndex = connectSignals(doorIndex, doors, managerNumber, leverManagers[i], "setState")
 	
 	## goes through all toggle areas and finds each manager number in the connectWith list
 	for toggleArea:ToggleArea in toggleAreas:
@@ -88,3 +96,17 @@ func compareNodesViaNumber(a:Node, b:Node):
 func getNodeNumber(node:Node):
 	var nodeName = node.name.substr(0, node.name.find("_"))
 	return nodeName.to_int()
+
+
+func connectSignals(index:int, nodes:Array[Node], managerNumber:int, leverManager:Node, methodName:StringName):
+	var newIndex = index
+	while newIndex < nodes.size() && getNodeNumber(nodes[newIndex]) == 0:
+		#print(nodes[newIndex])
+		newIndex += 1
+	
+	while newIndex < nodes.size() && getNodeNumber(nodes[newIndex]) == managerNumber:
+		print("connected: ", nodes[newIndex])
+		leverManager.connect("setState", Callable(nodes[newIndex], methodName), CONNECT_PERSIST)
+		newIndex += 1
+	
+	return newIndex

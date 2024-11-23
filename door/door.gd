@@ -6,3 +6,7 @@ func disable():
 
 func enable():
 	enabled = true
+
+
+func setState(state):
+	enabled = !enabled
