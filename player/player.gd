@@ -4,7 +4,9 @@ extends CharacterBody2D
 @export var maxReach = 32
 @export var brakePower = 5
 @export var fullStopThreshold = 5
-@export var wallCrashThreshold = 256
+@export var wallCrashThreshold = 255
+@export var doubleDashStartSpeed = 256
+@export var doubleDashAddSpeed = 16
 
 @export var hasDebugMovement:bool = false
 @export var debugDashSpeed:int = 100
@@ -160,6 +162,9 @@ func _input(event):
 	#for updateAnimation
 	if event is InputEventMouseMotion:
 		updateCarryPosition(event)
+		if %magicShield.visible:
+			updateMagicShield()
+	
 	#TEMP later add pause menu
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -192,6 +197,9 @@ func updateCarryPosition(event:InputEventMouseMotion):
 	
 	#print(carrying_transform.global_position)
 
+func updateMagicShield():
+	$magicShieldOrigin.global_rotation = (carrying_transform.global_position - global_position).angle() + PI/2
+
 ## also gets rid of wall kick
 func slowPlayerMovement(delta):
 	if !($wallKickTimer.is_stopped()):
@@ -202,6 +210,15 @@ func slowPlayerMovement(delta):
 		velocity = Vector2.ZERO
 
 func dash():
+	if $doubleDashWindow.is_stopped():
+		regularDash()
+		$doubleDashWindow.start()
+	else:
+		doubleDash()
+		$doubleDashWindow.stop()
+
+func regularDash():
+	#print("poot") # 2 poots per double dash: works as intended
 	var speed = velocity.length()
 	
 	if speed < lastFivePreviousSpeeds[1]:
@@ -211,6 +228,19 @@ func dash():
 		speed += 100
 	
 	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
+
+func doubleDash():
+	#print("DOUBLE DASH")
+	
+	%magicShield.use()
+	updateMagicShield()
+	if velocity.length() < doubleDashStartSpeed:
+		#INFO negated from "if speed < lastFivePreviousSpeeds[1]:"
+		velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * doubleDashStartSpeed
+	else:
+		# not negated
+		velocity += Vector2.UP.rotated(carrying_transform.global_rotation) * doubleDashAddSpeed
+	regularDash()
 
 func debugSteer():
 	var speed = velocity.length()

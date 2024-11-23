@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=18 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
 [ext_resource type="Shape2D" uid="uid://bab8m6vildr5n" path="res://player/playerCollision.tres" id="3_equ2o"]
 [ext_resource type="PackedScene" uid="uid://bog6uxyq7uej" path="res://grappleLash/grapple_lash.tscn" id="4_v7oug"]
 [ext_resource type="Script" path="res://player/wall_kick_area.gd" id="5_lknyh"]
+[ext_resource type="PackedScene" uid="uid://bvvmo4u21fv1e" path="res://magicShield/magic_shield.tscn" id="6_81vul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -107,7 +108,7 @@ shape = ExtResource("3_equ2o")
 
 [node name="carryingTransform" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(21.5, 0)
+position = Vector2(0, -30)
 
 [node name="interactArea" type="Area2D" parent="carryingTransform"]
 unique_name_in_owner = true
@@ -144,5 +145,17 @@ script = ExtResource("5_lknyh")
 
 [node name="collisionShape2d" type="CollisionShape2D" parent="wallKickArea"]
 shape = SubResource("RectangleShape2D_bqh1h")
+
+[node name="magicShieldOrigin" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="magicShield" parent="magicShieldOrigin" instance=ExtResource("6_81vul")]
+unique_name_in_owner = true
+position = Vector2(0, -15)
+scale = Vector2(2, 2)
+
+[node name="doubleDashWindow" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="wallKickArea" to="wallKickArea" method="_on_body_entered"]

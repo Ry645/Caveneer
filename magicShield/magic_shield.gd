@@ -5,7 +5,6 @@ extends AnimatedSprite2D
 func _ready() -> void:
 	visible = false
 
-
 func use():
 	$timeActive.start()
 	visible = true

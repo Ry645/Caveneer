@@ -26,7 +26,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"active",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -40,6 +40,8 @@ animations = [{
 [node name="magicShield" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_4wxxs")
 animation = &"active"
+frame = 1
+frame_progress = 0.0822913
 script = ExtResource("1_holna")
 
 [node name="timeActive" type="Timer" parent="."]
