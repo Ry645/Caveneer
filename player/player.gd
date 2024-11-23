@@ -93,8 +93,8 @@ func storeSpeed():
 	if $wallKickTimer.is_stopped():
 		lastFivePreviousSpeeds.pop_at(0)
 		lastFivePreviousSpeeds.append(velocity.length())
-	else:
-		print(lastFivePreviousSpeeds)
+	#else:
+		#print(lastFivePreviousSpeeds)
 
 ## called by a wallKickArea node
 func wallKickCollision():
@@ -209,7 +209,6 @@ func dash():
 	
 	if speed < lastFivePreviousSpeeds[1]:
 		speed = lastFivePreviousSpeeds[1]
-		$wallKickTimer.stop()
 	
 	if hasDebugMovement:
 		speed += 100
