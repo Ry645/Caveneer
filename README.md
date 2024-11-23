@@ -11,6 +11,6 @@ You can also export the project into an executable; click on "Project" and "Expo
 
 Modify the project in any way you want to!  
 Excuse my pseudo-spaghetti code.  
+See my development notes [here](https://github.com/Ry645/Caveneer/tree/master/developmentProcess).  
 
-Either way,  
-Have fun.
+Have fun.  

@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+#TODO add sound effects, level select, speedrun timer, and ranking system, in that order
+
+
 
 @export var maxReach = 32
 @export var brakePower = 5

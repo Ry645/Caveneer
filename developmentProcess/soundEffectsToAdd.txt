@@ -1,0 +1,44 @@
+Use Audacity for sound editing
+
+ambience:
+	record fan 30 seconds
+	lower pitch
+	square-wave-ify
+	zero out ends so it can loop
+
+dash sound:
+	like minecraft piston but more airy
+
+grapple:
+	like super cube cavern grapple sound
+
+wall slam:
+	punch table with fist
+	lower pitch
+	square wave
+	8 bit
+	main hit
+	
+	tap pencil against desk
+	square wave
+	pebbles falling on floor
+	
+	TODO also add particle effect for that
+
+door opening:
+	knock on table
+	slide textbook
+
+door with muliple levers opening:
+	like a cranking sound to open a drawbridge
+
+flick lever:
+	like minecraft door opening sound
+	more metallic
+
+magic shield:
+	like extremely   W I D E   cello vibrato on C-note in thumb position
+
+ding sound:
+	like M-1 Garand PING
+	when the lever you flicked was final (very important)
