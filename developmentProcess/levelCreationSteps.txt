@@ -1,0 +1,13 @@
+1:
+	start by drawing a bunch of level sections that I can put together
+	make good notation that communicates clearly what each object is
+	DO NOT RELY ON REMEMBERING IT LATER
+2:
+	create the level procedurally
+	after adding in all the levers and doors, I should have a finished project
+	
+	DO NOT CREATE THE PROPS AND CONNECT IT ALL AT THE END
+		
+		connecting it at the end takes much longer than doing it while adding in the props
+3:
+	test the level for any bugs
