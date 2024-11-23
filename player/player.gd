@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-#TODO add a bunch of new controls to the player
-#TODO add a wall kick (if the player collides with anything above 128 speed, they have 0.5 seconds to wall kick) (stores previous speed after head-on collision and waits 0.5 seconds before player dash, sets that after dash) 
 #TODO add a set cardinal direction for aim (locks player's grapple on an axis, not changing it until they let go) (ctrl)
 
 @export var maxReach = 32
@@ -20,6 +18,7 @@ extends CharacterBody2D
 @onready var holster = %grappleLashTransform
 
 var lastFivePreviousSpeeds:Array[float] = [0, 0, 0, 0, 0]
+var aimLocked = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -86,7 +85,12 @@ func inputProcess(delta):
 	#if Input.is_action_just_pressed("slot 2"):
 		#swapWeapon(2)
 	#if Input.is_action_just_pressed("slot 3"):
-		#swapWeapon(3) 
+		#swapWeapon(3)
+	
+	if Input.is_action_just_pressed("lockAim"):
+		setAimLocked(true)
+	if Input.is_action_just_released("lockAim"):
+		setAimLocked(false)
 
 ## stores the previous speed to use in a wall kick
 func storeSpeed():
@@ -162,20 +166,27 @@ func updateAnimation():
 func _input(event):
 	#for updateAnimation
 	if event is InputEventMouseMotion:
-		updateCarryPosition(event)
+		updateCarryPosition(event.relative)
 	#TEMP later add pause menu
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 ## updates the transform of the carry
-func updateCarryPosition(event:InputEventMouseMotion):
+func updateCarryPosition(newRelativePosition:Vector2):
 	#use previous mouse pos before set
 	#FIXED weird thing where the wand can only move along a line
 	#replicate by dragging the mouse in one direction at low screen size for a long time
 	#FIXED changed Input.MOUSE_MODE_CONFINED_HIDDEN to Input.MOUSE_MODE_CAPTURED
 	
-	var changeInPosition = event.relative
+	var changeInPosition = newRelativePosition
+	
+	# lockAim : locks the aim of the player to a cardinal direction
+	if aimLocked:
+		changeInPosition = lockAim(changeInPosition)
+	
 	carrying_transform.global_position += changeInPosition
+	
+	
 	
 	#find offset
 	var offset:Vector2 = carrying_transform.global_position - global_position
@@ -186,14 +197,35 @@ func updateCarryPosition(event:InputEventMouseMotion):
 	if offset.length() > maxReach:
 		carrying_transform.global_position = offset.normalized() * maxReach + global_position
 	
-	#flip y b/c weird
+	# flip y b/c weird
 	#WARNING MESSES WITH OFFSET VARIABLE
 	offset.y = -offset.y
 	var angleFromPlayer:float = offset.angle()
-	#rotate tool away from player
+	# rotate tool away from player
 	carrying_transform.rotation = -angleFromPlayer + PI/2
 	
 	#print(carrying_transform.global_position)
+
+func lockAim(changeInPosition:Vector2) -> Vector2:
+	var r = carrying_transform.global_rotation
+	var possibleAngleRanges = [-3*PI/4, -PI/4, PI/4, 3*PI/4]
+	 #lock aim east/west
+	if (r > PI/4 && r < 3*PI/4) || (r < -PI/4 && r > -3*PI/4):
+		carrying_transform.global_position.x = global_position.x
+		return Vector2(0, changeInPosition.y)
+	 #lock aim north/south
+	else:
+		carrying_transform.global_position.y = global_position.y
+		return Vector2(changeInPosition.x, 0)
+	
+	print(r)
+	return changeInPosition
+
+func setAimLocked(value:bool):
+	aimLocked = value
+	if aimLocked:
+		lockAim(Vector2.ZERO)
+		updateCarryPosition(Vector2.ZERO)
 
 ## also gets rid of wall kick
 func slowPlayerMovement(delta):
