@@ -18,3 +18,7 @@ func enable():
 
 func setState(state):
 	enabled = !enabled
+
+
+func _on_set_state(state: int) -> void:
+	setState(state)
