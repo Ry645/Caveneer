@@ -41,19 +41,25 @@ func interact():
 	frame = 1 if isActive else 0
 	
 	if isActive:
-		if get_parent().has_method("activatedLever"):
-			get_parent().activatedLever()
-		#do not connect to parent, connect to a separate lever manager
-		emit_signal("activated")
-		emit_signal("setState", 1)
+		activate()
 	else:
-		if get_parent().has_method("deactivatedLever"):
-			get_parent().deactivatedLever()
-		#do not connect to parent, connect to a separate lever manager
-		emit_signal("deactivated")
-		emit_signal("setState", 0)
+		deactivate()
 	
 	return 0
+
+func activate():
+	if get_parent().has_method("activatedLever"):
+		get_parent().activatedLever()
+	#do not connect to parent, connect to a separate lever manager
+	emit_signal("activated")
+	emit_signal("setState", 1)
+
+func deactivate():
+	if get_parent().has_method("deactivatedLever"):
+		get_parent().deactivatedLever()
+	#do not connect to parent, connect to a separate lever manager
+	emit_signal("deactivated")
+	emit_signal("setState", 0)
 
 func enable():
 	visible = true

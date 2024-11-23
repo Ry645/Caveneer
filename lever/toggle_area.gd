@@ -1,7 +1,8 @@
 class_name ToggleArea
 extends Node2D
 
-## naming convention: toggleAreaActive1 or toggleAreaInactive1
+## naming convention: toggleArea1 is active
+## toggleArea1_2 is inactive 
 
 @export var isActive:bool = false
 @export var connectWith:Array[int]

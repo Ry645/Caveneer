@@ -26,6 +26,13 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if hasDebugMovement:
+		%grappleLash.hasDebugMovement = true
+		set_collision_mask_value(1, false)
+	else:
+		%grappleLash.hasDebugMovement = false
+		set_collision_mask_value(1, true)
+	
 	inputProcess(delta)
 	updateAnimation()
 	

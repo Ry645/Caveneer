@@ -16,6 +16,10 @@ signal setState(state:int)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	numLevers = get_children().size()
+	
+	# to account for multiple togglable levers
+	if get_child(0).isOneShot == false:
+		numLevers = 1;
 
 func syncChildren(state):
 	# should only be levers
