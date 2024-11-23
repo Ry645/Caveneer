@@ -1,6 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvvmo4u21fv1e"]
+[gd_scene load_steps=7 format=3 uid="uid://bvvmo4u21fv1e"]
 
 [ext_resource type="Script" path="res://magicShield/magic_shield.gd" id="1_holna"]
+[ext_resource type="Texture2D" uid="uid://dtkkafkuqj1mp" path="res://sprites/magicShield/shield-Sheet.png" id="1_u3xtd"]
 
-[node name="magicShield" type="Sprite2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk2aj"]
+atlas = ExtResource("1_u3xtd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re6dh"]
+atlas = ExtResource("1_u3xtd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy8ph"]
+atlas = ExtResource("1_u3xtd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wxxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk2aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re6dh")
+}],
+"loop": true,
+"name": &"active",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy8ph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="magicShield" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_4wxxs")
+animation = &"active"
 script = ExtResource("1_holna")
+
+[node name="timeActive" type="Timer" parent="."]
+
+[connection signal="timeout" from="timeActive" to="." method="_on_timeout"]
