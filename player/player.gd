@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-#TODO add a bunch of new controls to the player
-#TODO add a wall kick (if the player collides with anything above 128 speed, they have 0.5 seconds to wall kick) (stores previous speed after head-on collision and waits 0.5 seconds before player dash, sets that after dash) 
-#TODO add a set cardinal direction for aim (locks player's grapple on an axis, not changing it until they let go) (ctrl)
 
 @export var maxReach = 32
 @export var brakePower = 5
