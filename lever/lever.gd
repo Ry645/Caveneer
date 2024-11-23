@@ -13,6 +13,7 @@ signal setState(state:int)
 
 @export var outlineShader:Shader = preload("res://outline/outline.gdshader")
 @export var isOneShot = true
+@export var canInteract = true
 
 var isActive = false
 
@@ -24,6 +25,8 @@ func _process(delta: float) -> void:
 			animation = "toggle"
 
 func _ready() -> void:
+	setInteractability(canInteract)
+	
 	var shaderMaterial:ShaderMaterial = ShaderMaterial.new()
 	shaderMaterial.shader = outlineShader
 	material = shaderMaterial
@@ -104,3 +107,14 @@ func showOutline():
 
 func hideOutline():
 	material.set_shader_parameter("process", false)
+
+
+func toggleInteractability():
+	setInteractability(!$Area2D.monitorable)
+
+func setInteractability(value:bool):
+	$Area2D.monitoring = value
+	$Area2D.monitorable = value
+
+func _on_set_state(state: int) -> void:
+	toggleInteractability()

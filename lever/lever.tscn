@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://lever/lever.gd" id="2_gsfte"]
 [ext_resource type="Script" path="res://interactBody.gd" id="3_avos6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvg4m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mn6ui"]
 shader = ExtResource("1_cxfrg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -59,7 +59,7 @@ animations = [{
 radius = 60.0
 
 [node name="lever1" type="AnimatedSprite2D"]
-material = SubResource("ShaderMaterial_mvg4m")
+material = SubResource("ShaderMaterial_mn6ui")
 sprite_frames = SubResource("SpriteFrames_iwj1g")
 animation = &"oneShot"
 frame_progress = 0.718058
