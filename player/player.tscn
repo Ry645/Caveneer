@@ -97,6 +97,7 @@ size = Vector2(16, 4)
 z_index = 2
 position = Vector2(136, 102)
 script = ExtResource("1_hpm7c")
+hasDebugMovement = true
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

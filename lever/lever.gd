@@ -38,6 +38,9 @@ func _ready() -> void:
 	else:
 		animation = "toggle"
 
+func setImportant():
+	isImportant = true
+
 func interact():
 	if isActive && isOneShot:
 		return 1
@@ -122,7 +125,11 @@ func setInteractability(value:bool):
 
 func playSound():
 	if isImportant:
+		$importantToggleSound.volume_db = 0
 		$importantToggleSound.play()
+		# wait for LOUD PING
+		await get_tree().create_timer(0.85).timeout
+		$importantToggleSound.volume_db = 10
 	else:
 		$toggleSound.play()
 

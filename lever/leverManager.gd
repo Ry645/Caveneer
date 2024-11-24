@@ -16,8 +16,9 @@ signal setState(state:int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for child in get_children():
-		child.isImportant = isImportant
+	if isImportant:
+		for child in get_children():
+			child.setImportant()
 	
 	numLevers = get_children().size()
 	

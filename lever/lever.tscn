@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bvupsalmrfabc" path="res://audio/export/pullTheLeverKronk.wav" id="5_3chqe"]
 [ext_resource type="AudioStream" uid="uid://oq1h86ae811s" path="res://audio/export/pullTheImportantLeverKronk.wav" id="6_hdn2t"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_31g80"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rs17x"]
 shader = ExtResource("1_cxfrg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -61,7 +61,7 @@ animations = [{
 radius = 60.0
 
 [node name="lever1" type="AnimatedSprite2D"]
-material = SubResource("ShaderMaterial_31g80")
+material = SubResource("ShaderMaterial_rs17x")
 sprite_frames = SubResource("SpriteFrames_iwj1g")
 animation = &"oneShot"
 frame_progress = 0.718058

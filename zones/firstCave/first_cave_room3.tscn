@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bpevx1vmiqj3w"]
+[gd_scene load_steps=30 format=4 uid="uid://bpevx1vmiqj3w"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_56ol6"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_7x7kl"]
@@ -8,12 +8,157 @@
 [ext_resource type="PackedScene" uid="uid://c1igbdcmltw5r" path="res://lever/lever_manager.tscn" id="6_qsfwv"]
 [ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="7_y168q"]
 [ext_resource type="PackedScene" uid="uid://mg3k4hmnwndq" path="res://lever/toggle_area.tscn" id="9_jvtel"]
+[ext_resource type="Shader" path="res://outline/outline.gdshader" id="9_y6xj6"]
 [ext_resource type="PackedScene" uid="uid://chm7t41n5lmqf" path="res://door/door.tscn" id="10_cdwcu"]
 [ext_resource type="PackedScene" uid="uid://drrghx6as50r5" path="res://caveEntrance/cave_entrance.tscn" id="10_n1ee2"]
 [ext_resource type="PackedScene" uid="uid://dolgejm3c3elr" path="res://zones/firstCave/first_cave_room4.tscn" id="11_wvsfh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2ij2"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcrx3"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34dkg"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hy1a2"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ak5nb"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnh35"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obolu"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tw3ke"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mn7h"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1oej5"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ilfk"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5v7m"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5cves"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqhko"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g44ma"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1h6f"]
+shader = ExtResource("9_y6xj6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/process = false
 
 [node name="room3" type="Node2D"]
 
@@ -60,6 +205,7 @@ isActive = true
 position = Vector2(-6690.12, 1144.89)
 
 [node name="lever1" parent="toggleAreaA/leverManager1" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_b2ij2")
 position = Vector2(5439, 798)
 frame_progress = 0.0
 
@@ -79,18 +225,23 @@ tile_map_data = PackedByteArray("AACNABEAAQAAAAAAAACNABIAAQAAAAAAAACNABMAAQAAAAA
 [node name="leverManager2" parent="toggleArea1_2" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea1_2/leverManager2" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_kcrx3")
 position = Vector2(5162, 953)
 
 [node name="lever2" parent="toggleArea1_2/leverManager2" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_34dkg")
 position = Vector2(4575, 1030)
 
 [node name="lever3" parent="toggleArea1_2/leverManager2" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_hy1a2")
 position = Vector2(4713, 569)
 
 [node name="lever4" parent="toggleArea1_2/leverManager2" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_ak5nb")
 position = Vector2(4965, 700)
 
 [node name="lever5" parent="toggleArea1_2/leverManager2" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_wnh35")
 position = Vector2(5285, 567)
 
 [node name="toggleArea2" parent="." instance=ExtResource("9_jvtel")]
@@ -106,6 +257,7 @@ connectWith = Array[int]([5])
 [node name="leverManager3" parent="toggleArea2_2" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea2_2/leverManager3" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_obolu")
 position = Vector2(4443, 793)
 
 [node name="toggleArea3_2" parent="." instance=ExtResource("9_jvtel")]
@@ -118,11 +270,13 @@ tile_map_data = PackedByteArray("AACJABEAAQAAAAAAAACJABIAAQAAAAAAAACJABMAAQAAAAA
 [node name="leverManager4" parent="toggleArea3_2" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea3_2/leverManager4" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_tw3ke")
 position = Vector2(5311, 798)
 
 [node name="leverManager5" parent="toggleArea3_2" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea3_2/leverManager5" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_5mn7h")
 position = Vector2(5664, 575)
 
 [node name="toggleArea4" parent="." instance=ExtResource("9_jvtel")]
@@ -139,21 +293,27 @@ connectWith = Array[int]([7])
 [node name="leverManager6" parent="toggleArea5" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_1oej5")
 position = Vector2(5670, 1000)
 
 [node name="lever1_2" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_5ilfk")
 position = Vector2(5408, 803)
 
 [node name="lever1_3" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_y5v7m")
 position = Vector2(5056, 787)
 
 [node name="lever1_4" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_5cves")
 position = Vector2(4896, 784)
 
 [node name="lever1_5" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_bqhko")
 position = Vector2(4673, 1021)
 
 [node name="lever1_6" parent="toggleArea5/leverManager6" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_g44ma")
 position = Vector2(4546, 576)
 
 [node name="toggleArea6" parent="." instance=ExtResource("9_jvtel")]
@@ -162,6 +322,7 @@ position = Vector2(4177, 1289)
 [node name="leverManager7" parent="toggleArea6" instance=ExtResource("6_qsfwv")]
 
 [node name="lever1" parent="toggleArea6/leverManager7" instance=ExtResource("7_y168q")]
+material = SubResource("ShaderMaterial_j1h6f")
 position = Vector2(266, -496)
 
 [node name="toggleArea7" parent="." instance=ExtResource("9_jvtel")]
