@@ -16,7 +16,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_knpdm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5u2n"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -25,7 +25,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_24qqb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8cik"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -34,7 +34,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2nvv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udyn2"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -43,7 +43,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7umu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_140g3"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -52,7 +52,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vmc80"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojap5"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -61,7 +61,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dliv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4npmv"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -70,7 +70,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8icb2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ky1vo"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -79,7 +79,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1j51"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i5jyb"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -88,7 +88,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hohjb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0uft"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -97,7 +97,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0v0ad"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ga6r"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -106,7 +106,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbjj0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l67it"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -115,7 +115,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cocbu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tipu1"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -124,7 +124,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktrmr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aobeh"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -133,7 +133,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1114c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntyhp"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -142,7 +142,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gp76u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf58o"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -151,7 +151,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_76sly"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbihw"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -160,7 +160,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_da8n4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1lvf"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -169,7 +169,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jili"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q8cp"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -178,7 +178,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vdnn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6tc1"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -187,7 +187,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtgk2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ci3k"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -196,7 +196,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qlba"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lqyr0"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -205,7 +205,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_57tpy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sx5ii"]
 shader = ExtResource("8_fgtcg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -218,7 +218,6 @@ shader_parameter/process = false
 
 [node name="player" parent="." instance=ExtResource("1_yq1ko")]
 position = Vector2(4401, 608)
-hasDebugMovement = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -282,7 +281,7 @@ sceneToLoad = ExtResource("7_k314j")
 [node name="leverManager1" parent="firstSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_2" parent="firstSection/leverManager1" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_knpdm")
+material = SubResource("ShaderMaterial_m5u2n")
 position = Vector2(4579, -606)
 animation = &"toggle"
 frame_progress = 0.0
@@ -298,11 +297,11 @@ enabled = false
 [node name="leverManager2" parent="firstSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_5" parent="firstSection/leverManager2" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_24qqb")
+material = SubResource("ShaderMaterial_d8cik")
 position = Vector2(4705, -1135)
 
 [node name="lever1_8" parent="firstSection/leverManager2" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_g2nvv")
+material = SubResource("ShaderMaterial_udyn2")
 position = Vector2(4703, -80)
 
 [node name="door2" parent="firstSection" instance=ExtResource("7_t0fvg")]
@@ -311,14 +310,14 @@ tile_map_data = PackedByteArray("AACKAOv/AQAAAAAAAACRAOf/AQAAAAAAAACLAOv/AQAAAAA
 [node name="leverManager3" parent="firstSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_3" parent="firstSection/leverManager3" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_j7umu")
+material = SubResource("ShaderMaterial_140g3")
 position = Vector2(4561, -1040)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_4" parent="firstSection/leverManager3" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_vmc80")
+material = SubResource("ShaderMaterial_ojap5")
 position = Vector2(4849, -1040)
 animation = &"toggle"
 frame_progress = 0.0
@@ -334,14 +333,14 @@ tile_map_data = PackedByteArray("AACOAN3/AQAAAAAAAACXAN3/AQAAAAAAAACYAN3/AQAAAAA
 [node name="leverManager4" parent="firstSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_6" parent="firstSection/leverManager4" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_1dliv")
+material = SubResource("ShaderMaterial_4npmv")
 position = Vector2(4561, -176)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_7" parent="firstSection/leverManager4" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_8icb2")
+material = SubResource("ShaderMaterial_ky1vo")
 position = Vector2(4849, -176)
 animation = &"toggle"
 frame_progress = 0.0
@@ -357,7 +356,7 @@ enabled = false
 [node name="leverManager5" parent="firstSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1" parent="firstSection/leverManager5" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_m1j51")
+material = SubResource("ShaderMaterial_i5jyb")
 position = Vector2(4798, -608)
 
 [node name="door5" parent="firstSection" instance=ExtResource("7_t0fvg")]
@@ -368,23 +367,23 @@ tile_map_data = PackedByteArray("AAB/AOv/AQAAAAAAAACAAOv/AQAAAAAAAACBAOv/AQAAAAA
 [node name="leverManager6" parent="secondSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1" parent="secondSection/leverManager6" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_hohjb")
+material = SubResource("ShaderMaterial_j0uft")
 position = Vector2(3791, -1585)
 
 [node name="lever1_2" parent="secondSection/leverManager6" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_0v0ad")
+material = SubResource("ShaderMaterial_5ga6r")
 position = Vector2(3986, -1470)
 
 [node name="lever1_3" parent="secondSection/leverManager6" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_wbjj0")
+material = SubResource("ShaderMaterial_l67it")
 position = Vector2(3983, -1760)
 
 [node name="lever1_4" parent="secondSection/leverManager6" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_cocbu")
+material = SubResource("ShaderMaterial_tipu1")
 position = Vector2(3600, -1665)
 
 [node name="lever1_5" parent="secondSection/leverManager6" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_ktrmr")
+material = SubResource("ShaderMaterial_aobeh")
 position = Vector2(3725, -1359)
 
 [node name="door6" parent="secondSection" instance=ExtResource("7_t0fvg")]
@@ -395,11 +394,11 @@ tile_map_data = PackedByteArray("AABwAMb/AQAAAAAAAABxAMb/AQAAAAAAAABvAMb/AQAAAAA
 [node name="leverManager7" parent="thirdSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1" parent="thirdSection/leverManager7" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_1114c")
+material = SubResource("ShaderMaterial_ntyhp")
 position = Vector2(3263, -2561)
 
 [node name="lever1_2" parent="thirdSection/leverManager7" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_gp76u")
+material = SubResource("ShaderMaterial_nf58o")
 position = Vector2(3971, -2561)
 
 [node name="door7" parent="thirdSection" instance=ExtResource("7_t0fvg")]
@@ -408,7 +407,7 @@ tile_map_data = PackedByteArray("AAByALX/AQAAAAAAAAByALb/AQAAAAAAAAByALT/AQAAAAA
 [node name="leverManager8" parent="thirdSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_3" parent="thirdSection/leverManager8" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_76sly")
+material = SubResource("ShaderMaterial_vbihw")
 position = Vector2(3615, -2766)
 animation = &"toggle"
 frame_progress = 0.0
@@ -425,7 +424,7 @@ overrideEnabled = true
 [node name="leverManager9" parent="thirdSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_4" parent="thirdSection/leverManager9" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_da8n4")
+material = SubResource("ShaderMaterial_n1lvf")
 position = Vector2(3611, -3182)
 animation = &"toggle"
 frame_progress = 0.0
@@ -441,19 +440,19 @@ enabled = false
 [node name="leverManager10" parent="thirdSection" instance=ExtResource("7_sfxj6")]
 
 [node name="lever1_5" parent="thirdSection/leverManager10" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_3jili")
+material = SubResource("ShaderMaterial_6q8cp")
 position = Vector2(3319, -3056)
 
 [node name="lever1_6" parent="thirdSection/leverManager10" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_3vdnn")
+material = SubResource("ShaderMaterial_i6tc1")
 position = Vector2(3710, -3310)
 
 [node name="lever1_7" parent="thirdSection/leverManager10" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_jtgk2")
+material = SubResource("ShaderMaterial_6ci3k")
 position = Vector2(3984, -3206)
 
 [node name="lever1_8" parent="thirdSection/leverManager10" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_8qlba")
+material = SubResource("ShaderMaterial_lqyr0")
 position = Vector2(3440, -3134)
 
 [node name="door10" parent="thirdSection" instance=ExtResource("7_t0fvg")]
@@ -463,7 +462,7 @@ tile_map_data = PackedByteArray("AAB9AJf/AQAAAAAAAAB9AJj/AQAAAAAAAAB9AJn/AQAAAAA
 isImportant = true
 
 [node name="finalLever" parent="leverManager11" instance=ExtResource("7_xhrr5")]
-material = SubResource("ShaderMaterial_57tpy")
+material = SubResource("ShaderMaterial_sx5ii")
 position = Vector2(3761, -2383)
 canInteract = false
 
