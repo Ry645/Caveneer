@@ -213,6 +213,8 @@ func slowPlayerMovement(delta):
 		velocity = Vector2.ZERO
 
 func dash():
+	$dashSound.play()
+	
 	if $doubleDashWindow.is_stopped():
 		regularDash()
 		$doubleDashWindow.start()

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://8l0nascllpgd"]
+
+[ext_resource type="Script" path="res://audio/sound_fx.gd" id="1_4jppg"]
+[ext_resource type="AudioStream" uid="uid://brwyxj1iyhu1s" path="res://audio/export/gameAmbience.wav" id="1_hxb4u"]
+[ext_resource type="AudioStream" uid="uid://dg8yvcluyme8q" path="res://audio/export/door.wav" id="2_g7ch1"]
+[ext_resource type="AudioStream" uid="uid://ci782eppdwkeq" path="res://audio/export/doorImportant.wav" id="3_alx0e"]
+
+[node name="soundFx" type="Node"]
+script = ExtResource("1_4jppg")
+
+[node name="ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_hxb4u")
+autoplay = true
+
+[node name="doorOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_g7ch1")
+
+[node name="doorImportantOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_alx0e")

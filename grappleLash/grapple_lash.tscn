@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bog6uxyq7uej"]
+[gd_scene load_steps=8 format=3 uid="uid://bog6uxyq7uej"]
 
 [ext_resource type="Texture2D" uid="uid://bjxu87i72rwwl" path="res://sprites/grappleLash/grappleLash-Sheet.png" id="1_benc7"]
 [ext_resource type="Script" path="res://grappleLash/grapple_lash.gd" id="2_5ypa4"]
+[ext_resource type="AudioStream" uid="uid://cw4av8jfmkun5" path="res://audio/export/grapple.wav" id="3_pyhjn"]
+[ext_resource type="AudioStream" uid="uid://c3o5cj6p68pkq" path="res://audio/export/grappleRelease.wav" id="4_h0dia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6noht"]
 atlas = ExtResource("1_benc7")
@@ -42,3 +44,9 @@ target_position = Vector2(0, -30000)
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
 width = 1.0
+
+[node name="grabSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pyhjn")
+
+[node name="releaseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h0dia")

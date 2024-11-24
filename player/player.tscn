@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=19 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bog6uxyq7uej" path="res://grappleLash/grapple_lash.tscn" id="4_v7oug"]
 [ext_resource type="Script" path="res://player/wall_kick_area.gd" id="5_lknyh"]
 [ext_resource type="PackedScene" uid="uid://bvvmo4u21fv1e" path="res://magicShield/magic_shield.tscn" id="6_81vul"]
+[ext_resource type="AudioStream" uid="uid://bomdbeqasjtgy" path="res://audio/export/dash.wav" id="7_v7xii"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -157,5 +158,9 @@ scale = Vector2(2, 2)
 [node name="doubleDashWindow" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="dashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_v7xii")
+volume_db = 3.0
 
 [connection signal="body_entered" from="wallKickArea" to="wallKickArea" method="_on_body_entered"]

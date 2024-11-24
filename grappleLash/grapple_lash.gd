@@ -34,6 +34,7 @@ func _physics_process(delta):
 
 
 func use():
+	$grabSound.play()
 	shootGrapple()
 
 func shootGrapple():
@@ -60,6 +61,7 @@ func createGrappleLine(desiredLocation):
 	line.points = [grapple_range.global_position, endpoint]
 	line.width = 1
 	line.texture = lineTexture
+	line.z_index = 1
 	get_node("/root").get_child(1).add_child(line)
 	#print(get_node("/root").get_child(0))
 
@@ -77,6 +79,7 @@ func moveUser(delta):
 	user.velocity += addedVelocity
 
 func stopUse():
+	$releaseSound.play()
 	retractGrapple()
 	if line != null:
 		line.queue_free()

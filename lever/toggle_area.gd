@@ -32,3 +32,7 @@ func disable():
 	for child in get_children():
 		if child.has_method("disable"):
 			child.disable()
+
+
+func _on_set_state(state: int) -> void:
+	toggle(state)

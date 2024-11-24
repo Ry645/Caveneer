@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcxah2hbl0gs7"]
+[gd_scene load_steps=14 format=3 uid="uid://bcxah2hbl0gs7"]
 
 [ext_resource type="Shader" path="res://outline/outline.gdshader" id="1_cxfrg"]
 [ext_resource type="Texture2D" uid="uid://dha5kqtth7h5j" path="res://sprites/lever/lever-Sheet.png" id="1_mjkqh"]
 [ext_resource type="Script" path="res://lever/lever.gd" id="2_gsfte"]
 [ext_resource type="Script" path="res://interactBody.gd" id="3_avos6"]
+[ext_resource type="AudioStream" uid="uid://bvupsalmrfabc" path="res://audio/export/pullTheLeverKronk.wav" id="5_3chqe"]
+[ext_resource type="AudioStream" uid="uid://oq1h86ae811s" path="res://audio/export/pullTheImportantLeverKronk.wav" id="6_hdn2t"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mn6ui"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31g80"]
 shader = ExtResource("1_cxfrg")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -59,7 +61,7 @@ animations = [{
 radius = 60.0
 
 [node name="lever1" type="AnimatedSprite2D"]
-material = SubResource("ShaderMaterial_mn6ui")
+material = SubResource("ShaderMaterial_31g80")
 sprite_frames = SubResource("SpriteFrames_iwj1g")
 animation = &"oneShot"
 frame_progress = 0.718058
@@ -73,3 +75,9 @@ script = ExtResource("3_avos6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_iwk7j")
+
+[node name="toggleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3chqe")
+
+[node name="importantToggleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hdn2t")

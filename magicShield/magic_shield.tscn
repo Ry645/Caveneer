@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvvmo4u21fv1e"]
+[gd_scene load_steps=8 format=3 uid="uid://bvvmo4u21fv1e"]
 
 [ext_resource type="Script" path="res://magicShield/magic_shield.gd" id="1_holna"]
 [ext_resource type="Texture2D" uid="uid://dtkkafkuqj1mp" path="res://sprites/magicShield/shield-Sheet.png" id="1_u3xtd"]
+[ext_resource type="AudioStream" uid="uid://dsy2bnim50yow" path="res://audio/export/magicShield.wav" id="3_gj03h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jk2aj"]
 atlas = ExtResource("1_u3xtd")
@@ -45,5 +46,9 @@ frame_progress = 0.0822913
 script = ExtResource("1_holna")
 
 [node name="timeActive" type="Timer" parent="."]
+
+[node name="activeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gj03h")
+volume_db = -2.0
 
 [connection signal="timeout" from="timeActive" to="." method="_on_timeout"]

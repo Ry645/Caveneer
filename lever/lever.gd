@@ -14,6 +14,8 @@ signal setState(state:int)
 @export var outlineShader:Shader = preload("res://outline/outline.gdshader")
 @export var isOneShot = true
 @export var canInteract = true
+## for audio
+@export var isImportant:bool = false
 
 var isActive = false
 
@@ -37,6 +39,11 @@ func _ready() -> void:
 		animation = "toggle"
 
 func interact():
+	if isImportant:
+		$importantToggleSound.play()
+	else:
+		$toggleSound.play()
+	
 	if isActive && isOneShot:
 		return 1
 	
