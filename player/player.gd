@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#TODO add sound effects, level select, speedrun timer, and ranking system, in that order
+#TODO level select, speedrun timer, and ranking system, in that order
 
 
 
