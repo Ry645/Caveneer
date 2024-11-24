@@ -10,6 +10,7 @@ script = ExtResource("1_4jppg")
 
 [node name="ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_hxb4u")
+volume_db = -2.0
 autoplay = true
 
 [node name="doorOpen" type="AudioStreamPlayer" parent="."]

@@ -39,13 +39,10 @@ func _ready() -> void:
 		animation = "toggle"
 
 func interact():
-	if isImportant:
-		$importantToggleSound.play()
-	else:
-		$toggleSound.play()
-	
 	if isActive && isOneShot:
 		return 1
+	
+	playSound()
 	
 	isActive = !isActive
 	frame = 1 if isActive else 0
@@ -122,6 +119,13 @@ func toggleInteractability():
 func setInteractability(value:bool):
 	$Area2D.monitoring = value
 	$Area2D.monitorable = value
+
+func playSound():
+	if isImportant:
+		$importantToggleSound.play()
+	else:
+		$toggleSound.play()
+
 
 func _on_set_state(state: int) -> void:
 	toggleInteractability()

@@ -31,17 +31,18 @@ func syncChildren(state):
 		child.sync(state)
 
 func activatedLever():
-	playDoorSound()
+	
 	pulledLevers += 1
 	syncChildren(1)
 	if pulledLevers == numLevers || quickPuzzle:
+		playDoorSound()
 		emit_signal("activate")
 		emit_signal("setState", 1)
 
 func deactivatedLever():
-	playDoorSound()
 	syncChildren(0)
 	if pulledLevers == numLevers || quickPuzzle:
+		playDoorSound()
 		emit_signal("deactivate")
 		emit_signal("setState", 0)
 	pulledLevers -= 1
@@ -56,7 +57,8 @@ func disable():
 
 func playDoorSound():
 	if isImportant:
-		await get_tree().create_timer(1000).timeout
+		await get_tree().create_timer(3.0).timeout
 		SoundFx.doorImportantOpen()
 	else:
+		await get_tree().create_timer(1.0).timeout
 		SoundFx.doorOpen()
