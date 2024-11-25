@@ -1,3 +1,58 @@
-[gd_scene format=3 uid="uid://c6w35kqrxeohr"]
+[gd_scene load_steps=4 format=3 uid="uid://c6w35kqrxeohr"]
 
-[node name="titleScreen" type="Node2D"]
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_46jcu"]
+[ext_resource type="Script" path="res://GUI/title_screen.gd" id="1_fpxte"]
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_33mpw"]
+
+[node name="titleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fpxte")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 68.0
+offset_right = 240.0
+offset_bottom = 188.0
+theme = ExtResource("1_46jcu")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="playButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("1_46jcu")
+text = "Play"
+
+[node name="control" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="levelSelectButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("1_46jcu")
+text = "Level Select"
+
+[node name="control2" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="optionsButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("1_46jcu")
+text = "Options"
+
+[node name="textureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 276.0
+offset_bottom = 268.0
+mouse_filter = 2
+texture = ExtResource("2_33mpw")
+
+[connection signal="button_up" from="vbox/playButton" to="." method="playButton"]
+[connection signal="button_up" from="vbox/levelSelectButton" to="." method="levelSelectButton"]
+[connection signal="button_up" from="vbox/optionsButton" to="." method="optionsButton"]

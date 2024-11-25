@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://wb48p37unrif"]
+
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_rgxxm"]
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_7wkyv"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vbox" type="VBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 68.0
+offset_right = 240.0
+offset_bottom = 188.0
+theme = ExtResource("2_7wkyv")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="textureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 276.0
+offset_bottom = 268.0
+mouse_filter = 2
+texture = ExtResource("1_rgxxm")

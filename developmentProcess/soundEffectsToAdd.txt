@@ -45,3 +45,10 @@ ding sound:
 	like M-1 Garand PING
 	flip coin
 	when the lever you flicked was final (very important)
+
+rank get sound:
+	drum roll sound
+	parry sound from pizza tower origin
+
+enter tunnel sound:
+	r/whoosh
