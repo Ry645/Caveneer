@@ -15,12 +15,44 @@ script = ExtResource("1_6vb4d")
 
 [node name="grid" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 68.0
-offset_right = 240.0
-offset_bottom = 188.0
+offset_left = 52.0
+offset_top = 80.0
+offset_right = 204.0
+offset_bottom = 176.0
 theme = ExtResource("2_jr0wn")
-metadata/_edit_use_anchors_ = true
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="level1" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "1"
+
+[node name="level2" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "2"
+
+[node name="level3" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "3"
+
+[node name="level4" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "4"
+
+[node name="level5" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "5"
+
+[node name="level6" type="Button" parent="grid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "6"
 
 [node name="textureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -28,3 +60,10 @@ offset_right = 276.0
 offset_bottom = 268.0
 mouse_filter = 2
 texture = ExtResource("1_llqqt")
+
+[connection signal="button_up" from="grid/level1" to="." method="_on_button_up_level_1"]
+[connection signal="button_up" from="grid/level2" to="." method="_on_button_up_level_2"]
+[connection signal="button_up" from="grid/level3" to="." method="_on_button_up_level_3"]
+[connection signal="button_up" from="grid/level4" to="." method="_on_button_up_level_4"]
+[connection signal="button_up" from="grid/level5" to="." method="_on_button_up_level_5"]
+[connection signal="button_up" from="grid/level6" to="." method="_on_button_up_level_6"]

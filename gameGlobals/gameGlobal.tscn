@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1a3mxplsl6xu"]
+
+[ext_resource type="Script" path="res://gameGlobals/game_global.gd" id="1_hyodn"]
+
+[node name="gameGlobal" type="Node"]
+script = ExtResource("1_hyodn")
+speedrunUnlocked = true

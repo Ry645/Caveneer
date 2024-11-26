@@ -6,6 +6,13 @@ extends Control
 @export var options:PackedScene = preload("res://GUI/options.tscn")
 
 
+func _ready() -> void:
+	if !GameGlobal.speedrunUnlocked:
+		$vbox/control.queue_free()
+		$vbox/levelSelectButton.queue_free()
+		$vbox/control2.queue_free()
+		$vbox/optionsButton.queue_free()
+
 
 func playButton() -> void:
 	get_node("/root").get_tree().change_scene_to_packed(firstLevel)

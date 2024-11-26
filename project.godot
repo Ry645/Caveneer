@@ -14,11 +14,13 @@ config/name="CaveFinder"
 run/main_scene="res://zones/firstCave/first_cave_room1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+run/default_signal_callback_name="_on_{signal_name}"
 
 [autoload]
 
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 SoundFx="*res://audio/SoundFX.tscn"
+GameGlobal="*res://gameGlobals/gameGlobal.tscn"
 
 [display]
 
@@ -30,7 +32,7 @@ window/stretch/scale_mode="integer"
 [editor]
 
 naming/node_name_casing=1
-naming/default_signal_callback_name="_on_{signal_name}"
+naming/default_signal_callback_name="_on_{signal_name}_{node_name}"
 
 [editor_plugins]
 

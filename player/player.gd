@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#TODO level select, speedrun timer, and ranking system, in that order
+#TODO speedrun timer, and ranking system, in that order
 
 
 
@@ -215,7 +215,7 @@ func slowPlayerMovement(delta):
 func dash():
 	$dashSound.play()
 	
-	if $doubleDashWindow.is_stopped():
+	if $doubleDashWindow.is_stopped() || !GameGlobal.speedrunUnlocked:
 		regularDash()
 		$doubleDashWindow.start()
 	else:
