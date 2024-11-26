@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=3 uid="uid://m05s8tgeoep0"]
+
+[ext_resource type="Script" path="res://zones/rewardRoom/reward_explain.gd" id="1_dg6tl"]
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_rv6uc"]
+[ext_resource type="Texture2D" uid="uid://dtkkafkuqj1mp" path="res://sprites/magicShield/shield-Sheet.png" id="2_6xcdd"]
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="4_x8xkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgqrj"]
+atlas = ExtResource("2_6xcdd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_teg6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgqrj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="rewardExplain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dg6tl")
+
+[node name="textureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 276.0
+offset_bottom = 268.0
+mouse_filter = 2
+texture = ExtResource("1_rv6uc")
+
+[node name="button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 218.0
+offset_right = 240.0
+offset_bottom = 242.0
+theme = ExtResource("4_x8xkp")
+text = "Continue"
+
+[node name="screen1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="animatedSprite2d" type="AnimatedSprite2D" parent="screen1"]
+position = Vector2(126, 86)
+rotation = 1.5708
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_teg6x")
+
+[node name="richTextLabel2" type="RichTextLabel" parent="screen1"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 128.0
+offset_right = 202.0
+offset_bottom = 153.0
+mouse_filter = 2
+text = "The Magic Shield."
+
+[node name="richTextLabel3" type="RichTextLabel" parent="screen1"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 155.0
+offset_right = 181.0
+offset_bottom = 210.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Dash twice to activate."
+
+[node name="richTextLabel" type="RichTextLabel" parent="screen1"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 22.0
+offset_right = 170.0
+offset_bottom = 47.0
+mouse_filter = 2
+text = "Unlocked:"
+
+[node name="screen2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="richTextLabel2" type="RichTextLabel" parent="screen2"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 22.0
+offset_right = 170.0
+offset_bottom = 47.0
+mouse_filter = 2
+text = "Unlocked:"
+
+[node name="richTextLabel4" type="RichTextLabel" parent="screen2"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 126.0
+offset_right = 170.0
+offset_bottom = 151.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center] A timer.
+"
+
+[node name="richTextLabel5" type="RichTextLabel" parent="screen2"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 168.0
+offset_right = 215.0
+offset_bottom = 198.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Test your speed."
+
+[node name="richTextLabel3" type="RichTextLabel" parent="screen2"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 76.0
+offset_right = 170.0
+offset_bottom = 101.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]01:16:00"
+
+[node name="screen3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_up" from="button" to="." method="_on_button_up_button"]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_g7ksv"]
 [ext_resource type="PackedScene" uid="uid://drrghx6as50r5" path="res://caveEntrance/cave_entrance.tscn" id="6_qaiss"]
 [ext_resource type="PackedScene" uid="uid://c1igbdcmltw5r" path="res://lever/lever_manager.tscn" id="7_hrgk8"]
-[ext_resource type="PackedScene" uid="uid://dg3ljaoakdwk2" path="res://zones/firstCave/fz_claim_reward_room.tscn" id="7_l5vtr"]
+[ext_resource type="PackedScene" uid="uid://dg3ljaoakdwk2" path="res://zones/rewardRoom/fz_claim_reward_room.tscn" id="7_l5vtr"]
 [ext_resource type="PackedScene" uid="uid://bcxah2hbl0gs7" path="res://lever/lever.tscn" id="7_w8jtn"]
 [ext_resource type="Shader" path="res://outline/outline.gdshader" id="8_6n1w3"]
 [ext_resource type="PackedScene" uid="uid://chm7t41n5lmqf" path="res://door/door.tscn" id="9_xkslu"]

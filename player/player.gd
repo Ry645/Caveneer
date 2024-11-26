@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#TODO speedrun timer, and ranking system, in that order
+#TODO unlock sequence, speedrun timer, ranking system, game title, in that order
 
 
 

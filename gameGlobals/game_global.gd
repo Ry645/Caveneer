@@ -7,7 +7,8 @@ extends Node
 @export var magicShield:bool = false
 @export var rank:bool = false
 
-
+var timeInGame:float = 0.0
+var timeInLevel:float = 0.0
 
 
 func unlockEverything():
@@ -15,3 +16,8 @@ func unlockEverything():
 	speedrunTimer = true
 	magicShield = true
 	rank = true
+
+func _process(delta: float) -> void:
+	timeInGame += delta
+	timeInLevel += delta
+	
