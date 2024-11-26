@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bj0b4yhpyqxey"]
+
+[ext_resource type="Texture2D" uid="uid://rjkglm4w02ts" path="res://sprites/tileSets/caveFloorUI.png" id="1_k3pd6"]
+
+[resource]
+texture = ExtResource("1_k3pd6")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.639216, 0.639216, 0.639216, 1)

@@ -4,4 +4,3 @@
 
 [node name="gameGlobal" type="Node"]
 script = ExtResource("1_hyodn")
-speedrunUnlocked = true

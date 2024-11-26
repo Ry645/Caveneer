@@ -1,33 +1,23 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://b256ciymyaap6"]
 
-[ext_resource type="Texture2D" uid="uid://rjkglm4w02ts" path="res://sprites/tileSets/caveFloorUI.png" id="1_mshxv"]
+[ext_resource type="StyleBox" uid="uid://bj0b4yhpyqxey" path="res://GUI/disabledButton.tres" id="1_nxw6t"]
 [ext_resource type="StyleBox" uid="uid://bqtoludq3rmtp" path="res://GUI/baseButton.tres" id="2_ilen4"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_li8sc"]
-texture = ExtResource("1_mshxv")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-modulate_color = Color(0.639216, 0.639216, 0.639216, 1)
+[ext_resource type="StyleBox" uid="uid://eaol3f0teqpd" path="res://GUI/hoverButton.tres" id="2_jebf1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yygu3"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odaq5"]
-texture = ExtResource("1_mshxv")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-modulate_color = Color(0.941176, 0.941176, 0.941176, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3hj4"]
 
 [resource]
 default_font_size = 8
-Button/styles/disabled = SubResource("StyleBoxTexture_li8sc")
+Button/styles/disabled = ExtResource("1_nxw6t")
 Button/styles/focus = SubResource("StyleBoxEmpty_yygu3")
-Button/styles/hover = SubResource("StyleBoxTexture_odaq5")
+Button/styles/hover = ExtResource("2_jebf1")
 Button/styles/normal = ExtResource("2_ilen4")
+Button/styles/pressed = ExtResource("1_nxw6t")
+CheckButton/styles/disabled = ExtResource("1_nxw6t")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_s3hj4")
+CheckButton/styles/hover = ExtResource("2_jebf1")
+CheckButton/styles/hover_pressed = ExtResource("1_nxw6t")
+CheckButton/styles/normal = ExtResource("2_ilen4")
+CheckButton/styles/pressed = ExtResource("1_nxw6t")

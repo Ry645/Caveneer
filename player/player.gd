@@ -215,7 +215,7 @@ func slowPlayerMovement(delta):
 func dash():
 	$dashSound.play()
 	
-	if $doubleDashWindow.is_stopped() || !GameGlobal.speedrunUnlocked:
+	if $doubleDashWindow.is_stopped() || !GameGlobal.magicShield:
 		regularDash()
 		$doubleDashWindow.start()
 	else:

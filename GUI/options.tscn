@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://wb48p37unrif"]
+[gd_scene load_steps=4 format=3 uid="uid://wb48p37unrif"]
 
+[ext_resource type="Script" path="res://GUI/options.gd" id="1_gqymt"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_rgxxm"]
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_7wkyv"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gqymt")
 
 [node name="vbox" type="VBoxContainer" parent="."]
 offset_left = 16.0
@@ -20,9 +22,28 @@ theme = ExtResource("2_7wkyv")
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="speedrunTimer" type="CheckButton" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+text = "Speedrun Timer"
+
+[node name="magicShield" type="CheckButton" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+text = "Magic Shield"
+
+[node name="rank" type="CheckButton" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+text = "Give Rank At Level End"
+
 [node name="textureRect" type="TextureRect" parent="."]
 z_index = -1
 offset_right = 276.0
 offset_bottom = 268.0
 mouse_filter = 2
 texture = ExtResource("1_rgxxm")
+
+[connection signal="toggled" from="vbox/speedrunTimer" to="." method="_on_toggled_speedrun_timer"]
+[connection signal="toggled" from="vbox/magicShield" to="." method="_on_toggled_magic_shield"]
+[connection signal="toggled" from="vbox/rank" to="." method="_on_toggled_rank"]
