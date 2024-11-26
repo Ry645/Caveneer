@@ -232,6 +232,10 @@ func regularDash():
 	if hasDebugMovement:
 		speed += 100
 	
+	# player can now infinitely dash into walls
+	if $wallKickArea.get_overlapping_bodies().size() > 0:
+		wallKickCollision()
+	
 	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
 
 func doubleDash():
@@ -245,6 +249,7 @@ func doubleDash():
 	else:
 		# not negated
 		velocity += Vector2.UP.rotated(carrying_transform.global_rotation) * doubleDashAddSpeed
+	
 	regularDash()
 
 func debugSteer():
