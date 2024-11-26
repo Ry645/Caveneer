@@ -26,7 +26,7 @@ func updateTimer(label:RichTextLabel):
 	stringToShow += "."
 	
 	var milliseconds = int((rawTime - float(int(rawTime))) * 1000)
-	print(milliseconds)
+	#print(milliseconds)
 	if milliseconds < 100:
 		stringToShow += "0"
 	if milliseconds < 10:

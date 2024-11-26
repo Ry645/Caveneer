@@ -9,6 +9,7 @@ func loadArea():
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 
 func interact():
+	GameGlobal.unlockEverything()
 	loadArea()
 	return 0
 

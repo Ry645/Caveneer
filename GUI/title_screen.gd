@@ -7,6 +7,7 @@ extends Control
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if !GameGlobal.speedrunUnlocked:
 		$vbox/control.queue_free()
 		$vbox/levelSelectButton.queue_free()

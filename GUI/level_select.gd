@@ -9,7 +9,6 @@ extends Control
 	preload("res://zones/firstCave/first_cave_room6.tscn"),
 ]
 
-
 func _on_button_up_level_1() -> void:
 	get_node("/root").get_tree().change_scene_to_packed(levels[0])
 
