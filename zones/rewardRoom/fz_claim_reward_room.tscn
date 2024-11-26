@@ -18,7 +18,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_htmj0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ygf2y"]
 shader = ExtResource("8_ickmm")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -124,7 +124,7 @@ text = "level purpose
 [node name="leverManager1" parent="." instance=ExtResource("6_15ri3")]
 
 [node name="lever1" parent="leverManager1" instance=ExtResource("7_rf455")]
-material = SubResource("ShaderMaterial_htmj0")
+material = SubResource("ShaderMaterial_ygf2y")
 position = Vector2(5816, 608)
 
 [node name="door1" parent="." instance=ExtResource("9_ddari")]

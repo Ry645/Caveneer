@@ -11,7 +11,6 @@ extends CharacterBody2D
 @export var doubleDashStartSpeed = 256
 @export var doubleDashAddSpeed = 16
 
-@export var hasDebugMovement:bool = false
 @export var debugDashSpeed:int = 100
 
 @onready var tools = [%grappleLash]
@@ -27,14 +26,14 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	%grappleLash.user = self
 	
-	if hasDebugMovement:
+	if GameGlobal.debugMode:
 		%grappleLash.hasDebugMovement = true
 		set_collision_mask_value(1, false)
 	
 	pass
 
 func _physics_process(delta):
-	if hasDebugMovement:
+	if GameGlobal.debugMode:
 		%grappleLash.hasDebugMovement = true
 		set_collision_mask_value(1, false)
 	else:
@@ -69,7 +68,7 @@ func inputProcess(delta):
 		dash()
 	# debug only
 	if Input.is_action_pressed("dash"):
-		if hasDebugMovement:
+		if GameGlobal.debugMode:
 			debugSteer()
 	if Input.is_action_pressed("brake"):
 		slowPlayerMovement(delta)
@@ -229,7 +228,7 @@ func regularDash():
 	if speed < lastFivePreviousSpeeds[1]:
 		speed = lastFivePreviousSpeeds[1]
 	
-	if hasDebugMovement:
+	if GameGlobal.debugMode:
 		speed += 100
 	
 	# player can now infinitely dash into walls

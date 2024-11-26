@@ -10,24 +10,24 @@ extends Control
 ]
 
 func _on_button_up_level_1() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[0])
+	GameGlobal.loadArea(levels[0])
 
 
 func _on_button_up_level_2() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[1])
+	GameGlobal.loadArea(levels[1])
 
 
 func _on_button_up_level_3() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[2])
+	GameGlobal.loadArea(levels[2])
 
 
 func _on_button_up_level_4() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[3])
+	GameGlobal.loadArea(levels[3])
 
 
 func _on_button_up_level_5() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[4])
+	GameGlobal.loadArea(levels[4])
 
 
 func _on_button_up_level_6() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(levels[5])
+	GameGlobal.loadArea(levels[5])

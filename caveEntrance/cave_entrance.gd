@@ -5,7 +5,7 @@ extends Sprite2D
 
 
 func loadArea():
-	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
+	GameGlobal.loadArea(sceneToLoad)
 
 
 func interact():

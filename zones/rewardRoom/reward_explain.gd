@@ -23,7 +23,7 @@ func advance():
 
 
 func loadStart():
-	get_node("/root").get_tree().change_scene_to_packed(firstLevel)
+	GameGlobal.loadArea(firstLevel)
 
 func _on_button_up_button() -> void:
 	advance()

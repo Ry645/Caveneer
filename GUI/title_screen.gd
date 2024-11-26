@@ -8,7 +8,7 @@ extends Control
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if !GameGlobal.speedrunUnlocked:
+	if !GameGlobal.gameCompleted:
 		$vbox/control.queue_free()
 		$vbox/levelSelectButton.queue_free()
 		$vbox/control2.queue_free()
@@ -16,10 +16,10 @@ func _ready() -> void:
 
 
 func playButton() -> void:
-	get_node("/root").get_tree().change_scene_to_packed(firstLevel)
+	GameGlobal.loadArea(firstLevel)
 
 func levelSelectButton():
-	get_node("/root").get_tree().change_scene_to_packed(levelSelect)
+	GameGlobal.loadArea(levelSelect)
 
 func optionsButton():
-	get_node("/root").get_tree().change_scene_to_packed(options)
+	GameGlobal.loadArea(options)
