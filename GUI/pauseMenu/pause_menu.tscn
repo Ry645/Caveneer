@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_lkk1l")
 
 [node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 102.0
 offset_right = 240.0
@@ -47,6 +48,7 @@ theme = ExtResource("2_q7m4o")
 text = "Title Screen"
 
 [node name="richTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_top = 64.0
 offset_right = 256.0
 offset_bottom = 119.0
@@ -56,6 +58,7 @@ text = "[center]Game Paused"
 [node name="textureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.588235)
 z_index = -1
+layout_mode = 0
 offset_right = 276.0
 offset_bottom = 268.0
 mouse_filter = 2
