@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqhh8yqx1gx1w"]
+
+[ext_resource type="Script" path="res://gameGlobals/rank_data.gd" id="1_bcc37"]
+
+[node name="rankData" type="Node"]
+script = ExtResource("1_bcc37")

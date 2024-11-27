@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo0nb5i3qjepb"]
+
+[ext_resource type="Script" path="res://GUI/personalBestsScene/time_element.gd" id="1_fivft"]
+
+[node name="timeElement" type="HBoxContainer"]
+script = ExtResource("1_fivft")
+
+[node name="time" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(161, 12)
+layout_mode = 2
+text = "no"
+
+[node name="rank" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(18, 12)
+layout_mode = 2
+bbcode_enabled = true
+text = "-F"
+scroll_active = false

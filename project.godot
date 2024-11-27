@@ -21,6 +21,7 @@ run/default_signal_callback_name="_on_{signal_name}"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 SoundFx="*res://audio/SoundFX.tscn"
 GameGlobal="*res://gameGlobals/gameGlobal.tscn"
+RankData="*res://gameGlobals/rank_data.tscn"
 
 [display]
 

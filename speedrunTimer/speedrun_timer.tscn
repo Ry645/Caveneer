@@ -27,6 +27,7 @@ text = "00:00.000"
 scroll_active = false
 
 [node name="level" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

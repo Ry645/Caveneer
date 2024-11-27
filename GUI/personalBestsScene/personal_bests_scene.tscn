@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3mitilv5ckho"]
+[gd_scene load_steps=5 format=3 uid="uid://d3mitilv5ckho"]
 
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_x040p"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_2fl27"]
 [ext_resource type="Script" path="res://GUI/personalBestsScene/personal_bests_scene.gd" id="2_fhqiw"]
+[ext_resource type="PackedScene" uid="uid://bo0nb5i3qjepb" path="res://GUI/personalBestsScene/time_element.tscn" id="4_fj4ka"]
 
 [node name="personalBestsScene" type="Control"]
 layout_mode = 3
@@ -45,20 +46,8 @@ offset_bottom = 114.0
 [node name="vBoxContainer" type="VBoxContainer" parent="panel/scrollContainer"]
 layout_mode = 2
 
-[node name="hBoxContainer" type="HBoxContainer" parent="panel/scrollContainer/vBoxContainer"]
+[node name="timeElement" parent="panel/scrollContainer/vBoxContainer" instance=ExtResource("4_fj4ka")]
 layout_mode = 2
-
-[node name="richTextLabel" type="RichTextLabel" parent="panel/scrollContainer/vBoxContainer/hBoxContainer"]
-custom_minimum_size = Vector2(161, 12)
-layout_mode = 2
-text = "06:06.754"
-
-[node name="richTextLabel2" type="RichTextLabel" parent="panel/scrollContainer/vBoxContainer/hBoxContainer"]
-custom_minimum_size = Vector2(18, 12)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]S"
-scroll_active = false
 
 [node name="richTextLabel" type="RichTextLabel" parent="panel"]
 layout_mode = 0
