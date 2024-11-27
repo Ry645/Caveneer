@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-#TODO ranking system, game title, in that order
-# ranking system: play at best, that's an A, go a 1/10 faster (1:00 A to 0:50 S)
+#TODO ranking system, in that order
 #TODO then MAYBE add konami code
 
 

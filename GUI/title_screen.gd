@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func playButton() -> void:
 	GameGlobal.gameTimeRunning = true
+	GameGlobal.restartTime()
 	GameGlobal.loadArea(firstLevel)
 
 func pbButton():

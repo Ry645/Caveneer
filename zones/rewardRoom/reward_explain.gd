@@ -1,18 +1,25 @@
 extends Control
 
 @export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
+@export var rankGetScene:PackedScene = preload("res://gameGlobals/rank_get_scene.tscn")
 
 var screens:Array[Node]
 var index:int = 0
 
 func _ready() -> void:
-	GameGlobal.unlockEverything()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	screens = get_tree().get_nodes_in_group("screen")
-	
-	for screen in screens:
-		screen.visible = false
-	screens[0].visible = true
+	if GameGlobal.gameCompleted:
+		call_deferred("loadRankGetScene")
+	else:
+		GameGlobal.unlockEverything()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		screens = get_tree().get_nodes_in_group("screen")
+		
+		for screen in screens:
+			screen.visible = false
+		screens[0].visible = true
+
+func loadRankGetScene():
+	GameGlobal.loadUI(rankGetScene)
 
 func advance():
 	screens[index].queue_free()

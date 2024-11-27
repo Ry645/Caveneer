@@ -9,7 +9,8 @@ func loadArea():
 	GameGlobal.loadUI(sceneToLoad)
 
 func interact():
-	GameGlobal.unlockEverything()
+	GameGlobal.gameTimeRunning = false
+	GameGlobal.ms_times.append(RankData.secToMilliTime(GameGlobal.timeInGame))
 	loadArea()
 	return 0
 

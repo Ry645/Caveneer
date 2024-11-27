@@ -4,3 +4,4 @@
 
 [node name="gameGlobal" type="Node" groups=["persist"]]
 script = ExtResource("1_hyodn")
+debugMode = true

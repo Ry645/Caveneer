@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxlryf34ig6av"]
+
+[ext_resource type="Script" path="res://gameGlobals/rank_get_scene.gd" id="1_m11bx"]
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_vatxb"]
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="3_td5v2"]
+[ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="4_a1vn3"]
+
+[node name="rankGetScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m11bx")
+
+[node name="textureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 276.0
+offset_bottom = 268.0
+mouse_filter = 2
+texture = ExtResource("2_vatxb")
+
+[node name="screen1" type="Control" parent="." groups=["screen"]]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button1" type="Button" parent="screen1"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 240.0
+offset_bottom = 161.0
+theme = ExtResource("3_td5v2")
+theme_override_font_sizes/font_size = 20
+text = "Reveal Your Rank"
+
+[node name="screen2" type="Control" parent="." groups=["screen"]]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button2" type="Button" parent="screen2"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 218.0
+offset_right = 240.0
+offset_bottom = 242.0
+theme = ExtResource("3_td5v2")
+text = "To Title Screen"
+
+[node name="rankText" parent="screen2" instance=ExtResource("4_a1vn3")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 113.0
+offset_top = 61.0
+offset_right = 148.0
+offset_bottom = 152.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="button_up" from="screen1/button1" to="." method="advance"]
+[connection signal="button_up" from="screen2/button2" to="." method="advance"]

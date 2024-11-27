@@ -45,10 +45,12 @@ func _process(delta: float) -> void:
 
 ## loads area and adds a speedrun timer
 func loadArea(sceneToLoad:PackedScene):
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 	addSpeedrunTimer()
 
 func loadUI(sceneToLoad:PackedScene):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 	if timerNode != null:
 		timerNode.queue_free()
@@ -78,7 +80,6 @@ func save():
 		"speedrunTimerEnabled": speedrunTimerEnabled,
 		"magicShieldEnabled": magicShieldEnabled,
 		"rankEnabled": rankEnabled,
-		"ms_times": ms_times,
 		"currentLevel": currentLevel,
 	}
 	
@@ -107,6 +108,8 @@ func save_game():
 
 		# Store the save dictionary as a new line in the save file.
 		save_file.store_line(json_string)
+		
+		saveMsTimes(node, save_file)
 
 
 # Note: This can be called from anywhere inside the tree. This function
@@ -136,5 +139,20 @@ func load_game():
 		
 		
 		# Now we set the remaining variables.
-		for i in node_data.keys():
-			set(i, node_data[i])
+		if node_data is Dictionary:
+			for i in node_data.keys():
+				set(i, node_data[i])
+		elif node_data is Array:
+			ms_times.clear()
+			for datum in node_data:
+				ms_times.append(int(datum))
+
+func saveMsTimes(node, save_file:FileAccess):
+	# Call the node's save function.
+	var node_data = GameGlobal.ms_times
+
+	# JSON provides a static method to serialized JSON string.
+	var json_string = JSON.stringify(node_data)
+
+	# Store the save dictionary as a new line in the save file.
+	save_file.store_line(json_string)
