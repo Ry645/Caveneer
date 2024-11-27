@@ -2,7 +2,7 @@ extends Control
 
 
 @export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
-@export var levelSelect:PackedScene = preload("res://GUI/level_select.tscn")
+@export var pbScene:PackedScene = preload("res://GUI/personalBestsScene/personal_bests_scene.tscn")
 @export var options:PackedScene = preload("res://GUI/options.tscn")
 
 
@@ -10,16 +10,17 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if !GameGlobal.gameCompleted:
 		$vbox/control.queue_free()
-		$vbox/levelSelectButton.queue_free()
+		$vbox/pbButton.queue_free()
 		$vbox/control2.queue_free()
 		$vbox/optionsButton.queue_free()
 
 
 func playButton() -> void:
+	GameGlobal.gameTimeRunning = true
 	GameGlobal.loadArea(firstLevel)
 
-func levelSelectButton():
-	GameGlobal.loadUI(levelSelect)
+func pbButton():
+	GameGlobal.loadUI(pbScene)
 
 func optionsButton():
 	GameGlobal.loadUI(options)

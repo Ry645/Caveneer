@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dolgejm3c3elr"]
+[gd_scene load_steps=25 format=4 uid="uid://dolgejm3c3elr"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_hnr73"]
 [ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_mqs66"]
@@ -16,7 +16,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7e4fj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ev515"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -25,7 +25,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_if7pf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxlw0"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -34,7 +34,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4g5p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wggj"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -43,7 +43,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yljgs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqtkx"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -52,7 +52,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ln7f8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsfmb"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -61,7 +61,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ia6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56xdy"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -70,7 +70,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wnoo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06src"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -79,7 +79,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2241"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wlorm"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -88,7 +88,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpbsq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k03wd"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -97,7 +97,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ioeug"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dnmc"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -106,16 +106,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/process = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cruv2"]
-shader = ExtResource("9_xbp4n")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 1.0
-shader_parameter/pattern = 1
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/process = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l641o"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0g0g3"]
 shader = ExtResource("9_xbp4n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -164,7 +155,7 @@ text = "level purpose
 [node name="leverManager1" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1" parent="leverManager1" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_7e4fj")
+material = SubResource("ShaderMaterial_ev515")
 position = Vector2(4448, -240)
 animation = &"toggle"
 frame_progress = 0.0
@@ -184,12 +175,12 @@ tile_map_data = PackedByteArray("AACIAPb/AQAAAAAAAACIAPf/AQAAAAAAAACIAPj/AQAAAAA
 [node name="leverManager2" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1_2" parent="leverManager2" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_if7pf")
+material = SubResource("ShaderMaterial_cxlw0")
 position = Vector2(4320, -240)
 frame_progress = 0.640101
 
 [node name="lever1_3" parent="leverManager2" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_w4g5p")
+material = SubResource("ShaderMaterial_7wggj")
 position = Vector2(4577, -240)
 frame_progress = 0.0
 
@@ -202,7 +193,7 @@ tile_map_data = PackedByteArray("AACIAPb/AQAAAAAAAACJAPb/AQAAAAAAAACKAPb/AQAAAAA
 [node name="leverManager3" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1" parent="leverManager3" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_yljgs")
+material = SubResource("ShaderMaterial_mqtkx")
 position = Vector2(4446, -739)
 animation = &"toggle"
 frame_progress = 0.0
@@ -222,7 +213,7 @@ tile_map_data = PackedByteArray("AACMAOb/AQAAAAAAAACLAOb/AQAAAAAAAACKAOb/AQAAAAA
 [node name="leverManager4" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1_2" parent="leverManager4" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_ln7f8")
+material = SubResource("ShaderMaterial_wsfmb")
 position = Vector2(4062, -726)
 
 [node name="toggleArea4" parent="." instance=ExtResource("9_6uwq4")]
@@ -234,7 +225,7 @@ tile_map_data = PackedByteArray("AACIAOL/AQAAAAAAAACIAOP/AQAAAAAAAACRAOL/AQAAAAA
 [node name="leverManager5" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1_3" parent="leverManager5" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_v3ia6")
+material = SubResource("ShaderMaterial_56xdy")
 position = Vector2(6881, -796)
 
 [node name="toggleArea5" parent="." instance=ExtResource("9_6uwq4")]
@@ -246,43 +237,36 @@ tile_map_data = PackedByteArray("AADWAOj/AQAAAAAAAADXAOj/AQAAAAAAAADXAOn/AQAAAAA
 [node name="leverManager6" parent="." instance=ExtResource("7_7rso4")]
 
 [node name="lever1_4" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_6wnoo")
+material = SubResource("ShaderMaterial_06src")
 position = Vector2(7996, 420)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_5" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_b2241")
+material = SubResource("ShaderMaterial_wlorm")
 position = Vector2(8224, 420)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_6" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_jpbsq")
+material = SubResource("ShaderMaterial_k03wd")
 position = Vector2(8447, 420)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_7" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_ioeug")
+material = SubResource("ShaderMaterial_2dnmc")
 position = Vector2(8671, 420)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false
 
 [node name="lever1_8" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_cruv2")
+material = SubResource("ShaderMaterial_0g0g3")
 position = Vector2(8897, 420)
-animation = &"toggle"
-frame_progress = 0.0
-isOneShot = false
-
-[node name="lever1_9" parent="leverManager6" instance=ExtResource("6_e4kec")]
-material = SubResource("ShaderMaterial_l641o")
-position = Vector2(9075, 417)
 animation = &"toggle"
 frame_progress = 0.0
 isOneShot = false

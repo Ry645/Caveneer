@@ -71,10 +71,12 @@ func addSpeedrunTimer():
 		return
 	
 	var canvas = CanvasLayer.new()
-	canvas.add_child(timer.instantiate())
+	timerNode = timer.instantiate()
+	canvas.add_child(timerNode)
 	get_node("/root").add_child(canvas)
 
-
+func restartTime():
+	timeInGame = 0.0;
 
 
 
