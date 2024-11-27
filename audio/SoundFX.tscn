@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ci782eppdwkeq" path="res://audio/export/doorImportant.wav" id="3_alx0e"]
 
 [node name="soundFx" type="Node"]
+process_mode = 3
 script = ExtResource("1_4jppg")
 
 [node name="ambience" type="AudioStreamPlayer" parent="."]

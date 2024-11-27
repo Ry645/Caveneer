@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://gameGlobals/game_global.gd" id="1_hyodn"]
 
 [node name="gameGlobal" type="Node" groups=["persist"]]
+process_mode = 3
 script = ExtResource("1_hyodn")
 debugMode = true

@@ -13,6 +13,8 @@ extends Node
 ##
 
 @export var timer:PackedScene = preload("res://speedrunTimer/speedrun_timer.tscn")
+@export var pauseMenuScene:PackedScene = preload("res://GUI/pauseMenu/pause_menu.tscn")
+
 @export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
 @export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
 @export var debugMode:bool = false
@@ -23,6 +25,7 @@ var gameTimeRunning:bool = false
 var levelTimeRunning:bool = false
 
 var timerNode:Node
+var pauseMenu:Control
 var canvasLayer
 
 
@@ -39,6 +42,9 @@ func unlockEverything():
 	rankEnabled = true
 
 func _process(delta: float) -> void:
+	if get_tree().paused == true:
+		return
+	
 	if gameTimeRunning:
 		timeInGame += delta
 	if levelTimeRunning:
@@ -50,13 +56,12 @@ func loadArea(sceneToLoad:PackedScene):
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 	addSpeedrunTimer()
+	addPauseMenu()
 
 func loadUI(sceneToLoad:PackedScene):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
-	if timerNode != null:
-		timerNode.queue_free()
-		timerNode = null
+	removeNodes()
 
 func loadTitleScreen():
 	loadUI(titleScreen)
@@ -65,6 +70,16 @@ func loadFirstLevel():
 	gameTimeRunning = true
 	restartTime()
 	loadArea(firstLevel)
+
+func pauseGame():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	pauseMenu.visible = true
+	get_tree().paused = true
+
+func unpauseGame():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pauseMenu.visible = false
+	get_tree().paused = false
 
 func addSpeedrunTimer():
 	if timerNode != null:
@@ -76,6 +91,26 @@ func addSpeedrunTimer():
 	
 	timerNode = timer.instantiate()
 	canvasLayer.add_child(timerNode)
+
+func addPauseMenu():
+	if pauseMenu != null:
+		return
+	
+	if canvasLayer == null:
+		canvasLayer = CanvasLayer.new()
+		get_node("/root").add_child(canvasLayer)
+	
+	pauseMenu = pauseMenuScene.instantiate()
+	canvasLayer.add_child(pauseMenu)
+	pauseMenu.visible = false
+
+func removeNodes():
+	if timerNode != null:
+		timerNode.queue_free()
+		timerNode = null
+	if pauseMenu != null:
+		pauseMenu.queue_free()
+		pauseMenu = null
 
 func restartTime():
 	timeInGame = 0.0;

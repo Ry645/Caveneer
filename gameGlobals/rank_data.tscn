@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://gameGlobals/rank_data.gd" id="1_bcc37"]
 
 [node name="rankData" type="Node"]
+process_mode = 3
 script = ExtResource("1_bcc37")

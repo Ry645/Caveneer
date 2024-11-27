@@ -78,9 +78,7 @@ func inputProcess(delta):
 	if Input.is_action_just_released("attack"):
 		if equippedTool.has_method("stopUse"):
 			equippedTool.stopUse()
-	#TEMP later add pause menu
-	if Input.is_action_just_pressed("pause"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	if Input.is_action_just_pressed("slot 1"):
 		swapWeapon(1)
 	#     not yet
