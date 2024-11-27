@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-#TODO ranking system, in that order
 #TODO then MAYBE add konami code
 
 

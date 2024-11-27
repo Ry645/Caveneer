@@ -14,6 +14,7 @@ extends Node
 
 @export var timer:PackedScene = preload("res://speedrunTimer/speedrun_timer.tscn")
 @export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
+@export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
 @export var debugMode:bool = false
 
 var timeInGame:float = 0.0
@@ -22,6 +23,7 @@ var gameTimeRunning:bool = false
 var levelTimeRunning:bool = false
 
 var timerNode:Node
+var canvasLayer
 
 
 func _ready() -> void:
@@ -59,14 +61,21 @@ func loadUI(sceneToLoad:PackedScene):
 func loadTitleScreen():
 	loadUI(titleScreen)
 
+func loadFirstLevel():
+	gameTimeRunning = true
+	restartTime()
+	loadArea(firstLevel)
+
 func addSpeedrunTimer():
 	if timerNode != null:
 		return
 	
-	var canvas = CanvasLayer.new()
+	if canvasLayer == null:
+		canvasLayer = CanvasLayer.new()
+		get_node("/root").add_child(canvasLayer)
+	
 	timerNode = timer.instantiate()
-	canvas.add_child(timerNode)
-	get_node("/root").add_child(canvas)
+	canvasLayer.add_child(timerNode)
 
 func restartTime():
 	timeInGame = 0.0;

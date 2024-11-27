@@ -1,7 +1,6 @@
 extends Control
 
 
-@export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
 @export var pbScene:PackedScene = preload("res://GUI/personalBestsScene/personal_bests_scene.tscn")
 @export var options:PackedScene = preload("res://GUI/options.tscn")
 
@@ -16,9 +15,7 @@ func _ready() -> void:
 
 
 func playButton() -> void:
-	GameGlobal.gameTimeRunning = true
-	GameGlobal.restartTime()
-	GameGlobal.loadArea(firstLevel)
+	GameGlobal.loadFirstLevel()
 
 func pbButton():
 	GameGlobal.loadUI(pbScene)

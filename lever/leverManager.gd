@@ -16,6 +16,9 @@ signal setState(state:int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameGlobal.debugMode:
+		quickPuzzle = true
+	
 	if isImportant:
 		for child in get_children():
 			child.setImportant()

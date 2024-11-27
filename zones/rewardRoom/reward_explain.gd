@@ -1,6 +1,5 @@
 extends Control
 
-@export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
 @export var rankGetScene:PackedScene = preload("res://gameGlobals/rank_get_scene.tscn")
 
 var screens:Array[Node]
@@ -17,6 +16,11 @@ func _ready() -> void:
 		for screen in screens:
 			screen.visible = false
 		screens[0].visible = true
+		
+		$screen2/speedrunTimer.visible = true
+		
+		if $screen3/rankText.text == "S":
+			$screen3/richTextLabel4.text = "[center]This isn't your first time."
 
 func loadRankGetScene():
 	GameGlobal.loadUI(rankGetScene)
@@ -31,7 +35,7 @@ func advance():
 
 
 func loadStart():
-	GameGlobal.loadArea(firstLevel)
+	GameGlobal.loadFirstLevel()
 
 func _on_button_up_button() -> void:
 	advance()
