@@ -18,7 +18,6 @@ run/default_signal_callback_name="_on_{signal_name}"
 
 [autoload]
 
-BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 SoundFx="*res://audio/SoundFX.tscn"
 GameGlobal="*res://gameGlobals/gameGlobal.tscn"
 RankData="*res://gameGlobals/rank_data.tscn"
@@ -38,7 +37,7 @@ naming/default_signal_callback_name="_on_{signal_name}_{node_name}"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
