@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_gqymt")
 
 [node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 68.0
 offset_right = 240.0
@@ -37,8 +38,17 @@ custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 text = "Give Rank At Level End"
 
+[node name="control" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="backButton" type="Button" parent="vbox"]
+layout_mode = 2
+text = "Back"
+
 [node name="textureRect" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_right = 276.0
 offset_bottom = 268.0
 mouse_filter = 2
@@ -47,3 +57,4 @@ texture = ExtResource("1_rgxxm")
 [connection signal="toggled" from="vbox/speedrunTimer" to="." method="_on_toggled_speedrun_timer"]
 [connection signal="toggled" from="vbox/magicShield" to="." method="_on_toggled_magic_shield"]
 [connection signal="toggled" from="vbox/rank" to="." method="_on_toggled_rank"]
+[connection signal="button_up" from="vbox/backButton" to="." method="_on_button_up_back_button"]

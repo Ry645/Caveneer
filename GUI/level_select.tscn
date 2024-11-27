@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_jr0wn")
 script = ExtResource("1_6vb4d")
 
 [node name="grid" type="GridContainer" parent="."]
@@ -62,9 +63,18 @@ offset_bottom = 268.0
 mouse_filter = 2
 texture = ExtResource("1_llqqt")
 
+[node name="backButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 204.0
+offset_right = 240.0
+offset_bottom = 228.0
+text = "Back"
+
 [connection signal="button_up" from="grid/level1" to="." method="_on_button_up_level_1"]
 [connection signal="button_up" from="grid/level2" to="." method="_on_button_up_level_2"]
 [connection signal="button_up" from="grid/level3" to="." method="_on_button_up_level_3"]
 [connection signal="button_up" from="grid/level4" to="." method="_on_button_up_level_4"]
 [connection signal="button_up" from="grid/level5" to="." method="_on_button_up_level_5"]
 [connection signal="button_up" from="grid/level6" to="." method="_on_button_up_level_6"]
+[connection signal="button_up" from="backButton" to="." method="_on_button_up_back_button"]

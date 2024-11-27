@@ -1,6 +1,6 @@
 extends Control
 
-
+@export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
 
 
 func _on_toggled_speedrun_timer(toggled_on: bool) -> void:
@@ -13,3 +13,7 @@ func _on_toggled_magic_shield(toggled_on: bool) -> void:
 
 func _on_toggled_rank(toggled_on: bool) -> void:
 	GameGlobal.rankEnabled = toggled_on
+
+
+func _on_button_up_back_button() -> void:
+	GameGlobal.loadRawArea(titleScreen)

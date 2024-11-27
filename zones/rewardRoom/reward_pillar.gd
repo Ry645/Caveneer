@@ -6,7 +6,7 @@ func _ready() -> void:
 	play()
 
 func loadArea():
-	GameGlobal.loadArea(sceneToLoad)
+	GameGlobal.loadRawArea(sceneToLoad)
 
 func interact():
 	GameGlobal.unlockEverything()

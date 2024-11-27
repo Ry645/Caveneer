@@ -16,10 +16,14 @@ func _ready() -> void:
 
 
 func playButton() -> void:
-	GameGlobal.loadArea(firstLevel)
+	GameGlobal.loadRawArea(firstLevel)
 
 func levelSelectButton():
-	GameGlobal.loadArea(levelSelect)
+	GameGlobal.loadRawArea(levelSelect)
 
 func optionsButton():
-	GameGlobal.loadArea(options)
+	GameGlobal.loadRawArea(options)
+
+func _on_button_up_save_and_exit_game_button() -> void:
+	GameGlobal.save_game()
+	get_tree().quit()

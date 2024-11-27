@@ -45,6 +45,16 @@ layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Options"
 
+[node name="control3" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="saveAndExitGameButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("1_46jcu")
+text = "Save and Exit Game"
+
 [node name="textureRect" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 0
@@ -56,3 +66,4 @@ texture = ExtResource("2_33mpw")
 [connection signal="button_up" from="vbox/playButton" to="." method="playButton"]
 [connection signal="button_up" from="vbox/levelSelectButton" to="." method="levelSelectButton"]
 [connection signal="button_up" from="vbox/optionsButton" to="." method="optionsButton"]
+[connection signal="button_up" from="vbox/saveAndExitGameButton" to="." method="_on_button_up_save_and_exit_game_button"]
