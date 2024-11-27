@@ -12,12 +12,11 @@ script = ExtResource("1_fpxte")
 [node name="vbox" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 16.0
-offset_top = 68.0
+offset_top = 102.0
 offset_right = 240.0
-offset_bottom = 188.0
+offset_bottom = 222.0
 theme = ExtResource("1_46jcu")
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="playButton" type="Button" parent="vbox"]
 custom_minimum_size = Vector2(0, 24)
@@ -26,7 +25,6 @@ theme = ExtResource("1_46jcu")
 text = "Play"
 
 [node name="control" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
 [node name="pbButton" type="Button" parent="vbox"]
@@ -36,7 +34,6 @@ theme = ExtResource("1_46jcu")
 text = "Personal Bests"
 
 [node name="control2" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
 [node name="optionsButton" type="Button" parent="vbox"]
@@ -46,7 +43,6 @@ theme = ExtResource("1_46jcu")
 text = "Options"
 
 [node name="control3" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
 [node name="saveAndExitGameButton" type="Button" parent="vbox"]
@@ -62,6 +58,15 @@ offset_right = 276.0
 offset_bottom = 268.0
 mouse_filter = 2
 texture = ExtResource("2_33mpw")
+
+[node name="richTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 256.0
+offset_bottom = 80.0
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Caveneer"
 
 [connection signal="button_up" from="vbox/playButton" to="." method="playButton"]
 [connection signal="button_up" from="vbox/pbButton" to="." method="pbButton"]
