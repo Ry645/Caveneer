@@ -31,6 +31,15 @@ text = "Continue"
 [node name="control" type="Control" parent="vbox"]
 layout_mode = 2
 
+[node name="resetLevelButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme = ExtResource("2_q7m4o")
+text = "Reset Level"
+
+[node name="control2" type="Control" parent="vbox"]
+layout_mode = 2
+
 [node name="titleButton" type="Button" parent="vbox"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
@@ -45,7 +54,7 @@ bbcode_enabled = true
 text = "[center]Game Paused"
 
 [node name="textureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.0980392)
+modulate = Color(1, 1, 1, 0.588235)
 z_index = -1
 offset_right = 276.0
 offset_bottom = 268.0
@@ -53,4 +62,5 @@ mouse_filter = 2
 texture = ExtResource("3_m273q")
 
 [connection signal="button_up" from="vbox/playButton" to="." method="_on_button_up_play_button"]
+[connection signal="button_up" from="vbox/resetLevelButton" to="." method="_on_button_up_reset_level_button"]
 [connection signal="button_up" from="vbox/titleButton" to="." method="_on_button_up_title_button"]

@@ -15,6 +15,11 @@ func _on_button_up_title_button() -> void:
 	unpause()
 	GameGlobal.loadTitleScreen()
 
+func _on_button_up_reset_level_button() -> void:
+	unpause()
+	get_tree().reload_current_scene()
+
+
 
 
 func unpause():
