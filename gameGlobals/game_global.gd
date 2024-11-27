@@ -27,6 +27,9 @@ extends Node
 
 var timeInGame:float = 0.0
 var timeInLevel:float = 0.0
+var gameTimeRunning:bool = false
+var levelTimeRunning:bool = false
+
 var timerNode:Node
 
 
@@ -43,8 +46,10 @@ func unlockEverything():
 	rankEnabled = true
 
 func _process(delta: float) -> void:
-	timeInGame += delta
-	timeInLevel += delta
+	if gameTimeRunning:
+		timeInGame += delta
+	if levelTimeRunning:
+		timeInLevel += delta
 	
 
 ## loads area and adds a speedrun timer
@@ -54,8 +59,9 @@ func loadArea(sceneToLoad:PackedScene):
 
 func loadUI(sceneToLoad:PackedScene):
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
-	timerNode.queue_free()
-	timerNode = null
+	if timerNode != null:
+		timerNode.queue_free()
+		timerNode = null
 
 func loadTitleScreen():
 	loadUI(titleScreen)
@@ -67,6 +73,10 @@ func addSpeedrunTimer():
 	var canvas = CanvasLayer.new()
 	canvas.add_child(timer.instantiate())
 	get_node("/root").add_child(canvas)
+
+
+
+
 
 func save():
 	var saveDict:Dictionary = {
