@@ -45,6 +45,7 @@ leverBefore=""
 leverAfter=""
 toggleArea=""
 door=""
+persist="for save games"
 
 [input]
 

@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-#TODO unlock sequence, speedrun timer, ranking system, game title, in that order
+#TODO ranking system, game title, in that order
+# ranking system: play at best, that's an A, go a 1/10 faster (1:00 A to 0:50 S)
+#TODO then add a save game system
+#TODO then MAYBE add konami code
 
 
 
@@ -214,7 +217,7 @@ func slowPlayerMovement(delta):
 func dash():
 	$dashSound.play()
 	
-	if $doubleDashWindow.is_stopped() || !GameGlobal.magicShield:
+	if $doubleDashWindow.is_stopped() || !GameGlobal.magicShieldEnabled:
 		regularDash()
 		$doubleDashWindow.start()
 	else:

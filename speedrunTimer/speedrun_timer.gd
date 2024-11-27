@@ -2,14 +2,14 @@ extends Control
 
 
 func _ready() -> void:
-	if !GameGlobal.speedrunTimer:
+	if !GameGlobal.speedrunTimerEnabled:
 		visible = false
 	else:
 		visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !GameGlobal.speedrunTimer:
+	if !GameGlobal.speedrunTimerEnabled:
 		return
 	
 	updateTimer($level)
