@@ -16,13 +16,13 @@ func _ready() -> void:
 
 
 func playButton() -> void:
-	GameGlobal.loadRawArea(firstLevel)
+	GameGlobal.loadArea(firstLevel)
 
 func levelSelectButton():
-	GameGlobal.loadRawArea(levelSelect)
+	GameGlobal.loadUI(levelSelect)
 
 func optionsButton():
-	GameGlobal.loadRawArea(options)
+	GameGlobal.loadUI(options)
 
 func _on_button_up_save_and_exit_game_button() -> void:
 	GameGlobal.save_game()

@@ -1,6 +1,10 @@
 extends Control
 
-@export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
+
+func _ready() -> void:
+	$vbox/speedrunTimer.button_pressed = GameGlobal.speedrunTimerEnabled
+	$vbox/magicShield.button_pressed = GameGlobal.magicShieldEnabled
+	$vbox/rank.button_pressed = GameGlobal.rankEnabled
 
 
 func _on_toggled_speedrun_timer(toggled_on: bool) -> void:
@@ -16,4 +20,4 @@ func _on_toggled_rank(toggled_on: bool) -> void:
 
 
 func _on_button_up_back_button() -> void:
-	GameGlobal.loadRawArea(titleScreen)
+	GameGlobal.loadTitleScreen()

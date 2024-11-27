@@ -1,6 +1,5 @@
 extends Control
 
-@export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
 
 @export var levels:Array[PackedScene] = [
 	preload("res://zones/firstCave/first_cave_room1.tscn"),
@@ -37,4 +36,4 @@ func _on_button_up_level_6() -> void:
 
 
 func _on_button_up_back_button() -> void:
-	GameGlobal.loadRawArea(titleScreen)
+	GameGlobal.loadTitleScreen()

@@ -1,6 +1,7 @@
 extends Node
 
 ## saved on exit
+@export var gameStarted:bool = false
 @export var gameCompleted:bool = false
 @export var speedrunTimerEnabled:bool = false
 @export var magicShieldEnabled:bool = false
@@ -21,11 +22,16 @@ extends Node
 ##
 
 @export var timer:PackedScene = preload("res://speedrunTimer/speedrun_timer.tscn")
+@export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
 @export var debugMode:bool = false
 
 var timeInGame:float = 0.0
 var timeInLevel:float = 0.0
+var timerNode:Node
 
+
+func _ready() -> void:
+	load_game()
 
 func unlockEverything():
 	if gameCompleted:
@@ -46,16 +52,25 @@ func loadArea(sceneToLoad:PackedScene):
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
 	addSpeedrunTimer()
 
-func loadRawArea(sceneToLoad:PackedScene):
+func loadUI(sceneToLoad:PackedScene):
 	get_node("/root").get_tree().change_scene_to_packed(sceneToLoad)
+	timerNode.queue_free()
+	timerNode = null
+
+func loadTitleScreen():
+	loadUI(titleScreen)
 
 func addSpeedrunTimer():
+	if timerNode != null:
+		return
+	
 	var canvas = CanvasLayer.new()
 	canvas.add_child(timer.instantiate())
 	get_node("/root").add_child(canvas)
 
 func save():
 	var saveDict:Dictionary = {
+		"gameStarted": gameStarted,
 		"gameCompleted": gameCompleted,
 		"speedrunTimerEnabled": speedrunTimerEnabled,
 		"magicShieldEnabled": magicShieldEnabled,
