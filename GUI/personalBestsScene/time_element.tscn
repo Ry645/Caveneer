@@ -6,7 +6,7 @@
 script = ExtResource("1_fivft")
 
 [node name="time" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(161, 12)
+custom_minimum_size = Vector2(168, 12)
 layout_mode = 2
 text = "no"
 
@@ -14,5 +14,5 @@ text = "no"
 custom_minimum_size = Vector2(18, 12)
 layout_mode = 2
 bbcode_enabled = true
-text = "-F"
+text = "F"
 scroll_active = false

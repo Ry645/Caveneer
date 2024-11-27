@@ -7,16 +7,7 @@ extends Node
 @export var magicShieldEnabled:bool = false
 @export var rankEnabled:bool = false
 
-#Array[int]
-@export var ms_times:Dictionary = {
-	"fullGame": [],
-	"level1": [],
-	"level2": [],
-	"level3": [],
-	"level4": [],
-	"level5": [],
-	"level6": [],
-}
+@export var ms_times:Array[int]
 
 @export var currentLevel:int = 1
 ##
