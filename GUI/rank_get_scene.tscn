@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxlryf34ig6av"]
 
-[ext_resource type="Script" path="res://gameGlobals/rank_get_scene.gd" id="1_lejs3"]
+[ext_resource type="Script" path="res://GUI/rank_get_scene.gd" id="1_lejs3"]
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_2ovj6"]
 [ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="3_0hm1p"]
 [ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="4_s7jpf"]

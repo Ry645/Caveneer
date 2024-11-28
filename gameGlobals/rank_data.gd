@@ -6,7 +6,7 @@ extends Node
 
 ## in milliseconds
 const timeToRank:Dictionary = {
-	280_000: "F",
+	260_000: "F",
 	300_000: "S",
 	360_000: "A",
 	450_000: "B",

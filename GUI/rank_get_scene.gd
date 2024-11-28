@@ -4,7 +4,7 @@ var screens:Array[Node]
 var index:int = 0
 
 func _ready() -> void:
-	print("poot")
+	#print("poot")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	screens = get_tree().get_nodes_in_group("screen")
 	
