@@ -11,6 +11,9 @@ signal deactivated
 ## useful for levers with different lever manager parents
 signal setState(state:int)
 
+## for room 5's nice try bud
+signal triedToInteractButFailed
+
 @export var outlineShader:Shader = preload("res://outline/outline.gdshader")
 @export var isOneShot = true
 @export var canInteract = true
@@ -27,8 +30,6 @@ func _process(delta: float) -> void:
 			animation = "toggle"
 
 func _ready() -> void:
-	setInteractability(canInteract)
-	
 	var shaderMaterial:ShaderMaterial = ShaderMaterial.new()
 	shaderMaterial.shader = outlineShader
 	material = shaderMaterial
@@ -42,6 +43,10 @@ func setImportant():
 	isImportant = true
 
 func interact():
+	if !canInteract:
+		emit_signal("triedToInteractButFailed")
+		return
+	
 	if isActive && isOneShot:
 		return 1
 	
@@ -102,6 +107,9 @@ func sync(state):
 
 
 func hover():
+	if !canInteract:
+		return
+	
 	if isActive && isOneShot:
 		return 
 	
@@ -120,8 +128,7 @@ func toggleInteractability():
 	setInteractability(!$Area2D.monitorable)
 
 func setInteractability(value:bool):
-	$Area2D.monitoring = value
-	$Area2D.monitorable = value
+	canInteract = value
 
 func playSound():
 	if isImportant:
