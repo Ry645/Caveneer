@@ -17,9 +17,9 @@ script = ExtResource("2_fhqiw")
 [node name="backButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 132.0
-offset_top = 424.0
+offset_top = 429.0
 offset_right = 804.0
-offset_bottom = 472.0
+offset_bottom = 477.0
 text = "Back"
 
 [node name="panel" type="Panel" parent="."]
@@ -80,7 +80,6 @@ text = "[center] Personal Bests"
 scroll_active = false
 
 [node name="background" parent="." instance=ExtResource("3_nj14l")]
-visible = false
 layout_mode = 0
 
 [connection signal="button_up" from="backButton" to="." method="_on_button_up_back_button"]

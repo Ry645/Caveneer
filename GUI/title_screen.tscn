@@ -59,9 +59,9 @@ text = "Save and Exit Game"
 
 [node name="gameTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 168.0
+offset_left = 177.0
 offset_top = 42.0
-offset_right = 768.0
+offset_right = 777.0
 offset_bottom = 192.0
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
