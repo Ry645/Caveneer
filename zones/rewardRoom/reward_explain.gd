@@ -1,6 +1,6 @@
 extends Control
 
-@export var rankGetScene:PackedScene = preload("res://gameGlobals/rank_get_scene.tscn")
+@export var rankGetScene:PackedScene = preload("res://GUI/rank_get_scene.tscn")
 
 var screens:Array[Node]
 var index:int = 0

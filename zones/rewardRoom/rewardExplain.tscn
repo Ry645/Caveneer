@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://m05s8tgeoep0"]
 
 [ext_resource type="Script" path="res://zones/rewardRoom/reward_explain.gd" id="1_dg6tl"]
-[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_rv6uc"]
 [ext_resource type="Texture2D" uid="uid://dtkkafkuqj1mp" path="res://sprites/magicShield/shield-Sheet.png" id="2_6xcdd"]
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="4_x8xkp"]
 [ext_resource type="PackedScene" uid="uid://defdqvh3cv1ej" path="res://speedrunTimer/speedrun_timer.tscn" id="5_y35y3"]
 [ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="6_0k2iv"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="6_noftu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgqrj"]
 atlas = ExtResource("2_6xcdd")
@@ -30,14 +30,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dg6tl")
-
-[node name="textureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_right = 276.0
-offset_bottom = 268.0
-mouse_filter = 2
-texture = ExtResource("1_rv6uc")
 
 [node name="button" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 24)
@@ -165,5 +157,7 @@ offset_left = 109.0
 offset_top = 52.0
 offset_right = 107.0
 offset_bottom = 101.0
+
+[node name="background" parent="." instance=ExtResource("6_noftu")]
 
 [connection signal="button_up" from="button" to="." method="_on_button_up_button"]

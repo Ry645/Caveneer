@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxlryf34ig6av"]
 
-[ext_resource type="Script" path="res://gameGlobals/rank_get_scene.gd" id="1_m11bx"]
-[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_vatxb"]
-[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="3_td5v2"]
-[ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="4_a1vn3"]
+[ext_resource type="Script" path="res://gameGlobals/rank_get_scene.gd" id="1_lejs3"]
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_2ovj6"]
+[ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="3_0hm1p"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="4_s7jpf"]
 
 [node name="rankGetScene" type="Control"]
 layout_mode = 3
@@ -12,15 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_m11bx")
-
-[node name="textureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_right = 276.0
-offset_bottom = 268.0
-mouse_filter = 2
-texture = ExtResource("2_vatxb")
+script = ExtResource("1_lejs3")
 
 [node name="screen1" type="Control" parent="." groups=["screen"]]
 anchors_preset = 0
@@ -34,7 +26,7 @@ offset_left = 16.0
 offset_top = 97.0
 offset_right = 240.0
 offset_bottom = 161.0
-theme = ExtResource("3_td5v2")
+theme = ExtResource("2_2ovj6")
 theme_override_font_sizes/font_size = 20
 text = "Reveal Your Rank"
 
@@ -51,10 +43,10 @@ offset_left = 16.0
 offset_top = 218.0
 offset_right = 240.0
 offset_bottom = 242.0
-theme = ExtResource("3_td5v2")
+theme = ExtResource("2_2ovj6")
 text = "To Title Screen"
 
-[node name="rankText" parent="screen2" instance=ExtResource("4_a1vn3")]
+[node name="rankText" parent="screen2" instance=ExtResource("3_0hm1p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -65,6 +57,8 @@ offset_right = 148.0
 offset_bottom = 152.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="background" parent="." instance=ExtResource("4_s7jpf")]
 
 [connection signal="button_up" from="screen1/button1" to="." method="advance"]
 [connection signal="button_up" from="screen2/button2" to="." method="advance"]

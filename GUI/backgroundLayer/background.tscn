@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1wuym7dhw62h"]
+
+[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_srnhx"]
+
+[node name="background" type="TextureRect"]
+modulate = Color(1, 1, 1, 0.588235)
+z_index = -2
+offset_right = 584.0
+offset_bottom = 333.0
+mouse_filter = 2
+texture = ExtResource("1_srnhx")

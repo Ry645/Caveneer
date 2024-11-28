@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bggb3hriejq46"]
 
 [ext_resource type="Script" path="res://GUI/level_select.gd" id="1_6vb4d"]
-[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="1_llqqt"]
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_jr0wn"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="3_5yw2j"]
 
 [node name="levelSelect" type="Control"]
 layout_mode = 3
@@ -55,14 +55,6 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "6"
 
-[node name="textureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_right = 276.0
-offset_bottom = 268.0
-mouse_filter = 2
-texture = ExtResource("1_llqqt")
-
 [node name="backButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 16.0
@@ -70,6 +62,9 @@ offset_top = 204.0
 offset_right = 240.0
 offset_bottom = 228.0
 text = "Back"
+
+[node name="background" parent="." instance=ExtResource("3_5yw2j")]
+layout_mode = 0
 
 [connection signal="button_up" from="grid/level1" to="." method="_on_button_up_level_1"]
 [connection signal="button_up" from="grid/level2" to="." method="_on_button_up_level_2"]

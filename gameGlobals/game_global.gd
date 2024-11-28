@@ -1,5 +1,8 @@
 extends Node
 
+# INFO todo list
+# BUG when game loaded from scene, can't pause, since game global doesn't load it in automatically
+
 ## saved on exit
 @export var gameStarted:bool = false
 @export var gameCompleted:bool = false

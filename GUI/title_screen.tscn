@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_46jcu"]
 [ext_resource type="Script" path="res://GUI/title_screen.gd" id="1_fpxte"]
-[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_33mpw"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="3_3id7w"]
 
 [node name="titleScreen" type="Control"]
 layout_mode = 3
@@ -51,13 +51,8 @@ layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Save and Exit Game"
 
-[node name="textureRect" type="TextureRect" parent="."]
-z_index = -1
+[node name="background" parent="." instance=ExtResource("3_3id7w")]
 layout_mode = 0
-offset_right = 276.0
-offset_bottom = 268.0
-mouse_filter = 2
-texture = ExtResource("2_33mpw")
 
 [node name="richTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

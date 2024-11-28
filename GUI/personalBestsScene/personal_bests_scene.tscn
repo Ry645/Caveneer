@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3mitilv5ckho"]
 
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_x040p"]
-[ext_resource type="Texture2D" uid="uid://budlryyj8kdry" path="res://sprites/tileSets/void/voidTile.png" id="2_2fl27"]
 [ext_resource type="Script" path="res://GUI/personalBestsScene/personal_bests_scene.gd" id="2_fhqiw"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="3_nj14l"]
 
 [node name="personalBestsScene" type="Control"]
 layout_mode = 3
@@ -13,14 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_x040p")
 script = ExtResource("2_fhqiw")
-
-[node name="textureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_right = 276.0
-offset_bottom = 268.0
-mouse_filter = 2
-texture = ExtResource("2_2fl27")
 
 [node name="backButton" type="Button" parent="."]
 layout_mode = 0
@@ -86,5 +78,8 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center] Personal Bests"
 scroll_active = false
+
+[node name="background" parent="." instance=ExtResource("3_nj14l")]
+layout_mode = 0
 
 [connection signal="button_up" from="backButton" to="." method="_on_button_up_back_button"]
