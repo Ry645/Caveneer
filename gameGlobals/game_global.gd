@@ -118,6 +118,12 @@ func removeNodes():
 func restartTime():
 	timeInGame = 0.0;
 
+func addCurrentTimeToPBs():
+	ms_times.append(RankData.secToMilliTime(timeInGame))
+	ms_times.sort_custom(sort_ascending)
+
+
+
 
 
 func save():
@@ -203,3 +209,13 @@ func saveMsTimes(node, save_file:FileAccess):
 
 	# Store the save dictionary as a new line in the save file.
 	save_file.store_line(json_string)
+
+
+
+
+
+
+func sort_ascending(a, b):
+	if a < b:
+		return true
+	return false

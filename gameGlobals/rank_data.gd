@@ -1,6 +1,8 @@
 extends Node
 
 # I finished the game in 06:07.903
+# 04:50.984
+# 04:26.511
 
 # 324/0.9/0.8/0.7
 

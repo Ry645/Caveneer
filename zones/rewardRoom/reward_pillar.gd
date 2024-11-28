@@ -10,7 +10,7 @@ func loadArea():
 
 func interact():
 	GameGlobal.gameTimeRunning = false
-	GameGlobal.ms_times.append(RankData.secToMilliTime(GameGlobal.timeInGame))
+	GameGlobal.addCurrentTimeToPBs()
 	GameGlobal.save_game()
 	loadArea()
 	return 0
