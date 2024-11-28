@@ -159,5 +159,6 @@ offset_right = 107.0
 offset_bottom = 101.0
 
 [node name="background" parent="." instance=ExtResource("6_noftu")]
+layout_mode = 0
 
 [connection signal="button_up" from="button" to="." method="_on_button_up_button"]

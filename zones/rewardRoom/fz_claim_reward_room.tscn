@@ -12,13 +12,13 @@
 [ext_resource type="Script" path="res://zones/rewardRoom/reward_pillar.gd" id="11_4lmpu"]
 [ext_resource type="Texture2D" uid="uid://dtkkafkuqj1mp" path="res://sprites/magicShield/shield-Sheet.png" id="12_82uuk"]
 [ext_resource type="Script" path="res://zones/rewardRoom/magic_shield_get.gd" id="13_wjfhs"]
-[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="14_cpkob"]
+[ext_resource type="PackedScene" uid="uid://w24lj2gmpv1y" path="res://GUI/backgroundLayer/background_layer.tscn" id="14_pni43"]
 [ext_resource type="Script" path="res://zones/rewardRoom/area_2d.gd" id="14_yj1ha"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8yijs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmiiy"]
 shader = ExtResource("8_ickmm")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
@@ -114,7 +114,7 @@ text = "level purpose
 [node name="leverManager1" parent="." instance=ExtResource("6_15ri3")]
 
 [node name="lever1" parent="leverManager1" instance=ExtResource("7_rf455")]
-material = SubResource("ShaderMaterial_8yijs")
+material = SubResource("ShaderMaterial_fmiiy")
 position = Vector2(5816, 608)
 
 [node name="door1" parent="." instance=ExtResource("9_ddari")]
@@ -153,9 +153,7 @@ offset_bottom = 1904.0
 theme_override_font_sizes/normal_font_size = 12
 text = "claim your reward"
 
-[node name="canvasLayer" type="CanvasLayer" parent="."]
-
-[node name="background" parent="canvasLayer" instance=ExtResource("14_cpkob")]
+[node name="backgroundLayer" parent="." instance=ExtResource("14_pni43")]
 
 [connection signal="setState" from="leverManager1" to="door1" method="setState"]
 [connection signal="timeout" from="rewardPillar/magicShieldGet/timer" to="rewardPillar/magicShieldGet" method="_on_timeout_timer"]

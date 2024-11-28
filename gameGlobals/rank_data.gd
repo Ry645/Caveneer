@@ -2,9 +2,12 @@ extends Node
 
 # I finished the game in 06:07.903
 
+# 324/0.9/0.8/0.7
+
 ## in milliseconds
 const timeToRank:Dictionary = {
-	320_000: "S",
+	280_000: "F",
+	300_000: "S",
 	360_000: "A",
 	450_000: "B",
 	640_000: "C",

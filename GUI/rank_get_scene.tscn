@@ -59,6 +59,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="background" parent="." instance=ExtResource("4_s7jpf")]
+layout_mode = 0
 
 [connection signal="button_up" from="screen1/button1" to="." method="advance"]
 [connection signal="button_up" from="screen2/button2" to="." method="advance"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpn0evwb5mf8q"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_wd4l0"]
-[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="2_1xer8"]
+[ext_resource type="PackedScene" uid="uid://w24lj2gmpv1y" path="res://GUI/backgroundLayer/background_layer.tscn" id="2_g2miw"]
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_b05ni"]
 [ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_aubku"]
 [ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_r0ddc"]
@@ -14,9 +14,7 @@ light_mode = 2
 [node name="player" parent="." instance=ExtResource("1_wd4l0")]
 position = Vector2(4448, 608)
 
-[node name="canvasLayer" type="CanvasLayer" parent="."]
-
-[node name="background" parent="canvasLayer" instance=ExtResource("2_1xer8")]
+[node name="backgroundLayer" parent="." instance=ExtResource("2_g2miw")]
 
 [node name="caveFloor" type="TileMapLayer" parent="."]
 material = SubResource("CanvasItemMaterial_p4fdj")

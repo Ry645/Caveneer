@@ -21,6 +21,9 @@ func _ready() -> void:
 		
 		if $screen3/rankText.text == "S":
 			$screen3/richTextLabel4.text = "[center]This isn't your first time."
+		
+		if $screen3/rankText.text == "F":
+			$screen3/richTextLabel4.text = "[center]Why"
 
 func loadRankGetScene():
 	GameGlobal.loadUI(rankGetScene)
