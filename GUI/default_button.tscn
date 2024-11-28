@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb5cgb6hnpeuh"]
+
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_v5dbg"]
+
+[node name="defaultButton" type="Button"]
+offset_right = 672.0
+offset_bottom = 48.0
+theme = ExtResource("1_v5dbg")
+text = "[edit]"

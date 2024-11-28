@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxlryf34ig6av"]
+[gd_scene load_steps=6 format=3 uid="uid://bxlryf34ig6av"]
 
 [ext_resource type="Script" path="res://GUI/rank_get_scene.gd" id="1_lejs3"]
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="2_2ovj6"]
 [ext_resource type="PackedScene" uid="uid://qxumrxnq3ogs" path="res://speedrunTimer/rank_text.tscn" id="3_0hm1p"]
+[ext_resource type="PackedScene" uid="uid://defdqvh3cv1ej" path="res://speedrunTimer/speedrun_timer.tscn" id="3_ov3u1"]
 [ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="4_s7jpf"]
 
 [node name="rankGetScene" type="Control"]
@@ -22,13 +23,27 @@ offset_bottom = 40.0
 [node name="button1" type="Button" parent="screen1"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 0
-offset_left = 16.0
-offset_top = 97.0
-offset_right = 240.0
-offset_bottom = 161.0
+offset_left = 137.0
+offset_top = 273.0
+offset_right = 809.0
+offset_bottom = 465.0
 theme = ExtResource("2_2ovj6")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 60
 text = "Reveal Your Rank"
+
+[node name="speedrunTimer" parent="screen1" instance=ExtResource("3_ov3u1")]
+layout_mode = 1
+offset_left = 542.0
+offset_top = 131.0
+offset_right = 542.0
+offset_bottom = 131.0
+
+[node name="game" parent="screen1/speedrunTimer" index="0"]
+offset_left = -333.0
+offset_top = -94.0
+offset_right = 110.0
+offset_bottom = 41.0
+theme_override_font_sizes/normal_font_size = 96
 
 [node name="screen2" type="Control" parent="." groups=["screen"]]
 visible = false
@@ -39,11 +54,12 @@ offset_bottom = 40.0
 [node name="button2" type="Button" parent="screen2"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 0
-offset_left = 16.0
-offset_top = 218.0
-offset_right = 240.0
-offset_bottom = 242.0
+offset_left = 139.0
+offset_top = 373.0
+offset_right = 811.0
+offset_bottom = 469.0
 theme = ExtResource("2_2ovj6")
+theme_override_font_sizes/font_size = 32
 text = "To Title Screen"
 
 [node name="rankText" parent="screen2" instance=ExtResource("3_0hm1p")]
@@ -51,15 +67,18 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 113.0
-offset_top = 61.0
-offset_right = 148.0
-offset_bottom = 152.0
+offset_left = 416.0
+offset_top = 14.0
+offset_right = 570.0
+offset_bottom = 359.0
 grow_horizontal = 1
 grow_vertical = 1
+theme_override_font_sizes/normal_font_size = 256
 
 [node name="background" parent="." instance=ExtResource("4_s7jpf")]
 layout_mode = 0
 
 [connection signal="button_up" from="screen1/button1" to="." method="advance"]
 [connection signal="button_up" from="screen2/button2" to="." method="advance"]
+
+[editable path="screen1/speedrunTimer"]

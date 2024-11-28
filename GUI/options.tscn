@@ -13,41 +13,49 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gqymt")
 
+[node name="background" parent="." instance=ExtResource("3_a1uxx")]
+layout_mode = 0
+
 [node name="vbox" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 68.0
-offset_right = 240.0
-offset_bottom = 188.0
+offset_left = 156.0
+offset_top = 150.0
+offset_right = 828.0
+offset_bottom = 406.0
 theme = ExtResource("2_7wkyv")
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="speedrunTimer" type="CheckButton" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Speedrun Timer"
 
+[node name="control2" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
 [node name="magicShield" type="CheckButton" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Magic Shield"
 
+[node name="control3" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
 [node name="rank" type="CheckButton" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Give Rank At Level End"
 
 [node name="control" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 4)
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
 [node name="backButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Back"
-
-[node name="background" parent="." instance=ExtResource("3_a1uxx")]
-layout_mode = 0
 
 [connection signal="toggled" from="vbox/speedrunTimer" to="." method="_on_toggled_speedrun_timer"]
 [connection signal="toggled" from="vbox/magicShield" to="." method="_on_toggled_magic_shield"]

@@ -16,70 +16,71 @@ script = ExtResource("2_fhqiw")
 
 [node name="backButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 204.0
-offset_right = 240.0
-offset_bottom = 235.0
+offset_left = 132.0
+offset_top = 424.0
+offset_right = 804.0
+offset_bottom = 472.0
 text = "Back"
 
 [node name="panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 68.0
-offset_right = 240.0
-offset_bottom = 190.0
+offset_left = 131.0
+offset_top = 135.0
+offset_right = 803.0
+offset_bottom = 379.0
 
 [node name="scrollContainer" type="ScrollContainer" parent="panel"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 28.0
-offset_right = 216.0
-offset_bottom = 114.0
+offset_left = 61.0
+offset_top = 56.0
+offset_right = 685.0
+offset_bottom = 226.0
 
 [node name="vBoxContainer" type="VBoxContainer" parent="panel/scrollContainer"]
 layout_mode = 2
 
 [node name="richTextLabel" type="RichTextLabel" parent="panel"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 8.0
-offset_right = 48.0
-offset_bottom = 23.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = 73.0
+offset_top = 18.0
+offset_right = 123.0
+offset_bottom = 48.0
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[u]Time"
 scroll_active = false
 
 [node name="richTextLabel2" type="RichTextLabel" parent="panel"]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 8.0
-offset_right = 203.0
-offset_bottom = 23.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = 536.0
+offset_top = 17.0
+offset_right = 586.0
+offset_bottom = 47.0
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[u]Rank"
 scroll_active = false
 
 [node name="title" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 14.0
-offset_right = 240.0
-offset_bottom = 54.0
+offset_left = 93.0
+offset_top = 33.0
+offset_right = 845.0
+offset_bottom = 93.0
 
 [node name="richTextLabel" type="RichTextLabel" parent="title"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 2.0
-offset_right = 220.0
-offset_bottom = 42.0
-theme_override_font_sizes/normal_font_size = 24
+offset_left = 36.0
+offset_top = 4.0
+offset_right = 712.0
+offset_bottom = 59.0
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[center] Personal Bests"
 scroll_active = false
 
 [node name="background" parent="." instance=ExtResource("3_nj14l")]
+visible = false
 layout_mode = 0
 
 [connection signal="button_up" from="backButton" to="." method="_on_button_up_back_button"]

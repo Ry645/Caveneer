@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var sceneToLoad:PackedScene = preload("res://zones/rewardRoom/rewardExplain.tscn")
+@export var sceneToLoad:PackedScene = preload("res://GUI/rewardExplain.tscn")
 
 func _ready() -> void:
 	play()

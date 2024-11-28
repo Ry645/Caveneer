@@ -10,11 +10,13 @@
 
 [resource]
 default_font_size = 8
+Button/font_sizes/font_size = 16
 Button/styles/disabled = ExtResource("1_nxw6t")
 Button/styles/focus = SubResource("StyleBoxEmpty_yygu3")
 Button/styles/hover = ExtResource("2_jebf1")
 Button/styles/normal = ExtResource("2_ilen4")
 Button/styles/pressed = ExtResource("1_nxw6t")
+CheckButton/font_sizes/font_size = 16
 CheckButton/styles/disabled = ExtResource("1_nxw6t")
 CheckButton/styles/focus = SubResource("StyleBoxEmpty_s3hj4")
 CheckButton/styles/hover = ExtResource("2_jebf1")

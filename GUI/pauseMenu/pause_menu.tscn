@@ -14,59 +14,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lkk1l")
 
-[node name="control" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 160.0
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 60.0
-metadata/_edit_group_ = true
-
-[node name="vbox" type="VBoxContainer" parent="control"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 102.0
-offset_right = 240.0
-offset_bottom = 222.0
-theme = ExtResource("2_q7m4o")
-alignment = 1
-
-[node name="playButton" type="Button" parent="control/vbox"]
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-theme = ExtResource("2_q7m4o")
-text = "Continue"
-
-[node name="control" type="Control" parent="control/vbox"]
-layout_mode = 2
-
-[node name="resetLevelButton" type="Button" parent="control/vbox"]
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-theme = ExtResource("2_q7m4o")
-text = "Reset Level"
-
-[node name="control2" type="Control" parent="control/vbox"]
-layout_mode = 2
-
-[node name="titleButton" type="Button" parent="control/vbox"]
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-theme = ExtResource("2_q7m4o")
-text = "Title Screen"
-
-[node name="richTextLabel" type="RichTextLabel" parent="control"]
-layout_mode = 0
-offset_top = 64.0
-offset_right = 256.0
-offset_bottom = 119.0
-bbcode_enabled = true
-text = "[center]Game Paused"
-
 [node name="background" parent="." instance=ExtResource("3_gbe0l")]
 modulate = Color(1, 1, 1, 0.588)
 layout_mode = 0
 
-[connection signal="button_up" from="control/vbox/playButton" to="." method="_on_button_up_play_button"]
-[connection signal="button_up" from="control/vbox/resetLevelButton" to="." method="_on_button_up_reset_level_button"]
-[connection signal="button_up" from="control/vbox/titleButton" to="." method="_on_button_up_title_button"]
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 269.0
+offset_right = 822.0
+offset_bottom = 441.0
+theme = ExtResource("2_q7m4o")
+alignment = 1
+
+[node name="continueButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("2_q7m4o")
+text = "Continue"
+
+[node name="control" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="resetLevelButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("2_q7m4o")
+text = "Reset Level"
+
+[node name="control2" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="titleButton" type="Button" parent="vbox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("2_q7m4o")
+text = "Title Screen"
+
+[node name="richTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 112.0
+offset_right = 755.0
+offset_bottom = 210.0
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Game Paused"
+
+[connection signal="button_up" from="vbox/continueButton" to="." method="_on_button_up_continue_button"]
+[connection signal="button_up" from="vbox/resetLevelButton" to="." method="_on_button_up_reset_level_button"]
+[connection signal="button_up" from="vbox/titleButton" to="." method="_on_button_up_title_button"]

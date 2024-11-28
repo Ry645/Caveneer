@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 		else:
 			pause()
 
-func _on_button_up_play_button() -> void:
+func _on_button_up_continue_button() -> void:
 	unpause()
 
 func _on_button_up_title_button() -> void:

@@ -9,57 +9,61 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fpxte")
 
+[node name="background" parent="." instance=ExtResource("3_3id7w")]
+layout_mode = 0
+
 [node name="vbox" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 16.0
-offset_top = 102.0
-offset_right = 240.0
-offset_bottom = 222.0
+offset_left = 139.0
+offset_top = 228.0
+offset_right = 811.0
+offset_bottom = 462.0
 theme = ExtResource("1_46jcu")
 alignment = 1
 
 [node name="playButton" type="Button" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Play"
 
 [node name="control" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
 [node name="pbButton" type="Button" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Personal Bests"
 
 [node name="control2" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
 [node name="optionsButton" type="Button" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Options"
 
 [node name="control3" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
 [node name="saveAndExitGameButton" type="Button" parent="vbox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme = ExtResource("1_46jcu")
 text = "Save and Exit Game"
 
-[node name="background" parent="." instance=ExtResource("3_3id7w")]
+[node name="gameTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
-
-[node name="richTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_top = 25.0
-offset_right = 256.0
-offset_bottom = 80.0
-theme_override_font_sizes/normal_font_size = 36
+offset_left = 168.0
+offset_top = 42.0
+offset_right = 768.0
+offset_bottom = 192.0
+theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "[center]Caveneer"
 
