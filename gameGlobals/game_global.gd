@@ -122,6 +122,9 @@ func addCurrentTimeToPBs():
 	ms_times.append(RankData.secToMilliTime(timeInGame))
 	ms_times.sort_custom(sort_ascending)
 
+func exitGame():
+	save_game()
+	get_tree().quit()
 
 
 

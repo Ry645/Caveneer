@@ -24,5 +24,4 @@ func optionsButton():
 	GameGlobal.loadUI(options)
 
 func _on_button_up_save_and_exit_game_button() -> void:
-	GameGlobal.save_game()
-	get_tree().quit()
+	GameGlobal.exitGame()

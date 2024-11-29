@@ -125,7 +125,7 @@ func hideOutline():
 
 
 func toggleInteractability():
-	setInteractability(!$Area2D.monitorable)
+	setInteractability(!canInteract)
 
 func setInteractability(value:bool):
 	canInteract = value

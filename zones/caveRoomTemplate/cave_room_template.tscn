@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpn0evwb5mf8q"]
+[gd_scene load_steps=8 format=3 uid="uid://dpn0evwb5mf8q"]
 
 [ext_resource type="PackedScene" uid="uid://d25x3ipsgstln" path="res://player/player.tscn" id="1_wd4l0"]
 [ext_resource type="PackedScene" uid="uid://w24lj2gmpv1y" path="res://GUI/backgroundLayer/background_layer.tscn" id="2_g2miw"]
 [ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="3_b05ni"]
 [ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="4_aubku"]
 [ext_resource type="PackedScene" uid="uid://do3ylcqvoufi5" path="res://border/border.tscn" id="5_r0ddc"]
+[ext_resource type="PackedScene" uid="uid://c4wktu6y8p28c" path="res://decor/decor.tscn" id="6_2m6mx"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p4fdj"]
 light_mode = 2
@@ -24,6 +25,9 @@ script = ExtResource("4_aubku")
 
 [node name="border" parent="." node_paths=PackedStringArray("rawTileData") instance=ExtResource("5_r0ddc")]
 z_index = -1
+rawTileData = NodePath("../caveFloor")
+
+[node name="decor" parent="." node_paths=PackedStringArray("rawTileData") instance=ExtResource("6_2m6mx")]
 rawTileData = NodePath("../caveFloor")
 
 [node name="overview" type="RichTextLabel" parent="."]

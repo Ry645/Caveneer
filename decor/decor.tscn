@@ -6,3 +6,4 @@
 [node name="decor" type="TileMapLayer"]
 tile_set = ExtResource("1_okh12")
 script = ExtResource("1_gedst")
+scattering = 14
