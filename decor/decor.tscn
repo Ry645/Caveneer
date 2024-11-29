@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4wktu6y8p28c"]
+
+[ext_resource type="Script" path="res://decor/decor.gd" id="1_gedst"]
+[ext_resource type="TileSet" uid="uid://b44u8ewea1e11" path="res://tilesets/caveFloorDecor.tres" id="1_okh12"]
+
+[node name="decor" type="TileMapLayer"]
+tile_set = ExtResource("1_okh12")
+script = ExtResource("1_gedst")
