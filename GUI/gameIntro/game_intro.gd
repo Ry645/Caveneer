@@ -41,7 +41,7 @@ const firstTextArray:Array[String] = [
 I don't have much of my life left.
 
 I've lost everything.
-All but my trusty grappling hook.
+All but my trusty grappling lash.
 
 And now, I only wonder.
 
@@ -57,7 +57,7 @@ There's only one way to find out.
 """
 const secondTextArray:Array[String] = [
 	"I don't have much of my life left.\n",
-	"I've lost everything.\nAll but my trusty grappling hook.\n",
+	"I've lost everything.\nAll but my trusty grappling lash.\n",
 	"And now, I only wonder.\n",
 	"What else can I lose?",
 	"My sanity?",
