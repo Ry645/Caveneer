@@ -27,7 +27,7 @@ GlobalBackground="*res://gameGlobals/global_background.tscn"
 
 window/size/viewport_width=950
 window/size/viewport_height=530
-window/size/mode=3
+window/size/mode=4
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/stretch/scale_mode="integer"
