@@ -13,7 +13,7 @@ config_version=5
 config/name="Caveneer"
 run/main_scene="res://GUI/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://sprites/gameIcon.png"
 run/default_signal_callback_name="_on_{signal_name}"
 
 [autoload]
@@ -31,6 +31,7 @@ window/size/mode=4
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="res://sprites/mouseCursor.png"
 
 [editor]
 
