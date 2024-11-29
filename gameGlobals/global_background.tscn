@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxk1dbkiuw8yd"]
+
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="1_wb8ix"]
+
+[node name="globalBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" parent="." instance=ExtResource("1_wb8ix")]
+layout_mode = 0
