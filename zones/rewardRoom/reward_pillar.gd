@@ -10,7 +10,8 @@ func loadArea():
 
 func interact():
 	GameGlobal.gameTimeRunning = false
-	GameGlobal.addCurrentTimeToPBs()
+	if !GameGlobal.debugMode:
+		GameGlobal.addCurrentTimeToPBs()
 	GameGlobal.save_game()
 	loadArea()
 	return 0
