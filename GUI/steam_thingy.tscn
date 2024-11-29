@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://byh3iy6pogmy5"]
+
+[node name="steamThingy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="itchio" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="gameTitle" type="RichTextLabel" parent="itchio"]
+offset_left = 177.0
+offset_top = 142.0
+offset_right = 777.0
+offset_bottom = 292.0
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center]Caveneer"
+
+[node name="descrip" type="RichTextLabel" parent="itchio"]
+offset_left = 177.0
+offset_top = 278.0
+offset_right = 777.0
+offset_bottom = 354.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Play now on itch.io"
+
+[node name="dev" type="RichTextLabel" parent="itchio"]
+offset_left = 19.0
+offset_top = 483.0
+offset_right = 555.0
+offset_bottom = 525.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Ry645"
+
+[node name="intro" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="descrip2" type="RichTextLabel" parent="intro"]
+offset_left = 177.0
+offset_top = 278.0
+offset_right = 777.0
+offset_bottom = 354.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Play now on itch.io"
