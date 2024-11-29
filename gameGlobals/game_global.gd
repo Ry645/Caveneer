@@ -134,6 +134,10 @@ func exitGame():
 	get_tree().quit()
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		exitGame()
+
 
 func save():
 	var saveDict:Dictionary = {

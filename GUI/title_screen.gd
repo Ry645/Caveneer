@@ -6,7 +6,7 @@ extends Control
 
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	showMouse()
 	if !GameGlobal.gameStarted:
 		GameGlobal.loadGameIntro()
 		return
@@ -16,7 +16,12 @@ func _ready() -> void:
 		$vbox/pbButton.queue_free()
 		$vbox/control2.queue_free()
 		$vbox/optionsButton.queue_free()
+	
+	await get_tree().process_frame
+	showMouse()
 
+func showMouse():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func playButton() -> void:
 	GameGlobal.loadFirstLevel()
