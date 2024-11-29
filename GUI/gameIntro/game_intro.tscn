@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://e2q7j7fydp71"]
+
+[ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_a6haj"]
+[ext_resource type="Script" path="res://GUI/gameIntro/game_intro.gd" id="1_ttqu1"]
+[ext_resource type="PackedScene" uid="uid://bb5cgb6hnpeuh" path="res://GUI/default_button.tscn" id="3_xnm4s"]
+[ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="4_ehu0e"]
+[ext_resource type="Texture2D" uid="uid://d0mg4hf531jbw" path="res://sprites/caveEntrance/caveEntrance.png" id="5_tq5qc"]
+[ext_resource type="TileSet" uid="uid://ck3t1nt4yqdo2" path="res://tilesets/rockFloorTileset.tres" id="6_13epl"]
+[ext_resource type="Script" path="res://dualGridSystem/TileMapDual.gd" id="7_lfg5y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_54yld"]
+light_mode = 2
+
+[node name="gameIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a6haj")
+script = ExtResource("1_ttqu1")
+
+[node name="introText1" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(672, 48)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 40.0
+offset_right = 804.0
+offset_bottom = 416.0
+theme_override_font_sizes/normal_font_size = 14
+text = "There it is.
+That entrance.
+
+This is the cave the world shuns.
+Anyone who enters...
+
+Never leaves.
+
+And yet,
+The cave beckons to me.
+
+It promises a level of elation I cannot comprehend.
+
+Infinite treasures, infinite challenges.
+
+I can't verify those promises.
+However..."
+
+[node name="introText2" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(672, 48)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 40.0
+offset_right = 804.0
+offset_bottom = 395.0
+theme_override_font_sizes/normal_font_size = 14
+text = "I don't have much of my life left.
+
+I've lost everything.
+All but my trusty grappling hook.
+
+And now, I only wonder.
+
+What else can I lose?
+My sanity?
+My life?
+
+Well...
+
+Past the nebulous tunnel,
+
+There's only one way to find out."
+
+[node name="advanceButton" parent="." instance=ExtResource("3_xnm4s")]
+visible = false
+layout_mode = 0
+offset_left = 132.0
+offset_top = 417.0
+offset_right = 804.0
+offset_bottom = 465.0
+text = "Continue"
+
+[node name="background" parent="." instance=ExtResource("4_ehu0e")]
+layout_mode = 0
+
+[node name="sprites" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -37.0
+offset_right = 40.0
+offset_bottom = 3.0
+
+[node name="sprite2d" type="Sprite2D" parent="sprites"]
+position = Vector2(475, 265)
+scale = Vector2(6, 6)
+texture = ExtResource("5_tq5qc")
+
+[node name="tileMapDual" type="TileMapLayer" parent="sprites"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_54yld")
+position = Vector2(-37, 0)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 2, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0, 5, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_set = ExtResource("6_13epl")
+script = ExtResource("7_lfg5y")
+
+[connection signal="button_up" from="advanceButton" to="." method="_on_button_up_default_button"]

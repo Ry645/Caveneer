@@ -21,6 +21,7 @@ run/default_signal_callback_name="_on_{signal_name}"
 SoundFx="*res://audio/SoundFX.tscn"
 GameGlobal="*res://gameGlobals/gameGlobal.tscn"
 RankData="*res://gameGlobals/rank_data.tscn"
+GlobalBackground="*res://gameGlobals/global_background.tscn"
 
 [display]
 

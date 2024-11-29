@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx03o8u2ld3l2"]
+
+[ext_resource type="Script" path="res://GUI/advanceLogic/advance_logic.gd" id="1_8fhv4"]
+
+[node name="advanceLogic" type="Node"]
+script = ExtResource("1_8fhv4")

@@ -34,6 +34,9 @@ func advance():
 		screens[index + 1].visible = true
 	else:
 		loadStart()
+	
+	if index == 1:
+		$button.text = "Sure"
 	index += 1
 
 

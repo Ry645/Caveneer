@@ -7,6 +7,10 @@ extends Control
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if !GameGlobal.gameStarted:
+		GameGlobal.loadGameIntro()
+		return
+	
 	if !GameGlobal.gameCompleted:
 		$vbox/control.queue_free()
 		$vbox/pbButton.queue_free()

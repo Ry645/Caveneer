@@ -18,9 +18,13 @@ extends Node
 @export var timer:PackedScene = preload("res://speedrunTimer/speedrun_timer.tscn")
 @export var pauseMenuScene:PackedScene = preload("res://GUI/pauseMenu/pause_menu.tscn")
 
+
 @export var titleScreen:PackedScene = preload("res://GUI/title_screen.tscn")
+@export var gameIntro:PackedScene = preload("res://GUI/gameIntro/game_intro.tscn")
 @export var firstLevel:PackedScene = preload("res://zones/firstCave/first_cave_room1.tscn")
 @export var debugMode:bool = false
+@export var dontSaveGame = false
+@export var dontLoadGame = false
 
 var timeInGame:float = 0.0
 var timeInLevel:float = 0.0
@@ -68,6 +72,9 @@ func loadUI(sceneToLoad:PackedScene):
 
 func loadTitleScreen():
 	loadUI(titleScreen)
+
+func loadGameIntro():
+	loadUI(gameIntro)
 
 func loadFirstLevel():
 	gameTimeRunning = true
@@ -128,7 +135,6 @@ func exitGame():
 
 
 
-
 func save():
 	var saveDict:Dictionary = {
 		"gameStarted": gameStarted,
@@ -143,6 +149,9 @@ func save():
 
 
 func save_game():
+	if dontSaveGame:
+		return
+	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("persist")
 	for node in save_nodes:
@@ -171,6 +180,9 @@ func save_game():
 # Note: This can be called from anywhere inside the tree. This function
 # is path independent.
 func load_game():
+	if dontLoadGame:
+		return
+	
 	if not FileAccess.file_exists("user://savegame.save"):
 		print("save file doesn't exist")
 		return # Error! We don't have a save to load.
