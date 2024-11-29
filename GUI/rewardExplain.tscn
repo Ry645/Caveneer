@@ -45,6 +45,7 @@ theme = ExtResource("4_x8xkp")
 text = "Continue"
 
 [node name="screen1" type="Control" parent="." groups=["screen"]]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -143,7 +144,6 @@ bbcode_enabled = true
 text = "[u]Unlocked"
 
 [node name="screen3" type="Control" parent="." groups=["screen"]]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
