@@ -14,6 +14,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="gameTitle" type="RichTextLabel" parent="itchio"]
+layout_mode = 0
 offset_left = 177.0
 offset_top = 142.0
 offset_right = 777.0
@@ -23,6 +24,7 @@ bbcode_enabled = true
 text = "[center]Caveneer"
 
 [node name="descrip" type="RichTextLabel" parent="itchio"]
+layout_mode = 0
 offset_left = 177.0
 offset_top = 278.0
 offset_right = 777.0
@@ -32,6 +34,7 @@ bbcode_enabled = true
 text = "[center]Play now on itch.io"
 
 [node name="dev" type="RichTextLabel" parent="itchio"]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 483.0
 offset_right = 555.0
@@ -46,6 +49,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="descrip2" type="RichTextLabel" parent="intro"]
+layout_mode = 0
 offset_left = 177.0
 offset_top = 278.0
 offset_right = 777.0

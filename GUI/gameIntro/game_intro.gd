@@ -14,8 +14,9 @@ And yet,
 The cave beckons to me.
 
 It promises a level of elation I cannot comprehend.
-
 Infinite treasures, infinite challenges.
+
+Almost as if it were sentient.
 
 I can't verify those promises.
 However...
@@ -27,8 +28,9 @@ const firstTextArray:Array[String] = [
 	"Anyone who enters...\n",
 	"Never leaves.\n",
 	"And yet,\nThe cave beckons to me.\n",
-	"It promises a level of elation I cannot comprehend.\n",
+	"It promises a level of elation I cannot comprehend.",
 	"Infinite treasures, infinite challenges.\n",
+	"Almost as if it were sentient.\n",
 	"I can't verify those promises.",
 	"However..."
 ]
@@ -45,7 +47,7 @@ And now, I only wonder.
 
 What else can I lose?
 My sanity?
-My life?
+My integrity?
 
 Well...
 
@@ -59,7 +61,7 @@ const secondTextArray:Array[String] = [
 	"And now, I only wonder.\n",
 	"What else can I lose?",
 	"My sanity?",
-	"My life?\n",
+	"My integrity?\n",
 	"Well...\n",
 	"Past the nebulous tunnel,\n",
 	"There's only one way to find out."

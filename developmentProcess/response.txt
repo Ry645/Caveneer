@@ -1,0 +1,29 @@
+In short:
+Caveneer makes use of levers to reveal secret areas the player can travel through.
+The game's introduction and atmosphere is dark and mysterious.
+The cave is sentient for some unknown reason.
+The player can discover secret tricks to improve their speedruns.
+There's also a secret rank, guarded by a funny number.
+
+Now for the long answer.
+Origininally, my game plan was to create a procedurally generated dungeon-crawler, in which the main upgrades were hidden in secret rooms.
+However, that soon proved to be virtually impossible given the time constraints and my other responsibilities, so I settled for a smaller scope.
+
+I kept the concept of hidden rooms in my game, but I did away with procedural generation.
+Instead, I revealed hidden game objects to the player.
+The player would flick a lever, and they would suddenly return to see everything changed!
+
+I also kept a mysterious vibe throughout the game, instilled by the game's introduction.
+I also gave the cave a bit of a hidden personality.
+
+
+*** omit ***
+I remember trying really hard to fiddle around with my player's grappling movement to encourage preserving momentum (as all grappling hooks should).
+Sometime in my process, I decided to just add a button that redirects the player's velocity at will.
+The movement felt great immideitly, so I banked in on that feature.
+*** omit ***
+
+*** omit ***
+I designed 6 levels around the player's dashing mechanic, which was really fun to play around with.
+Most of the mechanics I created came straight from level design, as I thought up of new and clever ways to ultilize the player's abilities.
+*** omit ***
