@@ -5,5 +5,3 @@
 [node name="gameGlobal" type="Node" groups=["persist"]]
 process_mode = 3
 script = ExtResource("1_hyodn")
-dontSaveGame = true
-dontLoadGame = true
