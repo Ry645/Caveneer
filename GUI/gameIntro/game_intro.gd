@@ -75,6 +75,8 @@ var advanced:bool = false
 
 ## sets up the starting scene
 func _ready() -> void:
+	setBrowserButtonVisibility(false)
+	
 	$introText1.text = ""
 	$introText1.show()
 	$introText2.text = ""
@@ -97,6 +99,7 @@ func _ready() -> void:
 	
 	# show button and start text
 	$advanceButton.visible = true
+	setBrowserButtonVisibility(true)
 	advanceText()
 
 
@@ -123,6 +126,7 @@ func _on_button_up_default_button() -> void:
 
 func triggerFadeOut():
 	# keep button alive
+	setBrowserButtonVisibility(false)
 	await get_tree().create_timer(3).timeout
 	
 	# hide button
@@ -135,3 +139,7 @@ func triggerFadeOut():
 	GameGlobal.save_game()
 	GameGlobal.loadFirstLevel()
 	
+
+func setBrowserButtonVisibility(val:bool):
+	if $browserButton != null:
+		$browserButton.visible = val

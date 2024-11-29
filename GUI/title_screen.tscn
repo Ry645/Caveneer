@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6w35kqrxeohr"]
+[gd_scene load_steps=5 format=3 uid="uid://c6w35kqrxeohr"]
 
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_46jcu"]
 [ext_resource type="Script" path="res://GUI/title_screen.gd" id="1_fpxte"]
 [ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="3_3id7w"]
+[ext_resource type="PackedScene" uid="uid://cjxabp3rt0xi" path="res://GUI/titleScreen/browser_button.tscn" id="4_bm64y"]
 
 [node name="titleScreen" type="Control"]
 layout_mode = 3
@@ -66,6 +67,13 @@ offset_bottom = 192.0
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "[center]Caveneer"
+
+[node name="browserButton" parent="." instance=ExtResource("4_bm64y")]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 9.0
+offset_right = 944.0
+offset_bottom = 76.0
 
 [connection signal="button_up" from="vbox/playButton" to="." method="playButton"]
 [connection signal="button_up" from="vbox/pbButton" to="." method="pbButton"]

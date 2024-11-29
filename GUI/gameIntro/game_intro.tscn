@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://e2q7j7fydp71"]
+[gd_scene load_steps=10 format=3 uid="uid://e2q7j7fydp71"]
 
 [ext_resource type="Theme" uid="uid://b256ciymyaap6" path="res://GUI/titleScreenTheme.tres" id="1_a6haj"]
 [ext_resource type="Script" path="res://GUI/gameIntro/game_intro.gd" id="1_ttqu1"]
+[ext_resource type="PackedScene" uid="uid://cjxabp3rt0xi" path="res://GUI/titleScreen/browser_button.tscn" id="3_7iw54"]
 [ext_resource type="PackedScene" uid="uid://bb5cgb6hnpeuh" path="res://GUI/default_button.tscn" id="3_xnm4s"]
 [ext_resource type="PackedScene" uid="uid://c1wuym7dhw62h" path="res://GUI/backgroundLayer/background.tscn" id="4_ehu0e"]
 [ext_resource type="Texture2D" uid="uid://d0mg4hf531jbw" path="res://sprites/caveEntrance/caveEntrance.png" id="5_tq5qc"]
@@ -20,6 +21,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_a6haj")
 script = ExtResource("1_ttqu1")
+
+[node name="browserButton" parent="." instance=ExtResource("3_7iw54")]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 11.0
+offset_right = 940.0
+offset_bottom = 78.0
 
 [node name="introText1" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(672, 48)
