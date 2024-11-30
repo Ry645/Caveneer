@@ -39,6 +39,7 @@ animations = [{
 }]
 
 [node name="magicShield" type="AnimatedSprite2D"]
+light_mask = 2
 sprite_frames = SubResource("SpriteFrames_4wxxs")
 animation = &"active"
 frame = 1
