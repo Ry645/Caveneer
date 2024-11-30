@@ -18,6 +18,7 @@ shader_parameter/process = false
 size = Vector2(64, 60)
 
 [node name="CaveEntrance" type="Sprite2D"]
+light_mask = 2
 z_index = 1
 material = SubResource("ShaderMaterial_acruw")
 position = Vector2(138, 128)

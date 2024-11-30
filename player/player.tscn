@@ -101,6 +101,7 @@ script = ExtResource("1_hpm7c")
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+light_mask = 2
 sprite_frames = SubResource("SpriteFrames_uqrkt")
 animation = &"walkUp"
 
@@ -164,15 +165,23 @@ one_shot = true
 stream = ExtResource("7_v7xii")
 volume_db = 3.0
 
-[node name="pointLight2d" type="PointLight2D" parent="."]
+[node name="tileLighting" type="PointLight2D" parent="."]
 position = Vector2(-0.5, 13.5)
-scale = Vector2(1.6, 1.6)
+blend_mode = 2
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.529412)
 texture = ExtResource("8_yyg5q")
-texture_scale = 8.0
+texture_scale = 12.8
 
 [node name="canvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.26, 0.26, 0.26, 1)
+color = Color(0.12, 0.12, 0.12, 1)
+
+[node name="objectLighting" type="PointLight2D" parent="."]
+position = Vector2(-0.5, 13.5)
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_color = Color(0, 0, 0, 0.529412)
+texture = ExtResource("8_yyg5q")
+texture_scale = 12.8
 
 [connection signal="body_entered" from="wallKickArea" to="wallKickArea" method="_on_body_entered"]
