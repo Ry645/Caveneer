@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d25x3ipsgstln"]
+[gd_scene load_steps=20 format=3 uid="uid://d25x3ipsgstln"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hpm7c"]
 [ext_resource type="Texture2D" uid="uid://cl1mvemu0lf5c" path="res://sprites/player/playerSheet.png" id="2_vndi6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://player/wall_kick_area.gd" id="5_lknyh"]
 [ext_resource type="PackedScene" uid="uid://bvvmo4u21fv1e" path="res://magicShield/magic_shield.tscn" id="6_81vul"]
 [ext_resource type="AudioStream" uid="uid://bomdbeqasjtgy" path="res://audio/export/dash.wav" id="7_v7xii"]
+[ext_resource type="Texture2D" uid="uid://cmfm5uc1d1ufh" path="res://GUI/light/basePointLight.png" id="8_yyg5q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj1p0"]
 atlas = ExtResource("2_vndi6")
@@ -162,5 +163,16 @@ one_shot = true
 [node name="dashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_v7xii")
 volume_db = 3.0
+
+[node name="pointLight2d" type="PointLight2D" parent="."]
+position = Vector2(-0.5, 13.5)
+scale = Vector2(1.6, 1.6)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.529412)
+texture = ExtResource("8_yyg5q")
+texture_scale = 8.0
+
+[node name="canvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.26, 0.26, 0.26, 1)
 
 [connection signal="body_entered" from="wallKickArea" to="wallKickArea" method="_on_body_entered"]

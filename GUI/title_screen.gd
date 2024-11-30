@@ -17,6 +17,9 @@ func _ready() -> void:
 		$vbox/control2.queue_free()
 		$vbox/optionsButton.queue_free()
 	
+	if !OS.has_feature("web"):
+		$browserButton.visible = false
+	
 	await get_tree().process_frame
 	showMouse()
 

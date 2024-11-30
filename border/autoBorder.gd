@@ -68,11 +68,13 @@ var groundLayer:TileMapLayer
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		print("auto border ready")
-		set_process(true)
 	else:
-		set_process(false)
+		visible = false
 
 func _process(delta: float) -> void:
+	if !Engine.is_editor_hint():
+		return
+	
 	if !active:
 		return
 	
