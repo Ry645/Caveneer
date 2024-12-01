@@ -36,6 +36,8 @@ func _physics_process(delta):
 func use():
 	$grabSound.play()
 	shootGrapple()
+	
+	spawnParticles()
 
 func shootGrapple():
 	if line != null:
@@ -62,6 +64,7 @@ func createGrappleLine(desiredLocation):
 	line.width = 1
 	line.texture = lineTexture
 	line.z_index = 1
+	line.light_mask = 2
 	get_node("/root").get_child(1).add_child(line)
 	#print(get_node("/root").get_child(0))
 
@@ -87,3 +90,8 @@ func stopUse():
 func retractGrapple():
 	play("default")
 	grappleState = NOT_GRAPPLING
+
+func spawnParticles():
+	$latchParticles.global_position = endpoint
+	$latchParticles.global_rotation = global_rotation + PI/2
+	$latchParticles.restart()

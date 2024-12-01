@@ -21,6 +21,8 @@ extends CharacterBody2D
 @onready var holster = %grappleLashTransform
 
 var lastFivePreviousSpeeds:Array[float] = [0, 0, 0, 0, 0]
+var previousSpeedForCrash:float
+var previousRotationForCrash:float
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -48,6 +50,8 @@ func _physics_process(delta):
 	storeSpeed()
 	
 	move_and_slide()
+	
+	checkForCrash()
 
 func inputProcess(delta):
 	if Input.is_action_just_pressed("interact"):
@@ -89,6 +93,7 @@ func inputProcess(delta):
 
 ## stores the previous speed to use in a wall kick
 func storeSpeed():
+	previousSpeedForCrash = velocity.length()
 	if $wallKickTimer.is_stopped():
 		lastFivePreviousSpeeds.pop_at(0)
 		lastFivePreviousSpeeds.append(velocity.length())
@@ -218,6 +223,9 @@ func dash():
 	else:
 		doubleDash()
 		$doubleDashWindow.stop()
+	
+	
+	previousRotationForCrash = %carryingTransform.global_rotation
 
 func regularDash():
 	#print("poot") # 2 poots per double dash: works as intended
@@ -252,3 +260,12 @@ func doubleDash():
 func debugSteer():
 	var speed = velocity.length()
 	velocity = Vector2.UP.rotated(carrying_transform.global_rotation) * speed
+
+func checkForCrash():
+	if is_on_wall() || is_on_ceiling() || is_on_floor():
+		if previousSpeedForCrash - velocity.length() > 500.0:
+			$crashSound.play()
+			
+			$crashParticles.global_position = get_slide_collision(0).get_position()
+			$crashParticles.global_rotation = previousRotationForCrash + PI/2
+			$crashParticles.restart()

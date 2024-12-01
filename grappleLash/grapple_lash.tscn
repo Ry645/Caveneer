@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bog6uxyq7uej"]
+[gd_scene load_steps=9 format=3 uid="uid://bog6uxyq7uej"]
 
 [ext_resource type="Texture2D" uid="uid://bjxu87i72rwwl" path="res://sprites/grappleLash/grappleLash-Sheet.png" id="1_benc7"]
 [ext_resource type="Script" path="res://grappleLash/grapple_lash.gd" id="2_5ypa4"]
 [ext_resource type="AudioStream" uid="uid://cw4av8jfmkun5" path="res://audio/export/grapple.wav" id="3_pyhjn"]
 [ext_resource type="AudioStream" uid="uid://c3o5cj6p68pkq" path="res://audio/export/grappleRelease.wav" id="4_h0dia"]
+[ext_resource type="Material" uid="uid://denp5eth2kxdk" path="res://grappleLash/grapplingParticles.tres" id="5_kb88w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6noht"]
 atlas = ExtResource("1_benc7")
@@ -44,12 +45,21 @@ target_position = Vector2(0, -30000)
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
+light_mask = 2
 width = 1.0
 
 [node name="grabSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pyhjn")
-volume_db = -6.0
+volume_db = -10.0
 
 [node name="releaseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h0dia")
-volume_db = -6.0
+volume_db = -10.0
+
+[node name="latchParticles" type="GPUParticles2D" parent="."]
+modulate = Color(0.19, 0.1254, 0.114, 1)
+emitting = false
+process_material = ExtResource("5_kb88w")
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
